@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 app.get("/api/coordinators", (req, res) => {
   const coordinators = [
-    { id: 1, firstName: "Rania", lastName: "patro" },
+    { id: 1, firstName: "Rania", lastName: "" },
     { id: 2, firstName: "Richard", lastName: "" },
     { id: 3, firstName: "Radhika", lastName: "Rajgiri" },
   ];
