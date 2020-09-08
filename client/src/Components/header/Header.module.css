@@ -1,0 +1,30 @@
+.holder {
+    align-content: center;
+    height: 10vh;
+    padding: 0;
+    margin: 0;
+    
+}
+
+
+.header {
+        background-color: lightblue;
+        display: inline-flex;
+        line-height:calc((10px+2vmin));
+        font-size: calc(10px + 2vmin);
+        margin: 0;
+        color: black;
+        width: 80%;
+        height: 100%;
+        justify-content: space-between;
+        box-shadow:5px 5px 5px lightslategray;
+
+}
+
+.headerimg {
+    height: 10vh;
+}
+
+.headertext {
+    align-self: flex-end;
+}
