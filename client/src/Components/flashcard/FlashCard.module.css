@@ -12,7 +12,7 @@
 
 
 .entrycontainer{
-    perspective: 1000px; 
+    perspective: 1500px; 
     position: absolute;
     height: 100%;
     width: 50%;
@@ -24,7 +24,7 @@
     transition: transform 0.8s ease-out;
     padding: 0;
     margin: 0;
-    z-index: 1;
+    z-index: -1;
     
 }
 
@@ -56,17 +56,57 @@
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     padding: 0;
-    margin: 0;
+    margin: 20px 0 0 0;
     background-color: rgb(224, 224, 244, 0.1);
     border-radius: 3%;
     box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
     0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
     0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
     0 100px 80px rgba(0, 0, 0, 0.12);
-    z-index: 1;
+ 
 
 }
 
 .back {
     transform: rotateY(180deg);
+}
+
+.front h1, .back h1 {
+    z-index: 100;
+    margin-top: 10vh;
+    
+}
+
+.flashnav {
+    display: inline-flex;
+}
+
+.clickbutton {
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 0 5px 0 5px;
+    background: lightblue;
+    cursor: pointer;
+}
+
+
+.label {
+    font-size: 1.5rem;
+}
+
+.select {
+    width: 3vw;
+    height: 3vh;
+    font-size: 1.2rem
+}
+
+.inputlevel {
+    margin-left: 5px;
+    font-size: 1.2rem;
+}
+
+.textholder {
+    width: 50%;
+    margin: auto;
 }

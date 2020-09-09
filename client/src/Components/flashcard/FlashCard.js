@@ -29,7 +29,7 @@ function FlashCard(){
         utterance.voice=voices[0];    
         setSmith(utterance)   
        
-      
+        console.log(question.length)
          
         
         }, [question])
@@ -54,21 +54,36 @@ function FlashCard(){
 
 return( 
         <div className={Styles.holder}>
+            <div className={Styles.flashnav}>
+                <div className={Styles.clickbutton}>Previous</div>
+                <form>
+                    <label className={Styles.label}>Choose a level: </label>
+                    <select className={Styles.select}>
+                        <option value="A1">A1</option> 
+                        <option value="A2">A2</option>
+                        <option value="B1">B1</option>
+                        <option value="B2">B2</option>
+                        <option value="C1">C1</option>
+                        <option value="C2">C2</option>   
+                    </select>
+                    <input className={Styles.inputlevel} type="submit" value="Choose"></input>
+                </form>
+                <div className={Styles.clickbutton}>Next</div>
+            </div>
             <div  className={Styles.entrycontainer}>
                     <div onClick={()=>Rotatenow()} className={Styles.entry} id="flashcard">
                         <div className={Styles.front}>
-                            <h1 onMouseEnter={()=>speechSynthesis.speak(smith)}>{question}</h1>
+                            <div className={Styles.textholder}>
+                                <h1 onMouseOver={()=>speechSynthesis.speak(smith)}>{question}</h1>
+                            </div>
                         </div>  
                         <div className={Styles.back}>
-                            <h1>BACK</h1>
+                            <div className={Styles.textholder}>
+                                <h1>BACK</h1>
+                            </div>
                         </div>  
                     </div>
             </div>
-
-
-
-
-
 
         </div>
             
