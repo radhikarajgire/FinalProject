@@ -1,12 +1,17 @@
 const express = require("express");
+const connectDB = require('./config/db');
 const app = express();
-app.get("/api/coordinators", (req, res) => {
-  const coordinators = [
-    { id: 1, firstName: "Rania", lastName: "patro" },
-    { id: 2, firstName: "Richard", lastName: "" },
-    { id: 3, firstName: "Radhika", lastName: "Rajgiri" },
-  ];
-  res.json(coordinators);
-});
-const port = 5000;
-app.listen(port, () => console.log(`Server started  on port ${port}`));
+//connect database
+connectDB();
+app.get('/', (req, res) => res.send('API running'));
+  
+  // const coordinators = [
+  //   { id: 1, firstName: "Rania", lastName: "" },
+  //   { id: 2, firstName: "Richard", lastName: "" },
+  //   { id: 3, firstName: "Radhika", lastName: "Rajgiri" },
+  // ];
+  // res.json(coordinators);
+  
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server started  on port ${PORT}`));
