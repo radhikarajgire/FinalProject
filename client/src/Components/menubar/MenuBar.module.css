@@ -1,0 +1,104 @@
+.holder {
+    align-content: center;
+    margin: 0px;
+    padding: 0px;
+
+    
+}
+
+
+.container{
+    background-color: lightblue;
+    width: 80%;
+    height: 2rem;
+    margin: 0px;
+    padding: 0px;
+    line-height: 2rem;
+    display: inline-flex;
+    box-shadow:5px 5px 5px lightslategray;
+    
+}
+
+.container h2{
+    margin: 0;
+    padding-right: 20px;
+    padding-left: 2px;
+    cursor: pointer;
+}
+
+.container h2:hover{
+    transform: scale(1.1);
+}
+
+.showlearn {
+    visibility: show;
+    position: absolute;
+    left: 10%;
+    background-color:rgb(173, 216, 230, 0.5);
+    transition: all 0.5s;
+    border-radius: 10%;
+    width: auto;
+}
+
+.menulist {
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+    cursor: pointer;
+    z-index: auto;
+}
+
+.showreview {
+    visibility: show;
+    position: absolute;
+    left: 15%;
+    background-color: rgb(173, 216, 230, 0.5);
+    padding: 5px;
+    transition: all 0.5s;
+    border-radius: 10%;
+}
+
+.showtest {
+    visibility: show;
+    position: absolute;
+    left: 20%;
+    background-color:rgb(173, 216, 230, 0.5);
+    padding: 5px;
+    transition: all 0.5s;
+    border-radius: 10%;
+}
+
+.showgame {
+    visibility: show;
+    position: absolute;
+    left: 25%;
+    background-color:rgb(173, 216, 230, 0.5);
+    padding: 5px;
+    transition: all 0.5s;
+    border-radius: 10%;
+}
+
+
+.hidelearn {
+    visibility: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.hidereview {
+    visibility: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.hidetest {
+    visibility: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.hidegame {
+    visibility: none;
+    position: absolute;
+    opacity: 0;
+}

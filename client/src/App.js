@@ -1,15 +1,18 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import Coordinators from "./Components/Coordinators/Coordinators.js";
+import MenuBar from "./Components/menubar/MenuBar.js"
+import Header from "./Components/header/Header.js"
+import FlashCard from "./Components/flashcard/FlashCard.js"
+
+
+//<img src={logo} className="App-logo" alt="logo" />
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <h1 className ="App-title"> Welcome to Our App</h1>
-      </header>
-       < Coordinators />
+        <Header />
+        <MenuBar/>
+        <FlashCard />
     </div>
   );
 }
