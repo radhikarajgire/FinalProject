@@ -90,6 +90,10 @@
     cursor: pointer;
 }
 
+.clickbutton:hover {
+    transform: scale(1.1);
+}
+
 
 .label {
     font-size: 1.5rem;
@@ -104,6 +108,11 @@
 .inputlevel {
     margin-left: 5px;
     font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.inputlevel:hover {
+    transform: scale(1.1);
 }
 
 .textholder {
