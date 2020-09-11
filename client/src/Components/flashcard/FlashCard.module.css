@@ -5,6 +5,8 @@
     height: 50vh;
     z-index: 1;
     position: relative;
+    
+    
 
     
 }
@@ -74,6 +76,7 @@
 .front h1, .back h1 {
     z-index: 100;
     margin-top: 10vh;
+    border: 1px solid black;
     
 }
 
@@ -116,6 +119,7 @@
 }
 
 .textholder {
-    width: 50%;
+    max-block-size: fit-content;
     margin: auto;
+    width: 40%;
 }
