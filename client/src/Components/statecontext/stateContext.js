@@ -5,7 +5,7 @@ export const StateContext = createContext({});
 export default function StateContextProvider({ children }) {
   
 
-    const customElements=[{q:"A four leged friend", a: "dog", raone:'chimp', ratwo:'parot', ratthree:'sheep', rafour:'hedge hog'}, {q:"moody house pet", a:"cat", raone:'chimp', ratwo:'parot', ratthree:'sheep', rafour:'hedge hog'}, {q:"lives in the sea", a:"fish", raone:'chimp', ratwo:'parot', ratthree:'sheep', rafour:'hedge hog'}, {q:"worm like", a:"snake", raone:'chimp', ratwo:'parot', ratthree:'sheep', rafour:'hedge hog'}]
+    const customElements=[{q:"A four leged friend", a: "dog", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}, {q:"A moody house pet", a:"cat", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}, {q:"Lives in the sea", a:"fish", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}, {q:"Worm like", a:"snake", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}]
     
     const words=['fish', 'chips', 'dogs', 'cats', 'raining', 'fishing', 'sausages', 'dictator']
 

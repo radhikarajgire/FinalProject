@@ -18,6 +18,10 @@
 
 }
 
+.formholder{
+    height: 50px;
+    align-items: center;
+}
 
 .container {
     width: 20vw;
@@ -26,36 +30,52 @@
 
 }
 
-.element{
-    width: 48%;
-    height: 50%;
-    border: 1px solid red;
-    cursor: pointer;
-    background-color: skyblue;
+.label {
+    font-size: 1.5rem;
 }
 
-.element:hover {
-    transform: scale(1.05);
-    transition: all 0.3s;
+.select{
+    width: 3vw;
+    height: 3vh;
+    font-size: 1.2rem
 }
 
-.button {
+.inputlevel {
     background-color: lightblue;
     cursor: pointer;
     width: 50px;
+    margin-left: 20px;
 }
 
-.button:hover {
+.inputlevel:hover {
     transform: scale(1.05);
     transition: all 0.3s;
 }
 
 .questionform{
-    border: 1px solid black;
     position: relative;
 }
 
 .answer{
-    border: 1px solid red;
     background-color: lightgray;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow:5px 5px 5px lightslategray;
+}
+
+.answer:hover {
+    transform: scale(1.05);
+    transition: all 0.3s;
+}
+
+.answerwrong{
+    background-color: red;
+    border-radius: 5px;
+    box-shadow:5px 5px 5px lightslategray;
+}
+
+.answerright{
+    background-color: green;
+    border-radius: 5px;
+    box-shadow:5px 5px 5px lightslategray;
 }
