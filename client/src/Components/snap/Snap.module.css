@@ -1,11 +1,21 @@
+.holderholder {
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
 .holder{
     justify-content: center;
+    align-content: center;
     padding: 0;
     margin: 15vh 0 0 0;
     height: 50vh;
     z-index: 1;
     position: relative;
-    border: 1px solid black;
+
 }
 
 
@@ -34,6 +44,7 @@
 .button {
     background-color: lightblue;
     cursor: pointer;
+    width: 50px;
 }
 
 .button:hover {

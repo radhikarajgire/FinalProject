@@ -8,10 +8,14 @@ const [showlearn, setShowLearn]=useState(Styles.hidelearn)
 const [showreview, setShowReview]=useState(Styles.hidereview)
 const [showtest, setShowTest]=useState(Styles.hidetest)
 const [showgame, setShowGame]=useState(Styles.hidegame)
+const [showmethod, setShowMethod]=useState(Styles.hidemethod)
+const [showgeneral, setShowGeneral]=useState(Styles.hidegeneral)
 const [myleftlearn, setMyleftLearn] = useState(-200)
 const [myleftreview, setMyleftReview] = useState(-200)
 const [mylefttest, setMyleftTest] = useState(-200)
 const [myleftgame, setMyleftGame] = useState(-200)
+const [myleftmethod, setMyleftMethod] = useState(-200)
+const [myleftgeneral, setMyleftGeneral] = useState(-200)
 
 
 //useEffect(()=>{
@@ -46,6 +50,16 @@ return (
                 const leftmegame = document.getElementById("game").getBoundingClientRect().x
                 setMyleftGame(leftmegame)
                 }} onMouseLeave={()=>setShowGame(Styles.hidegame)}>Games</h2>
+            <h2 id="method" onMouseEnter={()=>{
+                setShowMethod(Styles.showmethod)
+                const leftmemethod = document.getElementById("method").getBoundingClientRect().x
+                setMyleftMethod(leftmemethod)
+                }} onMouseLeave={()=>setShowMethod(Styles.hidemethod)}>Method</h2>
+            <h2 id="general" onMouseEnter={()=>{
+                setShowGeneral(Styles.showgeneral)
+                const leftmegeneral = document.getElementById("general").getBoundingClientRect().x
+                setMyleftGeneral(leftmegeneral)
+                }} onMouseLeave={()=>setShowGeneral(Styles.hidegeneral)}>General</h2>
         </div>
         <div className={showlearn} style={{left: myleftlearn}} onMouseEnter={()=>setShowLearn(Styles.showlearn)} onMouseLeave={()=>{
             setShowLearn(Styles.hidelearn)
@@ -82,6 +96,25 @@ return (
                 <li>Spellshot</li>
                 <li>Spellbee</li>
                 <li>Countdown</li>
+                <li>PoshorNot</li>
+            </ul>
+        </div>
+        <div className={showmethod} style={{left: myleftmethod}} onMouseEnter={()=>setShowMethod(Styles.showmethod)} onMouseLeave={()=>{
+            setMyleftMethod(-200)
+            setShowMethod(Styles.hidemethod)}}>
+            <ul className={Styles.menulist}>
+                <li>Learn-Methods</li>
+                <li>Learn-Music</li>
+                <li>Study-Partners</li>
+            </ul>
+        </div>
+        <div className={showgeneral} style={{left: myleftgeneral}} onMouseEnter={()=>setShowGeneral(Styles.showgeneral)} onMouseLeave={()=>{
+            setMyleftGeneral(-200)
+            setShowGeneral(Styles.hidegeneral)}}>
+            <ul className={Styles.menulist}>
+                <li>Dictionary</li>
+                <li>Thesaurous</li>
+                <li></li>
             </ul>
         </div>
     </div>

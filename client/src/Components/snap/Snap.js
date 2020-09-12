@@ -66,13 +66,15 @@ function rendersnap(){
 
 
 return(
-    <div className={Styles.holder}>
-        <button className={Styles.button} onClick={()=>TryAgain() }>TRY</button>
-        <div className={Styles.container}>
-            {entrylist?entrylist.map((entry, idn) =><div id={idn} className={Styles.element} onClick={(idi)=>{correct(entry.qa, idi, entry.idaq)}}>{ident===idn?oneEntry:""}</div>):""}  
-        </div> 
-    </div>
 
+    <div className={Styles.holderholder}>
+        <div className={Styles.holder}>
+            <button className={Styles.button} onClick={()=>TryAgain() }>TRY</button>
+            <div className={Styles.container}>
+                {entrylist?entrylist.map((entry, idn) =><div id={idn} className={Styles.element} onClick={(idi)=>{correct(entry.qa, idi, entry.idaq)}}>{ident===idn?oneEntry:""}</div>):""}  
+            </div> 
+        </div>
+    </div>
 
 
 )
