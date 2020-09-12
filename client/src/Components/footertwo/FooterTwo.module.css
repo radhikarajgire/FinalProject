@@ -3,6 +3,9 @@
     height: 10vh;
     padding: 0;
     margin: 0;
+    position: absolute;
+    width: 100vw;
+    bottom: 0;
     
 }
 
@@ -28,5 +31,4 @@
 
 .headertext {
     align-self: flex-end;
-    align-self: center;
 }

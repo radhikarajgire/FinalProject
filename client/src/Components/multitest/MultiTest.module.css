@@ -20,8 +20,6 @@
 
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
     width: 20vw;
     height: 20vh;
     justify-content: center;
@@ -50,4 +48,14 @@
 .button:hover {
     transform: scale(1.05);
     transition: all 0.3s;
+}
+
+.questionform{
+    border: 1px solid black;
+    position: relative;
+}
+
+.answer{
+    border: 1px solid red;
+    background-color: lightgray;
 }
