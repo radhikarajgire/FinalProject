@@ -31,23 +31,50 @@
 .element{
     width: 48%;
     height: 50%;
-    border: 1px solid red;
+    border: 1px solid black;
     cursor: pointer;
-    background-color: skyblue;
+    background-color: lightblue;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .element:hover {
     transform: scale(1.05);
     transition: all 0.3s;
+    opacity: 0.8;
 }
+
+.element h4{
+    margin: auto;
+}
+
+
+.elementblank{
+    width: 48%;
+    height: 50%;
+    border: 1px solid black;
+    background-color: white;
+    opacity: 0;
+}
+
+
 
 .button {
     background-color: lightblue;
     cursor: pointer;
     width: 50px;
+    margin-left: 10px;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .button:hover {
     transform: scale(1.05);
     transition: all 0.3s;
+}
+
+
+.select{
+    width: 3vw;
+    height: 3vh;
+    font-size: 1.2rem;
+    box-shadow:5px 5px 5px lightslategray;
 }

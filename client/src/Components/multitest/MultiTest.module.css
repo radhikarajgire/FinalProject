@@ -37,7 +37,8 @@
 .select{
     width: 3vw;
     height: 3vh;
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .inputlevel {
@@ -45,6 +46,7 @@
     cursor: pointer;
     width: 50px;
     margin-left: 20px;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .inputlevel:hover {

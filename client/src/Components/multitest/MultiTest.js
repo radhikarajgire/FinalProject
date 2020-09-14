@@ -56,7 +56,6 @@ return(
     <div className={Styles.holderholder}>
         <div className={Styles.holder}>
             <div className={Styles.formholder}>
-                <form>
                     <label className={Styles.label}>Choose a level: </label>
                         <select onChange={(e)=>setChoice(e.target.value)} className={Styles.select}>
                             <option value="A1">A1</option> 
@@ -66,9 +65,8 @@ return(
                             <option value="C1">C1</option>
                             <option value="C2">C2</option>   
                         </select>
-                    <input onClick={(e)=>{console.log("hello")}} 
-                    className={Styles.inputlevel} type="submit" value="TRY"></input>
-                </form>
+                    <button onClick={(e)=>{ setQuestionNumber(0)}} 
+                    className={Styles.inputlevel}>TRY</button>
             </div>
             
         

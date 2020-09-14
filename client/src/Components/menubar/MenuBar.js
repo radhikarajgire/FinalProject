@@ -1,9 +1,11 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Styles from "./MenuBar.module.css"
+import { StateContext } from "../statecontext/stateContext";
 
 
 
 function Menubar(){
+const {setMenuItem} = useContext(StateContext);
 const [showlearn, setShowLearn]=useState(Styles.hidelearn)
 const [showreview, setShowReview]=useState(Styles.hidereview)
 const [showtest, setShowTest]=useState(Styles.hidetest)
@@ -16,7 +18,6 @@ const [mylefttest, setMyleftTest] = useState(-200)
 const [myleftgame, setMyleftGame] = useState(-200)
 const [myleftmethod, setMyleftMethod] = useState(-200)
 const [myleftgeneral, setMyleftGeneral] = useState(-200)
-
 
 //useEffect(()=>{
 //setTimeout(()=>{     
@@ -75,9 +76,9 @@ return (
             setMyleftReview(-200)
             setShowReview(Styles.hidereview)}}>
             <ul className={Styles.menulist}>
-                <li>Flashcards</li>
-                <li>Snap</li>
-                <li>Wordsearch</li>
+                <li onClick={(e)=>setMenuItem('ba')}>Flashcards</li>
+                <li onClick={()=>setMenuItem('bb')}>Snap</li>
+                <li onClick={()=>setMenuItem('bc')}>Wordsearch</li>
             </ul>
         </div>
         <div className={showtest} style={{left: mylefttest}} onMouseEnter={()=>setShowTest(Styles.showtest)} onMouseLeave={()=>{
@@ -85,7 +86,7 @@ return (
             setShowTest(Styles.hidetest)}}>
             <ul className={Styles.menulist}>
                 <li>Score</li>
-                <li>Last</li>
+                <li onClick={()=>setMenuItem('cb')}>Last</li>
                 <li>Next</li>
             </ul>    
         </div>
