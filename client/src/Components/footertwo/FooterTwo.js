@@ -11,7 +11,7 @@ function Header(){
 return(
 <div className={Styles.holder}>
 <header className={Styles.header}>  
-    <h5>"LEARN ENGLISH SO THE BRITS DON'T HAVE TO LEARN ANYTHING FOREIGN"</h5>   
+    <h5></h5>   
     <h1 className={Styles.headertext}>R3</h1>
   </header>
   </div>
