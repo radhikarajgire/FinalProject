@@ -1,5 +1,7 @@
-import React from "react";
+import React, {useState, useContext, useEffect} from "react";
 import "./App.css";
+import { StateContext } from "./Components/statecontext/stateContext";
+
 import Coordinators from "./Components/Coordinators/Coordinators.js";
 
 import MenuBar from "./Components/menubar/MenuBar.js";
@@ -18,11 +20,20 @@ import "mdbreact/dist/css/mdb.css";
 
 //<img src={logo} className="App-logo" alt="logo" />
 function App() {
+  const { menuitem } = useContext(StateContext);
+  const [singlerender, setSingleRender]=useState()
+
+useEffect(()=>{
+  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, cb: <MultiTest/>}
+  const singre = renderarray[menuitem]
+  console.log(menuitem)
+setSingleRender(singre)},[menuitem])
+
   return (
     <div className="App">
       <Header />
       <MenuBar />
-      <MultiTest />
+      {singlerender}
       <FooterTwo />
       <SocialFollow />
     </div>

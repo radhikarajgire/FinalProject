@@ -37,6 +37,7 @@
     transition: all 0.5s;
     border-radius: 10%;
     width: auto;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .menulist {
@@ -47,6 +48,16 @@
     z-index: auto;
 }
 
+.menulist li{
+    cursor: pointer;
+}
+
+.menulist li:hover{
+    transform: scale(1.05);
+    color: red;
+
+}
+
 .showreview {
     visibility: show;
     position: absolute;
@@ -54,6 +65,7 @@
     padding: 5px;
     transition: all 0.5s;
     border-radius: 10%;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .showtest {
@@ -63,6 +75,7 @@
     padding: 5px;
     transition: all 0.5s;
     border-radius: 10%;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .showgame {
@@ -72,6 +85,7 @@
     padding: 5px;
     transition: all 0.5s;
     border-radius: 10%;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .showmethod {
@@ -81,6 +95,7 @@
     padding: 5px;
     transition: all 0.5s;
     border-radius: 10%;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .showgeneral {
@@ -90,6 +105,7 @@
     padding: 5px;
     transition: all 0.5s;
     border-radius: 10%;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 

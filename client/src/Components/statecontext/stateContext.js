@@ -3,6 +3,7 @@ import React, { createContext, useState, useEffect } from "react";
 export const StateContext = createContext({});
 
 export default function StateContextProvider({ children }) {
+  const [menuitem, setMenuItem] = useState();
   
 
     const customElements=[{q:"A four leged friend", a: "dog", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}, {q:"A moody house pet", a:"cat", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}, {q:"Lives in the sea", a:"fish", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}, {q:"Worm like", a:"snake", waone:'chimp', watwo:'parot', wathree:'sheep', wafour:'hedge hog'}]
@@ -12,7 +13,7 @@ export default function StateContextProvider({ children }) {
 
     return (
         <StateContext.Provider
-          value={{customElements, words
+          value={{customElements, words, menuitem, setMenuItem
 
         }}
         >

@@ -61,10 +61,7 @@
     margin: 20px 0 0 0;
     background-color: rgb(224, 224, 244, 0.1);
     border-radius: 3%;
-    box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.034),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.048), 0 12.5px 10px rgba(0, 0, 0, 0.06),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.072), 0 41.8px 33.4px rgba(0, 0, 0, 0.086),
-    0 100px 80px rgba(0, 0, 0, 0.12);
+    box-shadow:5px 5px 5px lightslategray;
  
 
 }
@@ -76,7 +73,8 @@
 .front h1, .back h1 {
     z-index: 100;
     margin-top: 10vh;
-    border: 1px solid black;
+    box-shadow:5px 5px 5px lightslategray;
+    
     
 }
 
@@ -91,6 +89,7 @@
     margin: 0 5px 0 5px;
     background: lightblue;
     cursor: pointer;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .clickbutton:hover {
@@ -105,13 +104,15 @@
 .select {
     width: 3vw;
     height: 3vh;
-    font-size: 1.2rem
+    font-size: 1.2rem;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .inputlevel {
     margin-left: 5px;
     font-size: 1.2rem;
     cursor: pointer;
+    box-shadow:5px 5px 5px lightslategray;
 }
 
 .inputlevel:hover {
