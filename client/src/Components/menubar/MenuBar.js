@@ -68,7 +68,9 @@ return (
             }}>
             <ul className={Styles.menulist}>
                 <li>Path</li>
+                <hr></hr>
                 <li>Current</li>
+                <hr></hr>
                 <li>Done</li>
             </ul>          
         </div>
@@ -77,7 +79,9 @@ return (
             setShowReview(Styles.hidereview)}}>
             <ul className={Styles.menulist}>
                 <li onClick={(e)=>setMenuItem('ba')}>Flashcards</li>
+                <hr></hr>
                 <li onClick={()=>setMenuItem('bb')}>Snap</li>
+                <hr></hr>
                 <li onClick={()=>setMenuItem('bc')}>Wordsearch</li>
             </ul>
         </div>
@@ -86,7 +90,9 @@ return (
             setShowTest(Styles.hidetest)}}>
             <ul className={Styles.menulist}>
                 <li>Score</li>
+                <hr></hr>
                 <li onClick={()=>setMenuItem('cb')}>Last</li>
+                <hr></hr>
                 <li>Next</li>
             </ul>    
         </div>
@@ -95,9 +101,14 @@ return (
             setShowGame(Styles.hidegame)}}>
             <ul className={Styles.menulist}>
                 <li>Spellshot</li>
+                <hr></hr>
                 <li>Spellbee</li>
+                <hr></hr>
                 <li>Countdown</li>
+                <hr></hr>
                 <li>PoshorNot</li>
+                <hr></hr>
+                <li onClick={()=>setMenuItem('de')}>Match</li>
             </ul>
         </div>
         <div className={showmethod} style={{left: myleftmethod}} onMouseEnter={()=>setShowMethod(Styles.showmethod)} onMouseLeave={()=>{
@@ -105,7 +116,9 @@ return (
             setShowMethod(Styles.hidemethod)}}>
             <ul className={Styles.menulist}>
                 <li>Learn-Methods</li>
+                <hr></hr>
                 <li>Learn-Music</li>
+                <hr></hr>
                 <li>Study-Partners</li>
             </ul>
         </div>
@@ -114,6 +127,7 @@ return (
             setShowGeneral(Styles.hidegeneral)}}>
             <ul className={Styles.menulist}>
                 <li>Dictionary</li>
+                <hr></hr>
                 <li>Thesaurous</li>
                 <li></li>
             </ul>
