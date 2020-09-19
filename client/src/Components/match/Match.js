@@ -144,11 +144,9 @@ function Match(){
         function reload(e) {
             console.log(e)
         const chip = pos[e]
-        //const house = pos[movingelement-((pos.length)/2)]
+       
         if(chip['xx']<offsetX && chip['yy']<offsetY && offsetX<(chip['xx']+chip['leng']) && offsetY<(chip['yy']+chip['hei'])){
             const maybe = {xx: -200, yy: -200, leng: 0, hei: 30}
-            //const changeofone = pos[movingelement]=maybe
-            //const changeoftwo = pos[e]=maybe
 
             setPos(prevPos=>pos.map((item, index) => {
                 if (index === movingelement || index === e) {

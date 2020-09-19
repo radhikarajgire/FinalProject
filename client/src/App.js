@@ -11,6 +11,7 @@ import Snap from "./Components/snap/Snap.js";
 import WordSearch from "./Components/wordsearch/WordSearch.js";
 import MultiTest from "./Components/multitest/MultiTest.js";
 import Match from "./Components/match/Match.js"
+import SpellShot from "./Components/spellshot/SpellShot.js"
 import FooterTwo from "./Components/footertwo/FooterTwo.js";
 //import MDBFooter from "./Components/footer/footer.js";
 
@@ -22,7 +23,7 @@ function App() {
   const [singlerender, setSingleRender]=useState()
 
 useEffect(()=>{
-  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, cb: <MultiTest/>, de: <Match/>}
+  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, cb: <MultiTest/>, da: <SpellShot/>, de: <Match/>}
   const singre = renderarray[menuitem]
   console.log(menuitem)
 setSingleRender(singre)},[menuitem])
