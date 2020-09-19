@@ -100,7 +100,7 @@ return (
             setMyleftGame(-200)
             setShowGame(Styles.hidegame)}}>
             <ul className={Styles.menulist}>
-                <li>Spellshot</li>
+                <li  onClick={()=>setMenuItem('da')}>Spellshot</li>
                 <hr></hr>
                 <li>Spellbee</li>
                 <hr></hr>
