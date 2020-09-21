@@ -1,11 +1,12 @@
 import React, {useState, useEffect, useContext} from "react";
 import Styles from "./MenuBar.module.css"
+import ReactPlayer from 'react-player'
 import { StateContext } from "../statecontext/stateContext";
 
 
 
 function Menubar(){
-const {setMenuItem} = useContext(StateContext);
+const {setMenuItem, choice} = useContext(StateContext);
 const [showlearn, setShowLearn]=useState(Styles.hidelearn)
 const [showreview, setShowReview]=useState(Styles.hidereview)
 const [showtest, setShowTest]=useState(Styles.hidetest)
@@ -89,11 +90,11 @@ return (
             setMyleftTest(-200)
             setShowTest(Styles.hidetest)}}>
             <ul className={Styles.menulist}>
-                <li>Score</li>
+                <li>Listening</li>
                 <hr></hr>
-                <li onClick={()=>setMenuItem('cb')}>Last</li>
+                <li onClick={()=>setMenuItem('cb')}>Knowledge</li>
                 <hr></hr>
-                <li>Next</li>
+                <li>Speaking</li>
             </ul>    
         </div>
         <div className={showgame} style={{left: myleftgame}} onMouseEnter={()=>setShowGame(Styles.showgame)} onMouseLeave={()=>{
@@ -119,7 +120,7 @@ return (
                 <hr></hr>
                 <li>Learn-Music</li>
                 <hr></hr>
-                <li>Study-Partners</li>
+                <li onClick={()=>setMenuItem('ec')}>Study-Partners</li>
             </ul>
         </div>
         <div className={showgeneral} style={{left: myleftgeneral}} onMouseEnter={()=>setShowGeneral(Styles.showgeneral)} onMouseLeave={()=>{
@@ -132,6 +133,7 @@ return (
                 <li></li>
             </ul>
         </div>
+        <ReactPlayer volume= "1" playing='true' width='0px' height='0px' controls='true' className={Styles.player} url={choice}/>
     </div>
 
 )    
