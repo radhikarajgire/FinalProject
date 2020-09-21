@@ -20,11 +20,14 @@ function SpellShot(){
     const [shotpos, setShotPos] = useState()
     const [shotY, setShotY] = useState(500)
     const [shooting, setShooting] = useState(false)
+    const [activeTimeout, setActiveTimeout] = useState("")
 
     useEffect(() => {
         const canvas = canvasRef.current;
         const context = canvas.getContext("2d");
         contextRef.current = context;
+        document.addEventListener('keydown', moveblockshoot)
+        return ()=>{document.removeEventListener('keydown', moveblockshoot)}
         
       }, []);
 
@@ -39,8 +42,8 @@ function SpellShot(){
         function redo(ii){  
             const randomnums = Math.floor((Math.random() * 740)+20);
             const randomnumh = Math.floor((Math.random() * 460)+20);
-            const rnvelx = Math.floor((Math.random()*10)-5)
-            const rnvely = Math.floor((Math.random()*10)-5) 
+            const rnvelx = Math.floor((Math.random()*6)-3)
+            const rnvely = Math.floor((Math.random()*6)-3) 
             dave=[...dave, {xx: randomnums, yy: randomnumh, velx: rnvelx, vely: rnvely}]
             contextRef.current.fillText(steve[ii], randomnums-5, randomnumh+5)
             contextRef.current.beginPath();
@@ -55,23 +58,20 @@ function SpellShot(){
         ;}
         setStartPos(dave)
         var i
-        clearInterval(myvar)
-        var myvar = setInterval(()=>{
+        setActiveTimeout(clearTimeout(activeTimeout))
+        setActiveTimeout(setInterval(()=>{
              i=i+1
             setLoopi(i)
-        }, 10)
-        //setTimeout(()=>{
-       // movethings(dave, steve)}, 1000)
+        }, 10))
     }
 
     useEffect(()=>{
         if (!startpos.length||!singleword.length) {
             return};
-    //movethings(startpos, singleword)
-    //function movethings(john, stephan){
-        var wordy=singleword
-        var davetwo=startpos
-        //setInterval(()=>{
+  
+        const wordy=singleword
+        const davetwo=startpos
+        
         setStartPos(prevPos=>startpos.map((entry)=> {
             if(entry['xx']>785||entry['xx']<15){return {xx: entry['xx']-entry['velx'], yy: entry['yy']-entry['vely'], velx: -entry['velx'], vely: entry['vely']}}
             else if(entry['yy']>485||entry['yy']<15){return {xx: entry['xx']-entry['velx'], yy: entry['yy']-entry['vely'], velx: entry['velx'], vely: -entry['vely']}}
@@ -95,13 +95,22 @@ function SpellShot(){
         contextRef.current.fillRect(shotpos+20, shotY, 10, 10)
         var i
         for(i=0;i<wordy.length;i++){
-        if(startpos[i]['xx']+10>shotpos&&shotpos>startpos[i]['xx']-10&&startpos[i]['yy']+10>shotY&&shotY>startpos[i]['yy']-10){
+        if(wordy.length === davetwo.length){
+        if(davetwo[i]['xx']+20>shotpos+25&&shotpos+25>davetwo[i]['xx']-20&&davetwo[i]['yy']+20>shotY&&shotY>davetwo[i]['yy']-20){
             setShooting(false)
             var newwordstart=wordy.slice(0, i)          
             var newwordend=wordy.slice(i+1)
             var newword = newwordstart.concat(newwordend)
             setSingleWord(newword)
-            console.log("hit")
+            davetwo.splice(i,1)
+            setStartPos(davetwo)
+            if(davetwo.length===0){
+                console.log("finished")
+                contextRef.current.clearRect(0, 0, 800, 500)
+                contextRef.current.fillText( 'FINISHED TRY AGAIN', 300, 300)
+
+            }
+            console.log("hit")}
         }}
         
         if(shotY>0){
@@ -110,50 +119,47 @@ function SpellShot(){
                 setShotY(500)
                 setShooting(false)
             }}
-        //setTimeout(()=>{  
-        //movethings(davetwo, wordy)}, 50)
-
-    //}tt
+        
     }, [singleword, blockpos, loopi])
 
-    function moveblockshoot(event){
-        if(event==='h'){
-            if(blockpos<750){
-            setBlockPos(before=>before+10) 
-        }
-        }
-        else if (event==='d'){
-            if(blockpos>0){
-            setBlockPos(before=>before-10)}
+    useEffect(()=>{
 
+        setShotPos(blockpos)
+
+
+
+    },[blockpos])
+
+    function moveblockshoot({key}){
+
+        if(key==='ArrowRight'){
+           setBlockPos(before=>{if(before<750){return before+10} return before}) 
         }
-        else if (event ==='t'){
-            setShotPos(blockpos)
+
+        else if (key==='ArrowLeft'){    
+            setBlockPos(before=>{if(before>0){return before-10} return before})
+        }
+
+        else if (key ==='ArrowUp'){
+           
             setShotY(500)
             setShooting(true)
         }
         else{}
 
     }
-    /*<select onChange={(e)=>setChoice(e.target.value)} className={Styles.select}>
-    <option value="A1">A1</option> 
-    <option value="A2">A2</option>
-    <option value="B1">B1</option>
-    <option value="B2">B2</option>
-    <option value="C1">C1</option>
-    <option value="C2">C2</option>   <label className={Styles.label}>Choose a level: </label>
-</select>*/
-
+    console.log(blockpos)
+   
     return(
         <div className={Styles.holder}>
-            <div className={Styles.header} onKeyDown ={(e)=>moveblockshoot(e.key)}>  
+            <div className={Styles.header} >  
                 <div className={Styles.formholder} >                        
                         <h4>{singleword}</h4>  
                        <button className={Styles.button} onClick={()=>positionthings() }>TRY</button>
-                        <h4>{shot}</h4>
+                        <h5>Use LEFT ARROW or RIGHT ARROW to move, UPARROW to shoot</h5>
                 </div>
                 <div>
-                    <canvas  ref={canvasRef} className={Styles.canvas} width="800px" height="500px"></canvas>
+                    <canvas   ref={canvasRef} className={Styles.canvas} width="800px" height="500px"></canvas>
                 </div>
                 
             </div>
