@@ -13,6 +13,7 @@ import MultiTest from "./Components/multitest/MultiTest.js";
 import Match from "./Components/match/Match.js"
 import SpellShot from "./Components/spellshot/SpellShot.js"
 import StudyPartners from "./Components/studypartners/StudyPartners.js"
+import PoshOrNot from "./Components/poshornot/PoshOrNot.js"
 import FooterTwo from "./Components/footertwo/FooterTwo.js";
 //import MDBFooter from "./Components/footer/footer.js";
 
@@ -24,9 +25,8 @@ function App() {
   const [singlerender, setSingleRender]=useState()
 
 useEffect(()=>{
-  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, cb: <MultiTest/>, da: <SpellShot/>, de: <Match/>, ec: <StudyPartners/>}
+  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
   const singre = renderarray[menuitem]
-  console.log(menuitem)
 setSingleRender(singre)},[menuitem])
 
   return (

@@ -115,6 +115,15 @@
     box-shadow:5px 5px 5px lightslategray;
 }
 
+.showteacher {
+    visibility: show;
+    position: absolute;
+    background-color: rgb(173, 216, 230, 0.5);
+    padding: 5px;
+    transition: all 0.5s;
+    border-radius: 10%;
+    box-shadow:5px 5px 5px lightslategray;
+}
 
 .hidelearn {
     visibility: none;
@@ -147,6 +156,12 @@
 }
 
 .hidegeneral {
+    visibility: none;
+    position: absolute;
+    opacity: 0;
+}
+
+.hideteacher {
     visibility: none;
     position: absolute;
     opacity: 0;

@@ -4,23 +4,7 @@ import Styles from "./StudyPartners.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function StudyPartners(){
-const {choice, setChoice, playmusic, setPlayMusic} = useContext(StateContext);
-
-//useEffect(()=>{
-
-
-
-
-//},[])
-
-
-function LoadVid(){
-    console.log('123')
-
-}
-
-
-
+const {choice, setChoice, playmusic, setPlayMusic, musicchoice, volsp, setVolsp} = useContext(StateContext);
 
 
 
@@ -36,21 +20,20 @@ return (
                             setPlayMusic(true)
                             }} className={Styles.select}>
                             <option>Choose something, then go learn</option>
-                            <option value="https://www.youtube.com/watch?v=cIXCnZ_jg30&t=23s">Study with me, music</option> 
-                            <option value="https://www.youtube.com/watch?reload=9&v=1Cv0kCB59J4">Study with me, quiet</option>
-                            <option value="https://www.youtube.com/watch?v=sUuNcYxocIQ">Study-bootcamp</option>
-                            <option value="https://www.youtube.com/watch?v=sjkrrmBnpGE">Ambient music</option>
-                            <option value="https://www.youtube.com/watch?v=kMAOey45mJI">Piano music</option>
-                            <option value="https://www.youtube.com/watch?v=M5QY2_8704o">Coding music</option> 
-                            <option value="https://www.youtube.com/watch?v=a4fv-BtzNmY">Electronic</option>  
-                            <option value="https://www.youtube.com/watch?v=eGwhAwWGcOI&t=19s">Insturmental Rock</option>
+                        {musicchoice.map((entry)=><option id={entry.id} value={entry.m}>{entry.t}</option>)}
+                            
                         </select>
-                        <button className={Styles.button} onClick={()=>setPlayMusic(false) }>Stop</button>
+                        <button className={Styles.button} onClick={()=>{playmusic?setPlayMusic(false):setPlayMusic(true) }}>{playmusic?'stop': 'play'}</button>
             </div>  
                 <div className={Styles.container}>
                     {choice.length?
-                    <ReactPlayer volume="0" playing={playmusic} width='800px' height='500px' controls='true' className={Styles.player} url={choice}/>:<h3>Use the Pomodero method to help you study or listen to some study music</h3> }
-                </div>                                 
+                    <ReactPlayer volume= {0} playing={playmusic} width='800px' height='480px' controls={true} className={Styles.player} url={choice}/>:<h3>Use the Pomodero method to help you study or listen to some study music</h3> }
+                </div>   
+                <div className={Styles.slidecontainer}>
+                    <h3 className={Styles.slidermarker}>Quiet</h3>
+                    <input onChange={(e)=>setVolsp(e.target.value)} type="range" min="0" max="100" value={volsp} className={Styles.slider} id="volRange" />
+                    <h3 className={Styles.slidermarker}>Loud</h3>
+                </div>                              
         </div>
     </div>
     
