@@ -57,11 +57,9 @@ function SpellShot(){
         redo(i)  
         ;}
         setStartPos(dave)
-        var i
         setActiveTimeout(clearTimeout(activeTimeout))
         setActiveTimeout(setInterval(()=>{
-             i=i+1
-            setLoopi(i)
+            setLoopi(bef=>bef+1)
         }, 10))
     }
 
@@ -93,16 +91,16 @@ function SpellShot(){
         
         if (shooting){
         contextRef.current.fillRect(shotpos+20, shotY, 10, 10)
-        var i
-        for(i=0;i<wordy.length;i++){
+        var zz
+        for(zz=0;zz<wordy.length;zz++){
         if(wordy.length === davetwo.length){
-        if(davetwo[i]['xx']+20>shotpos+25&&shotpos+25>davetwo[i]['xx']-20&&davetwo[i]['yy']+20>shotY&&shotY>davetwo[i]['yy']-20){
+        if(davetwo[zz]['xx']+20>shotpos+25&&shotpos+25>davetwo[zz]['xx']-20&&davetwo[zz]['yy']+20>shotY&&shotY>davetwo[zz]['yy']-20){
             setShooting(false)
-            var newwordstart=wordy.slice(0, i)          
-            var newwordend=wordy.slice(i+1)
+            var newwordstart=wordy.slice(0, zz)          
+            var newwordend=wordy.slice(zz+1)
             var newword = newwordstart.concat(newwordend)
             setSingleWord(newword)
-            davetwo.splice(i,1)
+            davetwo.splice(zz,1)
             setStartPos(davetwo)
             if(davetwo.length===0){
                 console.log("finished")
@@ -148,7 +146,7 @@ function SpellShot(){
         else{}
 
     }
-    console.log(blockpos)
+   
    
     return(
         <div className={Styles.holder}>

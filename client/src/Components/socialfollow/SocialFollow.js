@@ -15,7 +15,7 @@ import {
 
 export default function SocialFollow() {
   return (
-    <div class={Styles.socialcontainer}>
+    <div className={Styles.socialcontainer}>
       <h6>FOLLOW US</h6>
       <a
         target="_blank"

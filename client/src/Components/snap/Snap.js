@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useContext} from "react";
+import React, {useState, useContext} from "react";
 import Styles from "./Snap.module.css"
 import { StateContext } from "../statecontext/stateContext";
 
@@ -10,7 +10,6 @@ const [entrylist, setEntryList]=useState([])
 const [ident, setIdent]=useState(0)
 const [tryagain, setTryAgain]=useState(false)
 const [idcomp, setIDcomp]=useState()
-const [rend, setRend]=useState()
 const [choice, setChoice]=useState('A1');
 const [correctclass, setCorrectClass]=useState()
 

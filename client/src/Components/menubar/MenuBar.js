@@ -6,19 +6,21 @@ import { StateContext } from "../statecontext/stateContext";
 
 
 function Menubar(){
-const {setMenuItem, choice} = useContext(StateContext);
+const {setMenuItem, choice, playmusic, volsp} = useContext(StateContext);
 const [showlearn, setShowLearn]=useState(Styles.hidelearn)
 const [showreview, setShowReview]=useState(Styles.hidereview)
 const [showtest, setShowTest]=useState(Styles.hidetest)
 const [showgame, setShowGame]=useState(Styles.hidegame)
 const [showmethod, setShowMethod]=useState(Styles.hidemethod)
 const [showgeneral, setShowGeneral]=useState(Styles.hidegeneral)
+const [showteacher, setShowTeacher] = useState(Styles.hideteacher)
 const [myleftlearn, setMyleftLearn] = useState(-200)
 const [myleftreview, setMyleftReview] = useState(-200)
 const [mylefttest, setMyleftTest] = useState(-200)
 const [myleftgame, setMyleftGame] = useState(-200)
 const [myleftmethod, setMyleftMethod] = useState(-200)
 const [myleftgeneral, setMyleftGeneral] = useState(-200)
+const [myleftteacher, setMyleftTeacher] = useState(-200)
 
 //useEffect(()=>{
 //setTimeout(()=>{     
@@ -62,6 +64,11 @@ return (
                 const leftmegeneral = document.getElementById("general").getBoundingClientRect().x
                 setMyleftGeneral(leftmegeneral)
                 }} onMouseLeave={()=>setShowGeneral(Styles.hidegeneral)}>General</h2>
+            <h2 id="teacher" onMouseEnter={()=>{
+                setShowTeacher(Styles.showteacher)
+                const leftmeteacher = document.getElementById("teacher").getBoundingClientRect().x
+                setMyleftTeacher(leftmeteacher)
+                }} onMouseLeave={()=>setShowTeacher(Styles.hideteacher)}>Teacher</h2>
         </div>
         <div className={showlearn} style={{left: myleftlearn}} onMouseEnter={()=>setShowLearn(Styles.showlearn)} onMouseLeave={()=>{
             setShowLearn(Styles.hidelearn)
@@ -107,7 +114,7 @@ return (
                 <hr></hr>
                 <li>Countdown</li>
                 <hr></hr>
-                <li>PoshorNot</li>
+                <li onClick={()=>setMenuItem('dd')}>PoshorNot</li>
                 <hr></hr>
                 <li onClick={()=>setMenuItem('de')}>Match</li>
             </ul>
@@ -118,9 +125,7 @@ return (
             <ul className={Styles.menulist}>
                 <li>Learn-Methods</li>
                 <hr></hr>
-                <li>Learn-Music</li>
-                <hr></hr>
-                <li onClick={()=>setMenuItem('ec')}>Study-Partners</li>
+                <li onClick={()=>setMenuItem('eb')}>Study-Partners</li>
             </ul>
         </div>
         <div className={showgeneral} style={{left: myleftgeneral}} onMouseEnter={()=>setShowGeneral(Styles.showgeneral)} onMouseLeave={()=>{
@@ -133,7 +138,17 @@ return (
                 <li></li>
             </ul>
         </div>
-        <ReactPlayer volume= "1" playing='true' width='0px' height='0px' controls='true' className={Styles.player} url={choice}/>
+        <div className={showteacher} style={{left: myleftteacher}} onMouseEnter={()=>setShowTeacher(Styles.showteacher)} onMouseLeave={()=>{
+            setMyleftTeacher(-200)
+            setShowTeacher(Styles.hideteacher)}}>
+            <ul className={Styles.menulist}>
+                <li>Appointment</li>
+                <hr></hr>
+                <li>Question</li>
+                <li></li>
+            </ul>
+        </div>
+        <ReactPlayer volume={volsp/100} playing={playmusic} width='0px' height='0px' controls={false} className={Styles.player} url={choice}/>
     </div>
 
 )    
