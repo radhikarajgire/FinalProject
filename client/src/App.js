@@ -14,6 +14,7 @@ import Match from "./Components/match/Match.js"
 import SpellShot from "./Components/spellshot/SpellShot.js"
 import StudyPartners from "./Components/studypartners/StudyPartners.js"
 import PoshOrNot from "./Components/poshornot/PoshOrNot.js"
+import ListeningPractice from "./Components/listeningpractice/ListeningPractice.js"
 import FooterTwo from "./Components/footertwo/FooterTwo.js";
 //import MDBFooter from "./Components/footer/footer.js";
 
@@ -25,7 +26,7 @@ function App() {
   const [singlerender, setSingleRender]=useState()
 
 useEffect(()=>{
-  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
+  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
   const singre = renderarray[menuitem]
 setSingleRender(singre)},[menuitem])
 

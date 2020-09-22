@@ -86,7 +86,7 @@ return (
             setMyleftReview(-200)
             setShowReview(Styles.hidereview)}}>
             <ul className={Styles.menulist}>
-                <li onClick={(e)=>setMenuItem('ba')}>Flashcards</li>
+                <li onClick={()=>setMenuItem('ba')}>Flashcards</li>
                 <hr></hr>
                 <li onClick={()=>setMenuItem('bb')}>Snap</li>
                 <hr></hr>
@@ -97,7 +97,7 @@ return (
             setMyleftTest(-200)
             setShowTest(Styles.hidetest)}}>
             <ul className={Styles.menulist}>
-                <li>Listening</li>
+                <li onClick={()=>setMenuItem('ca')}>Listening</li>
                 <hr></hr>
                 <li onClick={()=>setMenuItem('cb')}>Knowledge</li>
                 <hr></hr>
