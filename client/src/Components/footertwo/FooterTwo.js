@@ -1,8 +1,9 @@
 import React from "react";
 import Styles from "./FooterTwo.module.css"
+import SocialFollow from ".././socialfollow/SocialFollow.js"
 //import Logo from ""
 
-function Header(){
+function Footertwo(){
 
 
 
@@ -11,7 +12,7 @@ function Header(){
 return(
 <div className={Styles.holder}>
 <header className={Styles.header}>  
-    <h5>"LEARN ENGLISH SO THE BRITS DON'T HAVE TO LEARN ANYTHING FOREIGN"</h5>   
+    <SocialFollow />   
     <h1 className={Styles.headertext}>R3</h1>
   </header>
   </div>
@@ -22,4 +23,4 @@ return(
 
 }
 
-export default Header;
+export default Footertwo;

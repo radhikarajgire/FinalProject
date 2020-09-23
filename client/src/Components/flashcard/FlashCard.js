@@ -66,7 +66,7 @@ return(
         <div className={Styles.holder}>
             <div className={Styles.flashnav}>
                 <div onClick={()=>{if(card===(0)){setCard(customElements.length-1)}else{setCard(card-1)}}} className={Styles.clickbutton}>Previous</div>
-                <form>
+            
                     <label className={Styles.label}>Choose a level: </label>
                     <select onChange={(e)=>setChoice(e.target.value)} className={Styles.select}>
                         <option value="A1">A1</option> 
@@ -76,8 +76,7 @@ return(
                         <option value="C1">C1</option>
                         <option value="C2">C2</option>   
                     </select>
-                    <input onClick={(e)=>console.log(e.value) } className={Styles.inputlevel} type="submit" value="Choose"></input>
-                </form>
+                    <button onClick={(e)=>console.log(e.value) } className={Styles.inputlevel}>Choose</button>
                 <div onClick={()=>{if(card===(customElements.length-1)){setCard(0)}else{setCard(card+1)}}} className={Styles.clickbutton}>Next</div>
             </div>
             <div  className={Styles.entrycontainer}>

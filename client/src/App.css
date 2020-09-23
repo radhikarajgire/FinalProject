@@ -4,6 +4,7 @@
   padding: 0;
 }
 
+
 .App-link {
   color: #61dafb;
 }
@@ -18,16 +19,10 @@ a.social:hover {
   transform: translateY(-2px);
 }
 
-a.youtube {
-  color: #eb3223;
-}
 
-a.facebook {
-  color: #4968ad;
-}
 
-a.twitter {
-  color: #49a1eb;
+.App-link {
+  color: #61dafb;
 }
 
 a.instagram {
@@ -632,3 +627,4 @@ button {
     border-radius: 0.5rem;
   }
 }
+
