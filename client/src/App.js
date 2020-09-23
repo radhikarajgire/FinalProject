@@ -19,7 +19,7 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
 
-import MenuBar from "./Components/menubar/MenuBar.js";
+/*import MenuBar from "./Components/menubar/MenuBar.js";
 import Header from "./Components/header/Header.js";
 import FlashCard from "./Components/flashcard/FlashCard.js";
 import Snap from "./Components/snap/Snap.js";
@@ -30,7 +30,7 @@ import SpellShot from "./Components/spellshot/SpellShot.js"
 import StudyPartners from "./Components/studypartners/StudyPartners.js"
 import PoshOrNot from "./Components/poshornot/PoshOrNot.js"
 import ListeningPractice from "./Components/listeningpractice/ListeningPractice.js"
-import FooterTwo from "./Components/footertwo/FooterTwo.js";
+import FooterTwo from "./Components/footertwo/FooterTwo.js";*/
 //import MDBFooter from "./Components/footer/footer.js";
 
 
@@ -43,16 +43,16 @@ if (localStorage.token) {
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
-  }, []);
+  }, []);}
 
-function App() {
+function Appe() {
   const { menuitem } = useContext(StateContext);
-  const [singlerender, setSingleRender]=useState()
+  //const [singlerender, setSingleRender]=useState()
 
-useEffect(()=>{
-  const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
-  const singre = renderarray[menuitem]
-setSingleRender(singre)},[menuitem])
+//useEffect(()=>{
+  //const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
+  //const singre = renderarray[menuitem]
+//setSingleRender(singre)},[menuitem])
 
 
   return (
@@ -73,7 +73,7 @@ setSingleRender(singre)},[menuitem])
       </Router>
     </Provider>
   )
-};
+}
 
 /* <Header />
 
@@ -81,11 +81,11 @@ setSingleRender(singre)},[menuitem])
       {singlerender}
       <FooterTwo />
 
-      <SocialFollow />  */
+      <SocialFollow />  
 
     </div>
   );
 }
+*/
 
-
-export default App;
+export default Appe
