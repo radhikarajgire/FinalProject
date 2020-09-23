@@ -2,25 +2,22 @@ const express = require ('express');
 const router = express.Router();
 const bcrypt = require("bcryptjs");
 const auth = require('../../middleware/auth');
-const User = require('../../models/User');
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const { body, validationResult } = require("express-validator");
+const { check, validationResult } = require("express-validator");
 
-router.get('/' ,auth ,async (req , res) => {
+const User = require('../../models/User');
+
+router.get('/' , auth ,async (req , res) => {
     try{
-     const user = await User.findById(req.user.id).Select('-password');
+     const user = await User.findById(req.user.id).select('-password');
      res.json(user);
     }catch(err){
 console.error(err.message);
-res.status(500).send('Server error')
+res.status(500).send('Server error');
     }
 });
-router.get("/", async (req, res) => {
-    const users = await User.find();
-    res.json({ success: true, msg: "show all users", data: users });
-  });
-  
+
 //@route get api/auth
 //@dec test route
 //@access public
@@ -28,8 +25,8 @@ router.get("/", async (req, res) => {
     "/",
     [
      
-      body("email", "Please include a a valid email").isEmail(),
-      body(
+      check("email", "Please include a a valid email").isEmail(),
+      check(
         "password",
         "Password is required"
       ).exists()
@@ -39,7 +36,7 @@ router.get("/", async (req, res) => {
       if (!errors.isEmpty()) {
         return res.status(400).json({ errors: errors.array() });
       }
-      const { name, email, password } = req.body;
+      const {  email, password } = req.body;
       try {
         //See if the user exits if yes send back error
         let user = await User.findOne({ email });
@@ -74,4 +71,4 @@ router.get("/", async (req, res) => {
     }
   );
 
-module.exports=router;
+module.exports = router;
