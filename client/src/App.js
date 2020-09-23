@@ -1,5 +1,5 @@
 
-import React, { Fragment, , useContext, useEffect } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 import { StateContext } from "./Components/statecontext/stateContext";
