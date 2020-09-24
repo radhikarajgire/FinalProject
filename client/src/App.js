@@ -1,4 +1,3 @@
-
 import React, { Fragment, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
@@ -18,7 +17,6 @@ import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 
-
 /*import MenuBar from "./Components/menubar/MenuBar.js";
 import Header from "./Components/header/Header.js";
 import FlashCard from "./Components/flashcard/FlashCard.js";
@@ -33,8 +31,6 @@ import ListeningPractice from "./Components/listeningpractice/ListeningPractice.
 import FooterTwo from "./Components/footertwo/FooterTwo.js";*/
 //import MDBFooter from "./Components/footer/footer.js";
 
-
-
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
@@ -43,17 +39,17 @@ if (localStorage.token) {
 const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
-  }, []);}
+  }, []);
+};
 
 function Appe() {
   const { menuitem } = useContext(StateContext);
   //const [singlerender, setSingleRender]=useState()
 
-//useEffect(()=>{
+  //useEffect(()=>{
   //const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
   //const singre = renderarray[menuitem]
-//setSingleRender(singre)},[menuitem])
-
+  //setSingleRender(singre)},[menuitem])
 
   return (
     <Provider store={store}>
@@ -72,7 +68,7 @@ function Appe() {
         </Fragment>
       </Router>
     </Provider>
-  )
+  );
 }
 
 /* <Header />
@@ -88,4 +84,4 @@ function Appe() {
 }
 */
 
-export default Appe
+export default Appe;
