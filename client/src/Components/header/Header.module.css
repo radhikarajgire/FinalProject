@@ -1,8 +1,10 @@
 .holder {
     align-content: center;
+    justify-content: center;
     height: 10vh;
     padding: 0;
     margin: 0;
+    border: 1px solid black
     
 }
 
@@ -24,6 +26,7 @@
 
 .headerimg {
     height: 10vh;
+    width: 20vh;
 }
 
 .headertext {

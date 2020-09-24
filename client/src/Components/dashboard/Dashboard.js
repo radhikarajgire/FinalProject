@@ -99,18 +99,22 @@ const Dashboard = ({getCurrentProfile ,auth: {user}, profile: {profile,loading} 
     useEffect(() => {
         getCurrentProfile();
     }, []);
+
+   // {profile !== null ? (<Fragment>haas</Fragment>) : 
+     //   (<Fragment><p> No Profile,Please add one </p>
+       // <Link to = '/create-profile' className ="btn btn-primary my-1">Create profile</Link>
+       // </Fragment>)}
+//{loading && profile === null ? <Spinner /> : <Fragment>    
+  //      <p className= 'lead'><i className='fas fa-user'> </i>Hola! {user && user.name}</p>
+        
+    //    </Fragment>}
+
+
 return (
     <div>
         <Header />
         <MenuBar/>
-        {loading && profile === null ? <Spinner /> : <Fragment>    
-        <h1 className='large text-primary'>dashboard</h1>
-        <p className= 'lead'><i className='fas fa-user'> </i>Hola! {user && user.name}</p>
-        {profile !== null ? (<Fragment>haas</Fragment>) : 
-        (<Fragment><p> No Profile,Please add one </p>
-        <Link to = '/create-profile' className ="btn btn-primary my-1">Create profile</Link>
-        </Fragment>)}
-        </Fragment>}
+        
         {singlerender}
         <FooterTwo/>
         </div>

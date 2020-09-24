@@ -17,6 +17,8 @@ export default function StateContextProvider({ children }) {
     
     const poshornotchoice =[{s: "https://www.youtube.com/v/rX0F3kY3uxU&start=62&end=80" ,area: 'London (Cockney)', posh: false, t: 62},{s: "https://www.youtube.com/v/cKFjPSAiHd8&start=90&end=95", area: 'manchester', posh: false, t: 90},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=112&end=116', area: 'Ulster', posh: false, t: 112},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=148&end=156', area: 'west country', posh: false, t: 148},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=219&end=225', area: 'Liverpool', posh: false, t:219},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=271&end=273',area:'Glasgow', posh: false, t:271},{s:'https://www.youtube.com/v/cKFjPSAiHd8&start=277&end=281', area: 'Berkshire', posh: true, t:277},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=352&end=356',area: 'Birmingham', posh: false, t:352},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=358&end=364',area: 'Welsh', posh: false, t:358},{s: 'https://www.youtube.com/v/cKFjPSAiHd8&start=409&end=412',area: 'Newcastle', posh: false, t:409}]
 
+    const listeningpractice = [{s: 'https://www.youtube.com/watch?v=svuPbOHWF-M', t: 0, descrip: 'Only fools and horses' },{s: 'https://www.youtube.com/watch?v=rvYuoWyk8iU' , t: 0, descrip: 'Yes Minister'},{s: 'https://www.youtube.com/watch?v=ueWXZaoHwsU', t: 0, descrip: 'Black Adder'},{s: 'https://www.youtube.com/watch?v=ayzvXhTRbII', t: 0, descrip: 'Fry and Laurie'},{s: 'https://www.youtube.com/watch?v=LfduUFF_i1A', t:0, descrip: 'Monthy Python'},{s:'https://www.youtube.com/watch?v=TLwc9lbJlIQ', t:0, descrip: 'The Young Ones'}]
+
  /* useEffect(()=>{
     fetch('https://www.oxfordlearnersdictionaries.com/api/v1/wordoftheday', {mode: 'no-cors', method: 'GET'})
     .then(response=>response.json())
@@ -30,7 +32,7 @@ export default function StateContextProvider({ children }) {
 
     return (
         <StateContext.Provider
-          value={{customElements, words, menuitem, setMenuItem, choice, setChoice, playmusic, setPlayMusic, musicchoice, volsp, setVolsp, poshornotchoice
+          value={{customElements, words, menuitem, setMenuItem, choice, setChoice, playmusic, setPlayMusic, musicchoice, volsp, setVolsp, poshornotchoice, listeningpractice
 
         }}
         >
