@@ -110,7 +110,7 @@ return (
             <ul className={Styles.menulist}>
                 <li  onClick={()=>setMenuItem('da')}>Spellshot</li>
                 <hr></hr>
-                <li>Spellbee</li>
+                <li onClick={()=>setMenuItem('db')}>Spellbee</li>
                 <hr></hr>
                 <li>Countdown</li>
                 <hr></hr>
