@@ -142,7 +142,7 @@ return (
             setMyleftTeacher(-200)
             setShowTeacher(Styles.hideteacher)}}>
             <ul className={Styles.menulist}>
-                <li>Appointment</li>
+                <li onClick={()=>setMenuItem('ga')}>Appointment</li>
                 <hr></hr>
                 <li>Question</li>
                 <li></li>

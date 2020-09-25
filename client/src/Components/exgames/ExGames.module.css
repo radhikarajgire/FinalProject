@@ -1,4 +1,54 @@
 .iframe {
-    width: 100%;
-    height: 100%;
+    width: 800px;
+    height: 500px;
+}
+
+.holderholder {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    justify-content: center;
+    font-family: Arial;
+    
+
+}
+
+
+.holder {
+    justify-content: center;
+    padding: 0;
+    margin: 15vh 0 0 0;
+    height: 50vh;
+    z-index: 1;
+    position: relative;
+
+
+}
+
+.holdertwo {
+    justify-content: center;
+    align-content: center;
+    padding: 0;
+    margin: 1vh 0 0 0;
+    height: 50vh;
+    z-index: 1;
+    position: relative;
+
+}
+
+
+
+.formholder {
+    display: inline-flex;
+    font-size: 2rem;
+    margin: 5px;
+}
+
+
+.container {
+    display: inline-flex;
+    width: 300px;
+    height: 50px;
+    justify-content: center;
+
 }

@@ -82,6 +82,7 @@ import StudyPartners from "../studypartners/StudyPartners.js"
 import PoshOrNot from "../poshornot/PoshOrNot.js"
 import ListeningPractice from "../listeningpractice/ListeningPractice.js"
 import ExGames from "../exgames/ExGames.js"
+import Scheduler from "../scheduler/Scheduler.js"
 import FooterTwo from "../footertwo/FooterTwo.js";
 
 
@@ -93,7 +94,7 @@ const Dashboard = ({getCurrentProfile ,auth: {user}, profile: {profile, loading}
     const [singlerender, setSingleRender]=useState()
 
     useEffect(()=>{
-        const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, db:<ExGames/> ,dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
+        const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, db:<ExGames/> ,dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>, ga: <Scheduler/>}
         const singre = renderarray[menuitem]
     setSingleRender(singre)},[menuitem])
 

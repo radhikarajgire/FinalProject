@@ -1,0 +1,67 @@
+.holderholder {
+    width: 100vw;
+    justify-content: center;
+    align-content: center;
+    font-family: Arial;
+}
+
+
+.holder{
+    padding: 0;
+    margin: 1vh 0 0 0;
+    height: auto;
+    z-index: 1;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.day {
+    display: inline-block;
+    border: 1px solid black;
+    padding: 4px 7px 0 7px;
+    text-align: center;
+    width: 200px
+
+}
+
+.appointment{
+    border: 1px solid red;
+    background: light-grey;
+    cursor: pointer;
+}
+
+.appointment:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+.appointmenttaken{
+    border: 1px solid red;
+    background: blue;
+}
+
+.appointmenttakenme {
+    border: 1px solid red;
+    background: green;
+    cursor: pointer;
+}
+
+.appointmenttakenme:hover {
+    transform: scale(1.05);
+    transition: all 0.2s;
+}
+
+
+.datecal {
+    background: lightblue;
+}
+
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 800px;
+    height: 480px;
+    justify-content: center;
+}
