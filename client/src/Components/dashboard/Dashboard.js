@@ -64,6 +64,7 @@
 // );
 import React, {Fragment, useEffect, useState, useContext } from "react";
 import {Link} from 'react-router-dom';
+import Styles from './Dashboard.component.css'
 import PropTypes from "prop-types";
 import {connect} from 'react-redux';
 import Spinner from '../layout/Spinner';
@@ -80,18 +81,20 @@ import SpellShot from "../spellshot/SpellShot.js"
 import StudyPartners from "../studypartners/StudyPartners.js"
 import PoshOrNot from "../poshornot/PoshOrNot.js"
 import ListeningPractice from "../listeningpractice/ListeningPractice.js"
+import ExGames from "../exgames/ExGames.js"
+import Scheduler from "../scheduler/Scheduler.js"
 import FooterTwo from "../footertwo/FooterTwo.js";
 
 
 
 
 
-const Dashboard = ({getCurrentProfile ,auth: {user}, profile: {profile,loading} })=> {
+const Dashboard = ({getCurrentProfile ,auth: {user}, profile: {profile, loading} })=> {
     const { menuitem } = useContext(StateContext);
     const [singlerender, setSingleRender]=useState()
 
     useEffect(()=>{
-        const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
+        const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, db:<ExGames/> ,dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>, ga: <Scheduler/>}
         const singre = renderarray[menuitem]
     setSingleRender(singre)},[menuitem])
 
@@ -111,13 +114,13 @@ const Dashboard = ({getCurrentProfile ,auth: {user}, profile: {profile,loading} 
 
 
 return (
-    <div>
+    <div className={Styles.holder}>
         <Header />
         <MenuBar/>
         
         {singlerender}
         <FooterTwo/>
-        </div>
+    </div>
         );
 
 };
