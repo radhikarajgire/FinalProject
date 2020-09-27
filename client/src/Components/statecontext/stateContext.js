@@ -7,6 +7,7 @@ export default function StateContextProvider({ children }) {
   const [choice, setChoice] = useState("");
   const [playmusic, setPlayMusic] = useState(true);
   const [volsp, setVolsp] = useState(100);
+  const [showoverview, setShowOverview] = useState();
 
   const customElements = [
     {
@@ -63,11 +64,20 @@ export default function StateContextProvider({ children }) {
       m: "https://www.youtube.com/watch?reload=9&v=1Cv0kCB59J4",
       t: "Study with me, quiet",
     },
-    { m: "https://www.youtube.com/watch?v=sUuNcYxocIQ", t: "Study-bootcamp" },
-    { m: "https://www.youtube.com/watch?v=sjkrrmBnpGE", t: "Ambient music" },
-    { m: "https://www.youtube.com/watch?v=kMAOey45mJI", t: "Paino music" },
-    { m: "https://www.youtube.com/watch?v=M5QY2_8704o", t: "Coding music" },
-    { m: "https://www.youtube.com/watch?v=a4fv-BtzNmY", t: "Electronic" },
+    {
+      m: "https://www.youtube.com/watch?v=sUuNcYxocIQ&t=1s",
+      t: "Study-bootcamp",
+    },
+    {
+      m: "https://www.youtube.com/watch?v=sjkrrmBnpGE&t=1s",
+      t: "Ambient music",
+    },
+    { m: "https://www.youtube.com/watch?v=kMAOey45mJI&t=1s", t: "Paino music" },
+    {
+      m: "https://www.youtube.com/watch?v=M5QY2_8704o&t=1s",
+      t: "Coding music",
+    },
+    { m: "https://www.youtube.com/watch?v=a4fv-BtzNmY&t=1s", t: "Electronic" },
     {
       m: "https://www.youtube.com/watch?v=eGwhAwWGcOI&t=19s",
       t: "Instrumental Rock",
@@ -172,20 +182,33 @@ export default function StateContextProvider({ children }) {
 
   const [days, setDays] = useState([
     [
-      { datecal: "September 28, 2020" },
+      { datecal: "September 27, 2020 23:59:59" },
+      {
+        id: 0,
+        starttime: "14:00",
+        endtime: "15:30",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+    ],
+    [
+      { datecal: "September 28, 2020 23:59:59" },
       {
         id: 1,
         starttime: "14:00",
         endtime: "15:30",
         isSelected: true,
         idofselector: 1,
+        subejct: "talk about cats",
       },
       {
         id: 2,
         starttime: "15:45",
         endtime: "17:15",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 3,
@@ -193,6 +216,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 4,
@@ -200,16 +224,18 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
     ],
     [
-      { datecal: "September 29, 2020" },
+      { datecal: "September 29, 2020 23:59:59" },
       {
         id: 5,
         starttime: "14:00",
         endtime: "15:30",
         isSelected: true,
         idofselector: 3,
+        subejct: "talking practice",
       },
       {
         id: 6,
@@ -217,6 +243,7 @@ export default function StateContextProvider({ children }) {
         endtime: "17:15",
         isSelected: true,
         idofselector: 3,
+        subejct: "pronouns",
       },
       {
         id: 7,
@@ -224,6 +251,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 8,
@@ -231,17 +259,19 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
     ],
 
     [
-      { datecal: "September 30, 2020" },
+      { datecal: "September 30, 2020 23:59:59" },
       {
         id: 9,
         starttime: "14:00",
         endtime: "15:30",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 10,
@@ -249,6 +279,7 @@ export default function StateContextProvider({ children }) {
         endtime: "17:15",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 11,
@@ -256,6 +287,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: true,
         idofselector: 3,
+        subejct: "time form",
       },
       {
         id: 12,
@@ -263,24 +295,27 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: true,
         idofselector: 3,
+        subejct: "time form part 2",
       },
     ],
 
     [
-      { datecal: "October 1, 2020" },
+      { datecal: "October 1, 2020 23:59:59" },
       {
         id: 13,
         starttime: "14:00",
         endtime: "15:30",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 14,
         starttime: "15:45",
         endtime: "17:15",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 15,
@@ -288,6 +323,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: true,
         idofselector: 2,
+        subejct: "grammar",
       },
       {
         id: 16,
@@ -295,24 +331,27 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: true,
         idofselector: 2,
+        subejct: "grammar again",
       },
     ],
 
     [
-      { datecal: "October 2, 2020" },
+      { datecal: "October 2, 2020 23:59:59" },
       {
         id: 17,
         starttime: "14:00",
         endtime: "15:30",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 18,
         starttime: "15:45",
         endtime: "17:15",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 19,
@@ -320,6 +359,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: true,
         idofselector: 2,
+        subejct: "talking practice",
       },
       {
         id: 20,
@@ -327,17 +367,19 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: true,
         idofselector: 2,
+        subejct: "talking practice",
       },
     ],
 
     [
-      { datecal: "October 5, 2020" },
+      { datecal: "October 5, 2020 23:59:59" },
       {
         id: 21,
         starttime: "14:00",
         endtime: "15:30",
-        isSelected: true,
-        idofselector: 3,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 22,
@@ -345,6 +387,7 @@ export default function StateContextProvider({ children }) {
         endtime: "17:15",
         isSelected: true,
         idofselector: 3,
+        subejct: "past form",
       },
       {
         id: 23,
@@ -352,6 +395,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 24,
@@ -359,23 +403,26 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
     ],
     [
-      { datecal: "October 6, 2020" },
+      { datecal: "October 6, 2020 23:59:59" },
       {
         id: 25,
         starttime: "14:00",
         endtime: "15:30",
-        isSelected: true,
-        idofselector: 3,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 26,
         starttime: "15:45",
         endtime: "17:15",
-        isSelected: true,
-        idofselector: 3,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 27,
@@ -383,6 +430,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 28,
@@ -390,17 +438,19 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
     ],
 
     [
-      { datecal: "October 7, 2020" },
+      { datecal: "October 7, 2020 23:59:59" },
       {
         id: 29,
         starttime: "14:00",
         endtime: "15:30",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 30,
@@ -408,6 +458,7 @@ export default function StateContextProvider({ children }) {
         endtime: "17:15",
         isSelected: false,
         idofselector: 0,
+        subejct: "",
       },
       {
         id: 31,
@@ -415,6 +466,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: true,
         idofselector: 1,
+        subejct: "vocab taining",
       },
       {
         id: 32,
@@ -422,17 +474,19 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: true,
         idofselector: 1,
+        subejct: "grammar",
       },
     ],
 
     [
-      { datecal: "October 8, 2020" },
+      { datecal: "October 8, 2020 23:59:59" },
       {
         id: 33,
         starttime: "14:00",
         endtime: "15:30",
-        isSelected: true,
-        idofselector: 3,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 34,
@@ -440,6 +494,7 @@ export default function StateContextProvider({ children }) {
         endtime: "17:15",
         isSelected: true,
         idofselector: 3,
+        subejct: "past tense",
       },
       {
         id: 35,
@@ -447,31 +502,35 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: true,
         idofselector: 2,
+        subejct: "future tense",
       },
       {
         id: 36,
         starttime: "19:15",
         endtime: "20:45",
-        isSelected: true,
-        idofselector: 2,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
     ],
 
     [
-      { datecal: "October 9, 2020" },
+      { datecal: "October 9, 2020 23:59:59" },
       {
         id: 37,
         starttime: "14:00",
         endtime: "15:30",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 38,
         starttime: "15:45",
         endtime: "17:15",
-        isSelected: true,
-        idofselector: 1,
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
       },
       {
         id: 39,
@@ -479,6 +538,7 @@ export default function StateContextProvider({ children }) {
         endtime: "19:00",
         isSelected: true,
         idofselector: 2,
+        subejct: "presence",
       },
       {
         id: 40,
@@ -486,6 +546,7 @@ export default function StateContextProvider({ children }) {
         endtime: "20:45",
         isSelected: true,
         idofselector: 2,
+        subejct: "past grammar",
       },
     ],
   ]);
@@ -509,6 +570,21 @@ export default function StateContextProvider({ children }) {
     },
   ];
 
+  const [userid, setUserId] = useState(2);
+  const [appointments, setAppointments] = useState([
+    {
+      userid: 1,
+      total: 22,
+      nextmonth: 2,
+      allowance: 8,
+    },
+    {
+      userid: 2,
+      total: 5,
+      nextmonth: 3,
+      allowance: 5,
+    },
+  ]);
   /* useEffect(()=>{
     fetch('https://www.oxfordlearnersdictionaries.com/api/v1/wordoftheday', {mode: 'no-cors', method: 'GET'})
     .then(response=>response.json())
@@ -537,6 +613,11 @@ export default function StateContextProvider({ children }) {
         days,
         setDays,
         exgameslist,
+        userid,
+        appointments,
+        setAppointments,
+        showoverview,
+        setShowOverview,
       }}
     >
       {children}
