@@ -67,6 +67,9 @@ function SubjectOverlay({ fromabove }) {
       <h4 className={Styles.abovetext}>
         {fromabove.isSelected ? "Cancel appointment ?" : "Add appointment ?"}
       </h4>
+      <h4 className={Styles.abovetext}>
+        Student {userid === 0 ? fromabove.idofselector : ""}
+      </h4>
       <textarea
         onChange={(e) => setTextInput(e.target.nodeValue)}
         value={textinput}
