@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import StateContextProvider from "./Components/statecontext/stateContext";
-
+import 'antd/dist/antd.css';
 ReactDOM.render(
   <React.StrictMode>
     <StateContextProvider>
