@@ -11,6 +11,7 @@ function Appointment() {
     appointments,
     showoverview,
     setShowOverview,
+    studentcolor,
   } = useContext(StateContext);
   //const [taken, setTaken] = useState(Styles.appointment);
 
@@ -28,10 +29,6 @@ function Appointment() {
     );
     setNewDate(dog);
   }, [days]);
-  //console.log(boy.getMonth());
-  //function infooverlay() {
-  //return;
-  //}
 
   useEffect(() => {
     for (let i = 0; i < appointments.length; i++) {
@@ -42,13 +39,13 @@ function Appointment() {
     }
   }, [userid, appointments]);
 
+  //you have {singleuserbooking["nextmonth"]}{" "}
+  //appointments in the next four weeks (limit:{" "}
+  //{singleuserbooking["allowance"]})
+
   return (
     <div className={Styles.holderholder}>
-      <h3>
-        Appointment Picker - you have {singleuserbooking["nextmonth"]}{" "}
-        appointments in the next four weeks (limit:{" "}
-        {singleuserbooking["allowance"]})
-      </h3>
+      {userid === 0 ? <h3>Welcome teacher</h3> : <h3>Appointment Picker</h3>}
       <div className={Styles.holder}>
         {newdate !== undefined
           ? newdate.map((entry, idn) => (
@@ -65,13 +62,21 @@ function Appointment() {
                   <div key={idz}>
                     {idz !== 0 ? (
                       <h3
+                        style={
+                          userid === 0
+                            ? { background: studentcolor[enter.idofselector] }
+                            : { color: "black" }
+                        }
                         className={
-                          (new Date(entry[0].datecal).getDay() === dayofmonth) &
-                          (new Date(entry[0].datecal).getMonth() ===
-                            monthofyear)
+                          userid === 0
+                            ? Styles.appointment
+                            : (new Date(entry[0].datecal).getDay() ===
+                                dayofmonth) &
+                              (new Date(entry[0].datecal).getMonth() ===
+                                monthofyear)
                             ? enter.isSelected
                               ? enter.idofselector === userid
-                                ? Styles.appointmentnotakeme
+                                ? Styles.appointmentnotakenme
                                 : Styles.appointmentnotaken
                               : Styles.appointmentnobook
                             : enter.isSelected
@@ -82,8 +87,12 @@ function Appointment() {
                         }
                         id={enter.id}
                         onClick={() =>
-                          enter.idofselector === 0 ||
-                          enter.idofselector === userid
+                          userid === 0
+                            ? setShowOverview(
+                                <SubjectOverlay fromabove={enter} />
+                              )
+                            : enter.idofselector === 0 ||
+                              enter.idofselector === userid
                             ? Date.parse(entry[0].datecal) >
                               Date.parse(new Date()) + 86400000
                               ? setShowOverview(

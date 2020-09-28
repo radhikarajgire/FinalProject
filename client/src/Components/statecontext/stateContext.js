@@ -570,7 +570,7 @@ export default function StateContextProvider({ children }) {
     },
   ];
 
-  const [userid, setUserId] = useState(2);
+  const [userid, setUserId] = useState(3);
   const [appointments, setAppointments] = useState([
     {
       userid: 1,
@@ -585,6 +585,9 @@ export default function StateContextProvider({ children }) {
       allowance: 5,
     },
   ]);
+
+  const studentcolor = ["", "red", "blue", "green", "yellow"];
+
   /* useEffect(()=>{
     fetch('https://www.oxfordlearnersdictionaries.com/api/v1/wordoftheday', {mode: 'no-cors', method: 'GET'})
     .then(response=>response.json())
@@ -618,6 +621,7 @@ export default function StateContextProvider({ children }) {
         setAppointments,
         showoverview,
         setShowOverview,
+        studentcolor,
       }}
     >
       {children}
