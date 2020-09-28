@@ -1,0 +1,10 @@
+.Navbar {
+  display: flex;
+  padding: 15px;
+  justify-content: space-between;
+}
+
+.Navbar--link,
+.Navbar--link:hover {
+  color: white;
+}

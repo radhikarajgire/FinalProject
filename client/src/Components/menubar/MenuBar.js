@@ -110,7 +110,7 @@ return (
             <ul className={Styles.menulist}>
                 <li  onClick={()=>setMenuItem('da')}>Spellshot</li>
                 <hr></hr>
-                <li>Spellbee</li>
+                <li onClick={()=>setMenuItem('db')}>Spellbee</li>
                 <hr></hr>
                 <li>Countdown</li>
                 <hr></hr>
@@ -142,7 +142,7 @@ return (
             setMyleftTeacher(-200)
             setShowTeacher(Styles.hideteacher)}}>
             <ul className={Styles.menulist}>
-                <li>Appointment</li>
+                <li onClick={()=>setMenuItem('ga')}>Appointment</li>
                 <hr></hr>
                 <li>Question</li>
                 <li></li>
