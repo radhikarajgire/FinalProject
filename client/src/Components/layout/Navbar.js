@@ -63,7 +63,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             aria-label="open drawer"
             onClick={() => setOpenSidebar(!openSidebar)}
             edge="start"
-            className={clsx(classes.menuButton, openSidebar && classes.hide)}
+            className={clsx(classes.menuButton, openSidebar)}
           >
             <MenuIcon />
           </IconButton>
