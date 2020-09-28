@@ -7,41 +7,67 @@ import "react-chat-widget/lib/styles.css";
 
 function TeacherMessage() {
   const { userid } = useContext(StateContext);
+  const [contactwith, setContactWith] = useState(2);
   const [messagesstudentone, setMessageStudentOne] = useState([]);
+  const [messengertittle, setMessengerTittle] = useState();
+
   //{ from: 0, mess: "you smell" },
   //{ from: 1, mess: "go away" },
   //{ from: 1, mess: "leave me alone" },
   //{ from: 0, mess: "sorry" },
 
   useEffect(() => {
+    setMessageStudentOne();
     //localStorage.clear("mestuone");
-    const dog = JSON.parse(localStorage.getItem("mestuone"));
+    var dog;
+    if (userid === 0) {
+      dog = JSON.parse(localStorage.getItem("User" + contactwith));
+      setMessengerTittle("Messages from student " + contactwith);
+    } else {
+      dog = JSON.parse(localStorage.getItem("User" + userid));
+      setMessengerTittle("Messages from student " + userid);
+    }
 
     if (!dog) {
-      console.log("me");
       return;
     }
     setMessageStudentOne(dog);
+
     for (let i = 0; i < dog.length; i++) {
-      if (dog[i]["from"]) {
-        addResponseMessage(dog[i]["mess"]);
+      if (userid === 0) {
+        if (dog[i]["from"] !== 0) {
+          addResponseMessage(dog[i]["mess"]);
+        } else {
+          addUserMessage(dog[i]["mess"]);
+        }
       } else {
-        addUserMessage(dog[i]["mess"]);
+        if (dog[i]["from"] === 0) {
+          addResponseMessage(dog[i]["mess"]);
+        } else {
+          addUserMessage(dog[i]["mess"]);
+        }
       }
     }
-
-    //localStorage.setItem("mestuone", JSON.stringify(messagesstudentone));
   }, []);
 
   const handleNewUserMessage = (newMessage) => {
-    //localStorage.removeItem("mestuone");
-    const fish = newMessage;
-    setMessageStudentOne((prev) => [...prev, { from: userid, mess: fish }]);
+    console.log(messagesstudentone);
 
-    localStorage.setItem("mestuone", JSON.stringify(messagesstudentone));
-    //console.log(JSON.parse(localStorage.getItem("mestuone")));
-    //console.log(messagesstudentone);
-    // Now send the message throught the backend API
+    const fish = newMessage;
+    const paper = messagesstudentone;
+    var chips;
+    if (paper === undefined) {
+      chips = [{ from: userid, mess: fish }];
+    } else {
+      chips = paper.concat({ from: userid, mess: fish });
+    }
+    setMessageStudentOne(chips);
+
+    if (userid === 0) {
+      localStorage.setItem("User" + contactwith, JSON.stringify(chips));
+    } else {
+      localStorage.setItem("User" + userid, JSON.stringify(chips));
+    }
   };
 
   return (
@@ -49,7 +75,8 @@ function TeacherMessage() {
       <Widget
         handleNewUserMessage={handleNewUserMessage}
         title="Talk to me"
-        subtitle="Messages from Student "
+        subtitle={messengertittle}
+        showTimeStamp={false}
       />
     </div>
   );
