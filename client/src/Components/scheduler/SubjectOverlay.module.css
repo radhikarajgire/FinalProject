@@ -1,0 +1,46 @@
+.button {
+  background-color: lightblue;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  box-shadow: 5px 5px 5px lightslategray;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  transition: all 0.3s;
+}
+
+.buttonholder {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+.box {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  right: 50vw;
+  bottom: 50vh;
+  width: 20vw;
+  height: 20vh;
+  z-index: 10000;
+  box-shadow: 5px 5px 5px lightslategray;
+  background: lightgrey;
+  justify-content: center;
+}
+
+.text {
+  position: relative;
+  width: 18vw;
+  height: 12vh;
+  margin-top: 0.2vh;
+  margin-left: 1vw;
+  margin-bottom: 1vh;
+  padding: 5px;
+}
+
+.abovetext {
+  text-align: center;
+}
