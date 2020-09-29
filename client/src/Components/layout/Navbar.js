@@ -41,24 +41,12 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </Typography>
     </div>
   );
-  const guestLinks = (
-    <ul>
-      <li>
-        <a href="#!">Teachers</a>
-      </li>
-      <li>
-        <Link to="/register">Register</Link>
-      </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
-    </ul>
-  );
 
   return (
     <AppBar position="static">
       <Toolbar className="Navbar">
-        <IconButton
+        {isAuthenticated &&
+          <IconButton
             color="inherit"
             aria-label="open drawer"
             onClick={() => setOpenSidebar(!openSidebar)}
@@ -67,18 +55,17 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           >
             <MenuIcon />
           </IconButton>
+        }
+
         <Typography variant="h4" color="inherit">
           <Link className="Navbar--link" to="/">
             {" "}
             RThree Academy
           </Link>
         </Typography>
-        {authLinks}
-        {/*
-{!loading && (
-          <Fragment>{isAuthenticated ? authLinks : guestLinks}</Fragment>
-        )}
-*/}
+          {!loading && (
+            <Fragment>{isAuthenticated && authLinks}</Fragment>
+          )}
       </Toolbar>
     </AppBar>
   );
