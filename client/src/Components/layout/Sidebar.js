@@ -33,7 +33,6 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
-    color: "blue",
   },
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
@@ -68,10 +67,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
-    minWidth: "220px"
+    minWidth: "220px",
   },
   drawerLabel: {
-    marginLeft: "15px"
+    marginLeft: "15px",
   },
   content: {
     flexGrow: 1,
@@ -139,7 +138,10 @@ function Sidebar() {
         <div className={classes.drawerHeader}>
           <ListItem button>
             <SpellcheckIcon color="primary" fontSize="small" />
-            <ListItemText primary="Dictionary" className={classes.drawerLabel} />
+            <ListItemText
+              primary="Dictionary"
+              className={classes.drawerLabel}
+            />
           </ListItem>
         </div>
         <div className={classes.drawerHeader}>
@@ -153,7 +155,10 @@ function Sidebar() {
         <div className={classes.drawerHeader}>
           <ListItem button>
             <CalendarTodayIcon color="primary" fontSize="small" />
-            <ListItemText primary="Appointments" className={classes.drawerLabel} />
+            <ListItemText
+              primary="Appointments"
+              className={classes.drawerLabel}
+            />
           </ListItem>
         </div>
       </List>
@@ -161,7 +166,10 @@ function Sidebar() {
         <div className={classes.drawerHeader}>
           <ListItem button>
             <PermContactCalendarIcon color="primary" fontSize="medium" />
-            <ListItemText primary="Contact Teacher" className={classes.drawerLabel} />
+            <ListItemText
+              primary="Contact Teacher"
+              className={classes.drawerLabel}
+            />
           </ListItem>
         </div>
       </List>
