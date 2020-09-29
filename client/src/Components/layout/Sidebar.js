@@ -66,9 +66,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     padding: theme.spacing(0, 1),
-    // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
+    minWidth: "220px"
+  },
+  drawerLabel: {
+    marginLeft: "15px"
   },
   content: {
     flexGrow: 1,
@@ -116,64 +119,50 @@ function Sidebar() {
       <Divider />
       <List>
         <div className={classes.drawerHeader}>
-          {["Learn"].map((text, index) => (
-            <ListItem button key={text}>
-              <BookIcon color="primary" fontSize="small" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <BookIcon color="primary" fontSize="small" />
+            <ListItemText primary="Learn" className={classes.drawerLabel} />
+          </ListItem>
         </div>
         <div className={classes.drawerHeader}>
-          {["Play"].map((text, index) => (
-            <ListItem button key={text}>
-              <SportsEsportsIcon color="primary" fontSize="small" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <SportsEsportsIcon color="primary" fontSize="small" />
+            <ListItemText primary="Play" className={classes.drawerLabel} />
+          </ListItem>
         </div>
         <div className={classes.drawerHeader}>
-          {["Method"].map((text, index) => (
-            <ListItem button key={text}>
-              <MusicNoteIcon color="primary" fontSize="small" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <MusicNoteIcon color="primary" fontSize="small" />
+            <ListItemText primary="Method" className={classes.drawerLabel} />
+          </ListItem>
         </div>
         <div className={classes.drawerHeader}>
-          {["Dictionary"].map((text, index) => (
-            <ListItem button key={text}>
-              <SpellcheckIcon color="primary" fontSize="small" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <SpellcheckIcon color="primary" fontSize="small" />
+            <ListItemText primary="Dictionary" className={classes.drawerLabel} />
+          </ListItem>
         </div>
         <div className={classes.drawerHeader}>
-          {["Thesaurus"].map((text, index) => (
-            <ListItem button key={text}>
-              <MenuBookIcon color="primary" fontSize="small" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <MenuBookIcon color="primary" fontSize="small" />
+            <ListItemText primary="Thesaurus" className={classes.drawerLabel} />
+          </ListItem>
         </div>
       </List>
       <List>
         <div className={classes.drawerHeader}>
-          {["Appointments"].map((text, index) => (
-            <ListItem button key={text}>
-              <CalendarTodayIcon color="primary" fontSize="small" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <CalendarTodayIcon color="primary" fontSize="small" />
+            <ListItemText primary="Appointments" className={classes.drawerLabel} />
+          </ListItem>
         </div>
       </List>
       <List>
         <div className={classes.drawerHeader}>
-          {["Contact Teacher"].map((text, index) => (
-            <ListItem button key={text}>
-              <PermContactCalendarIcon color="primary" fontSize="medium" />
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem button>
+            <PermContactCalendarIcon color="primary" fontSize="medium" />
+            <ListItemText primary="Contact Teacher" className={classes.drawerLabel} />
+          </ListItem>
         </div>
       </List>
     </Drawer>
