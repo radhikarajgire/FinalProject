@@ -127,7 +127,6 @@ const Dashboard = ({
 
   return (
     <div className={Styles.holder}>
-      <Header />
       <MenuBar />
 
       {singlerender}

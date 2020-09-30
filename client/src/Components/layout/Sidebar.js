@@ -34,6 +34,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
   },
+
   appBar: {
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.sharp,
@@ -51,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     marginRight: theme.spacing(2),
   },
+
   hide: {
     display: "none",
   },
@@ -60,6 +62,8 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerPaper: {
     width: drawerWidth,
+    backgroundColor: "#0093c4",
+    color: "white",
   },
   drawerHeader: {
     display: "flex",
@@ -101,6 +105,7 @@ function Sidebar() {
       className={classes.drawer}
       variant="persistent"
       anchor="left"
+      background="light-blue"
       open={openSidebar}
       classes={{
         paper: classes.drawerPaper,
@@ -119,25 +124,25 @@ function Sidebar() {
       <List>
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <BookIcon color="primary" fontSize="small" />
+            <BookIcon color="#484848" fontSize="small" />
             <ListItemText primary="Learn" className={classes.drawerLabel} />
           </ListItem>
         </div>
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <SportsEsportsIcon color="primary" fontSize="small" />
+            <SportsEsportsIcon color="#484848" fontSize="small" />
             <ListItemText primary="Play" className={classes.drawerLabel} />
           </ListItem>
         </div>
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <MusicNoteIcon color="primary" fontSize="small" />
+            <MusicNoteIcon color="#484848" fontSize="small" />
             <ListItemText primary="Method" className={classes.drawerLabel} />
           </ListItem>
         </div>
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <SpellcheckIcon color="primary" fontSize="small" />
+            <SpellcheckIcon color="#484848" fontSize="small" />
             <ListItemText
               primary="Dictionary"
               className={classes.drawerLabel}
@@ -146,26 +151,24 @@ function Sidebar() {
         </div>
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <MenuBookIcon color="primary" fontSize="small" />
+            <MenuBookIcon color="#484848" fontSize="small" />
             <ListItemText primary="Thesaurus" className={classes.drawerLabel} />
           </ListItem>
         </div>
-      </List>
-      <List>
+
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <CalendarTodayIcon color="primary" fontSize="small" />
+            <CalendarTodayIcon color="#484848" fontSize="small" />
             <ListItemText
               primary="Appointments"
               className={classes.drawerLabel}
             />
           </ListItem>
         </div>
-      </List>
-      <List>
+
         <div className={classes.drawerHeader}>
           <ListItem button>
-            <PermContactCalendarIcon color="primary" fontSize="medium" />
+            <PermContactCalendarIcon color="#484848" fontSize="medium" />
             <ListItemText
               primary="Contact Teacher"
               className={classes.drawerLabel}
