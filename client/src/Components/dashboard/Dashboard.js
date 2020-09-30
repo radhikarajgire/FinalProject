@@ -84,6 +84,9 @@ import ListeningPractice from "../listeningpractice/ListeningPractice.js";
 import ExGames from "../exgames/ExGames.js";
 import Scheduler from "../scheduler/Scheduler.js";
 import TeacherQuestion from "../teacherquestion/TeacherQuestion.js";
+import CourseList from "../courses/courseList.js";
+import Dictionary from "../dictionary/Dictionary.js";
+import Thesauraus from "../thesauraus/Thesauraus.js";
 import FooterTwo from "../footertwo/FooterTwo.js";
 
 const Dashboard = ({
@@ -96,6 +99,7 @@ const Dashboard = ({
 
   useEffect(() => {
     const renderarray = {
+      aa: <CourseList />,
       ba: <FlashCard />,
       bb: <Snap />,
       bc: <WordSearch />,
@@ -106,6 +110,8 @@ const Dashboard = ({
       dd: <PoshOrNot />,
       de: <Match />,
       eb: <StudyPartners />,
+      fa: <Dictionary />,
+      fb: <Thesauraus />,
       ga: <Scheduler />,
     };
     const singre = renderarray[menuitem];
@@ -131,7 +137,6 @@ const Dashboard = ({
 
       {singlerender}
       <TeacherQuestion />
-      <FooterTwo />
     </div>
   );
 };
