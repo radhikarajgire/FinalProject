@@ -131,7 +131,6 @@ const Dashboard = ({
 
       {singlerender}
       <TeacherQuestion />
-      <FooterTwo />
     </div>
   );
 };
