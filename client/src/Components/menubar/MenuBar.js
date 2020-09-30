@@ -133,11 +133,11 @@ function Menubar() {
         }}
       >
         <ul className={Styles.menulist}>
-          <li>Path</li>
+          <li onClick={() => setMenuItem("aa")}>Courses</li>
           <hr></hr>
           <li>Current</li>
           <hr></hr>
-          <li>Done</li>
+          <li>Path</li>
         </ul>
       </div>
       <div
@@ -220,9 +220,9 @@ function Menubar() {
         }}
       >
         <ul className={Styles.menulist}>
-          <li>Dictionary</li>
+          <li onClick={() => setMenuItem("fa")}>Dictionary</li>
           <hr></hr>
-          <li>Thesaurous</li>
+          <li onClick={() => setMenuItem("fb")}>Thesaurous</li>
           <li></li>
         </ul>
       </div>

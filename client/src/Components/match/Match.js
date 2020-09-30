@@ -6,7 +6,7 @@ import { StateContext } from "../statecontext/stateContext";
 function Match() {
   const contextRef = useRef(null);
   const canvasRef = useRef(null);
-  const [choice, setChoice] = useState();
+  const [choice, setChoice] = useState(0);
   const { customElements } = useContext(StateContext);
   const [pos, setPos] = useState([]);
   const [textpos, setTextPos] = useState([]);
@@ -48,13 +48,14 @@ function Match() {
     contextRef.current.fillStyle = "red";
     setPos([]);
     setTextPos([]);
+
     function redo(a, b) {
       const long = Math.floor(
-        contextRef.current.measureText(customElements[a][b]).width
+        contextRef.current.measureText(customElements[choice][a][b]).width
       );
       const randomnums = Math.floor(Math.random() * (780 - long));
       const randomnumh = Math.floor(Math.random() * 460);
-      const fishy = customElements[a][b];
+      const fishy = customElements[choice][a][b];
       setTextPos((bef) => [...bef, fishy]);
       setPos((before) => [
         ...before,
@@ -72,8 +73,7 @@ function Match() {
       const flipchip = ["a", "q"];
       const z = flipchip[u];
 
-      var i = 0;
-      for (i = 0; i < 4; i++) {
+      for (let i = 1; i < 5; i++) {
         redo(i, z);
 
         //var n=0
@@ -199,12 +199,11 @@ function Match() {
             onChange={(e) => setChoice(e.target.value)}
             className={Styles.select}
           >
-            <option value="A1">A1</option>
-            <option value="A2">A2</option>
-            <option value="B1">B1</option>
-            <option value="B2">B2</option>
-            <option value="C1">C1</option>
-            <option value="C2">C2</option>
+            {customElements.map((entry, idk) => (
+              <option key={idk} value={idk}>
+                {entry[0]["qadata"]}
+              </option>
+            ))}
           </select>
           <button className={Styles.button} onClick={() => positionthings()}>
             TRY
