@@ -27,6 +27,9 @@ import CalendarTodayIcon from "@material-ui/icons/CalendarToday";
 import PermContactCalendarIcon from "@material-ui/icons/PermContactCalendar";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
+import SocialFollow from ".././socialfollow/SocialFollow.js";
+import { Widget, addResponseMessage, addUserMessage } from "react-chat-widget";
+import "react-chat-widget/lib/styles.css";
 
 const drawerWidth = 240;
 
@@ -105,7 +108,7 @@ function Sidebar() {
       className={classes.drawer}
       variant="persistent"
       anchor="left"
-      background="light-blue"
+      background="light-blue" //tried to change only the top of the drawer so it fits with the header color
       open={openSidebar}
       classes={{
         paper: classes.drawerPaper,
@@ -176,6 +179,16 @@ function Sidebar() {
           </ListItem>
         </div>
       </List>
+      <Divider />
+      <div>
+        <SocialFollow />
+      </div>
+      <div>
+        {" "}
+        <Widget />
+        <addResponseMessage />
+        <addUserMessage />
+      </div>
     </Drawer>
   );
 }
