@@ -6,11 +6,11 @@ import { logout } from "../../actions/auth";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import IconButton from "@material-ui/core/IconButton";
+import MenuIcon from "@material-ui/icons/Menu";
 import { StateContext } from "../statecontext/stateContext";
-import { makeStyles } from '@material-ui/core/styles';
-import clsx from 'clsx';
+import { makeStyles } from "@material-ui/core/styles";
+import clsx from "clsx";
 
 import "./Navbar.css";
 
@@ -19,8 +19,8 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(2),
   },
   hide: {
-    display: 'none',
-  }
+    display: "none",
+  },
 }));
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
@@ -45,7 +45,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <AppBar position="static">
       <Toolbar className="Navbar">
-        {isAuthenticated &&
+        {isAuthenticated && (
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -55,7 +55,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           >
             <MenuIcon />
           </IconButton>
-        }
+        )}
 
         <Typography variant="h4" color="inherit">
           <Link className="Navbar--link" to="/">
@@ -63,9 +63,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             RThree Academy
           </Link>
         </Typography>
-          {!loading && (
-            <Fragment>{isAuthenticated && authLinks}</Fragment>
-          )}
+        {!loading && <Fragment>{isAuthenticated && authLinks}</Fragment>}
       </Toolbar>
     </AppBar>
   );

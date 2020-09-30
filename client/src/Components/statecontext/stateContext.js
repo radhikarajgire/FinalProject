@@ -5,10 +5,11 @@ export const StateContext = createContext({});
 export default function StateContextProvider({ children }) {
   const [menuitem, setMenuItem] = useState();
 
-  const [choice, setChoice] = useState('')
-  const [playmusic, setPlayMusic] = useState(true)
-  const [volsp, setVolsp] = useState(100)
+  const [choice, setChoice] = useState("");
+  const [playmusic, setPlayMusic] = useState(true);
+  const [volsp, setVolsp] = useState(100);
   const [openSidebar, setOpenSidebar] = useState(false);
+  const [showoverview, setShowOverview] = useState();
 
   const customElements = [
     {
@@ -598,7 +599,6 @@ export default function StateContextProvider({ children }) {
 
   },[])*/
 
-
   return (
     <StateContext.Provider
       value={{
@@ -632,4 +632,3 @@ export default function StateContextProvider({ children }) {
     </StateContext.Provider>
   );
 }
-
