@@ -183,12 +183,6 @@ function Sidebar() {
       <div>
         <SocialFollow />
       </div>
-      <div>
-        {" "}
-        <Widget />
-        <addResponseMessage />
-        <addUserMessage />
-      </div>
     </Drawer>
   );
 }
