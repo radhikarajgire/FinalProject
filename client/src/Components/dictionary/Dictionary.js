@@ -43,8 +43,6 @@ function Dictionary() {
 
     setLoadingInfo("none");
 
-    console.log(data);
-
     setDefinitionWord(data);
     setSuggestions();
 
