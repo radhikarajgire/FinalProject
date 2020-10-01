@@ -16,6 +16,9 @@ import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
+import Learn from "./Components/pages/Learn";
+import Play from "./Components/pages/Play";
+
 
 /*if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -41,6 +44,13 @@ function Appe() {
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/learn" component={Learn} />
+              {/*<Route exact path="/learn" component={Play} />
+              <Route exact path="/method" component={Method} />
+              <Route exact path="/dictionary" component={Dictionary} />
+              <Route exact path="/thesaurus" component={Thesaurus} />
+              <Route exact path="/appointments" component={Appointments} />
+              <Route exact path="/teacher" component={Teacher} /> */}
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>

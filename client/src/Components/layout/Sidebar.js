@@ -1,5 +1,6 @@
 import React, { Fragment, useContext, useEffect } from "react";
 import clsx from "clsx";
+import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Drawer,
@@ -74,7 +75,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
-    minWidth: "220px",
+    height: '76px'
+  },
+  drawerLink: {
+    padding: '5px 20px'
   },
   drawerLabel: {
     marginLeft: "15px",
@@ -125,25 +129,27 @@ function Sidebar() {
       </div>
       <Divider />
       <List>
-        <div className={classes.drawerHeader}>
-          <ListItem button>
+        <div className={classes.drawerLink}>
+          <ListItem button className={classes.drawerLink}>
             <BookIcon color="#484848" fontSize="small" />
-            <ListItemText primary="Learn" className={classes.drawerLabel} />
+            <Link to='/learn'>
+              <ListItemText primary="Learn" className={classes.drawerLabel} />
+            </Link>
           </ListItem>
         </div>
-        <div className={classes.drawerHeader}>
-          <ListItem button>
+        <div className={classes.drawerLink}>
+          <ListItem button className={classes.drawerLink}>
             <SportsEsportsIcon color="#484848" fontSize="small" />
             <ListItemText primary="Play" className={classes.drawerLabel} />
           </ListItem>
         </div>
-        <div className={classes.drawerHeader}>
+        <div className={classes.drawerLink}>
           <ListItem button>
             <MusicNoteIcon color="#484848" fontSize="small" />
             <ListItemText primary="Method" className={classes.drawerLabel} />
           </ListItem>
         </div>
-        <div className={classes.drawerHeader}>
+        <div className={classes.drawerLink}>
           <ListItem button>
             <SpellcheckIcon color="#484848" fontSize="small" />
             <ListItemText
@@ -152,14 +158,14 @@ function Sidebar() {
             />
           </ListItem>
         </div>
-        <div className={classes.drawerHeader}>
+        <div className={classes.drawerLink}>
           <ListItem button>
             <MenuBookIcon color="#484848" fontSize="small" />
             <ListItemText primary="Thesaurus" className={classes.drawerLabel} />
           </ListItem>
         </div>
 
-        <div className={classes.drawerHeader}>
+        <div className={classes.drawerLink}>
           <ListItem button>
             <CalendarTodayIcon color="#484848" fontSize="small" />
             <ListItemText
@@ -169,11 +175,11 @@ function Sidebar() {
           </ListItem>
         </div>
 
-        <div className={classes.drawerHeader}>
+        <div className={classes.drawerLink}>
           <ListItem button>
             <PermContactCalendarIcon color="#484848" fontSize="medium" />
             <ListItemText
-              primary="Contact Teacher"
+              primary="Teacher"
               className={classes.drawerLabel}
             />
           </ListItem>
