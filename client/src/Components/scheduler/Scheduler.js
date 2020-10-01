@@ -52,8 +52,8 @@ function Appointment() {
               <div
                 key={idn}
                 className={
-                  (new Date(entry[0].datecal).getDay() === dayofmonth) &
-                  (new Date(entry[0].datecal).getMonth() === monthofyear)
+                  Date.parse(entry[0].datecal) <
+                  Date.parse(new Date()) + 86400000
                     ? Styles.daytoday
                     : Styles.day
                 }
@@ -70,10 +70,8 @@ function Appointment() {
                         className={
                           userid === 0
                             ? Styles.appointment
-                            : (new Date(entry[0].datecal).getDay() ===
-                                dayofmonth) &
-                              (new Date(entry[0].datecal).getMonth() ===
-                                monthofyear)
+                            : Date.parse(entry[0].datecal) <
+                              Date.parse(new Date()) + 86400000
                             ? enter.isSelected
                               ? enter.idofselector === userid
                                 ? Styles.appointmentnotakenme
