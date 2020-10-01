@@ -15,6 +15,9 @@ import clsx from "clsx";
 import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
+  AppBar: {
+    backgroundColor: '#0093c4'
+  },
   menuButton: {
     marginRight: theme.spacing(2),
   },
@@ -43,7 +46,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   );
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" className={classes.AppBar}>
       <Toolbar className="Navbar">
         {isAuthenticated && (
           <IconButton

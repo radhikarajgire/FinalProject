@@ -1,6 +1,6 @@
 /* Styling for social media buttons */
 .social {
-  margin: 0 1rem;
+  margin: 0 1rem 20px;
   transition: transform 250ms;
   display: inline-block;
 }
@@ -10,25 +10,30 @@
 }
 
 .youtube {
-  color: black;
-  margin-left: 10px;
+  color: #fafafa;
+  margin-left: 30px;
 }
 
 .facebook {
-  color: black;
-  margin-left: 10px;
+  color: #fafafa;
+  margin-left: 30px;
+  bottom: 0;
 }
 
 .twitter {
-  color: black;
-  margin-left: 10px;
+  color: #fafafa;
+  margin-left: 30px;
+  bottom: 0;
 }
 
 .instagram {
-  color: black;
-  margin-left: 10px;
+  color: #fafafa;
+  margin-left: 30px;
+  bottom: 0;
 }
 
-.h6 {
+h6 {
   padding: center;
+  margin-left: 50px;
+  margin-bottom: 10px;
 }

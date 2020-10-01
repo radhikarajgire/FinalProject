@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Styles from "./SocialFollow.module.css"
+import Styles from "./SocialFollow.module.css";
 
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "bootstrap-css-only/css/bootstrap.min.css";
@@ -24,6 +24,7 @@ export default function SocialFollow() {
       >
         <FontAwesomeIcon icon={faYoutube} size="1x" />
       </a>
+
       <a
         target="_blank"
         href="https://www.facebook.com/learnbuildteach/"
@@ -31,6 +32,7 @@ export default function SocialFollow() {
       >
         <FontAwesomeIcon icon={faFacebook} size="1x" />
       </a>
+
       <a
         target="_blank"
         href="https://www.twitter.com/jamesqquick"
@@ -38,6 +40,7 @@ export default function SocialFollow() {
       >
         <FontAwesomeIcon icon={faTwitter} size="1x" />
       </a>
+
       <a
         target="_blank"
         href="https://www.instagram.com/learnbuildteach"
