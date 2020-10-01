@@ -29,8 +29,6 @@ import PermContactCalendarIcon from "@material-ui/icons/PermContactCalendar";
 import MenuBookIcon from "@material-ui/icons/MenuBook";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import SocialFollow from ".././socialfollow/SocialFollow.js";
-import { Widget, addResponseMessage, addUserMessage } from "react-chat-widget";
-import "react-chat-widget/lib/styles.css";
 
 const drawerWidth = 240;
 
@@ -75,10 +73,10 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     ...theme.mixins.toolbar,
     justifyContent: "flex-end",
-    height: '76px'
+    height: "76px",
   },
   drawerLink: {
-    padding: '5px 20px'
+    padding: "5px 20px",
   },
   drawerLabel: {
     marginLeft: "15px",
@@ -132,7 +130,7 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <ListItem button className={classes.drawerLink}>
             <BookIcon color="#484848" fontSize="small" />
-            <Link to='/learn'>
+            <Link to="/learn">
               <ListItemText primary="Learn" className={classes.drawerLabel} />
             </Link>
           </ListItem>
@@ -140,48 +138,60 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <ListItem button className={classes.drawerLink}>
             <SportsEsportsIcon color="#484848" fontSize="small" />
-            <ListItemText primary="Play" className={classes.drawerLabel} />
+            <Link to="/play">
+              <ListItemText primary="Play" className={classes.drawerLabel} />
+            </Link>
           </ListItem>
         </div>
         <div className={classes.drawerLink}>
           <ListItem button>
             <MusicNoteIcon color="#484848" fontSize="small" />
-            <ListItemText primary="Method" className={classes.drawerLabel} />
+            <Link to="/method">
+              <ListItemText primary="Method" className={classes.drawerLabel} />
+            </Link>
           </ListItem>
         </div>
         <div className={classes.drawerLink}>
           <ListItem button>
             <SpellcheckIcon color="#484848" fontSize="small" />
-            <ListItemText
-              primary="Dictionary"
-              className={classes.drawerLabel}
-            />
+            <Link to="/dictionary">
+              <ListItemText
+                primary="Dictionary"
+                className={classes.drawerLabel}
+              />
+            </Link>
           </ListItem>
         </div>
         <div className={classes.drawerLink}>
           <ListItem button>
             <MenuBookIcon color="#484848" fontSize="small" />
-            <ListItemText primary="Thesaurus" className={classes.drawerLabel} />
+            <Link to="/thesaurus">
+              <ListItemText
+                primary="Thesaurus"
+                className={classes.drawerLabel}
+              />
+            </Link>
           </ListItem>
         </div>
 
         <div className={classes.drawerLink}>
           <ListItem button>
             <CalendarTodayIcon color="#484848" fontSize="small" />
-            <ListItemText
-              primary="Appointments"
-              className={classes.drawerLabel}
-            />
+            <Link to="/appointments">
+              <ListItemText
+                primary="Appointments"
+                className={classes.drawerLabel}
+              />
+            </Link>
           </ListItem>
         </div>
 
         <div className={classes.drawerLink}>
           <ListItem button>
             <PermContactCalendarIcon color="#484848" fontSize="medium" />
-            <ListItemText
-              primary="Teacher"
-              className={classes.drawerLabel}
-            />
+            <Link to="/teacher">
+              <ListItemText primary="Teacher" className={classes.drawerLabel} />
+            </Link>
           </ListItem>
         </div>
       </List>

@@ -5,7 +5,7 @@ import { StateContext } from "./Components/statecontext/stateContext";
 import Coordinators from "./Components/Coordinators/Coordinators.js";
 import Navbar from "./Components/layout/Navbar";
 import Landing from "./Components/layout/Landing";
-import Sidebar from './Components/layout/Sidebar';
+import Sidebar from "./Components/layout/Sidebar";
 import Login from "./Components/auth/Login";
 import Register from "./Components/auth/Register";
 import Alert from "./Components/layout/Alert";
@@ -18,7 +18,11 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import Learn from "./Components/pages/Learn";
 import Play from "./Components/pages/Play";
-
+import Method from "./Components/pages/Method";
+import Appointments from "./Components/pages/Appointments";
+import Dictionary from "./Components/pages/Dictionary";
+import Teacher from "./Components/pages/Teacher";
+import Thesaurus from "./Components/pages/Thesaurus";
 
 /*if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -45,12 +49,12 @@ function Appe() {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
               <Route exact path="/learn" component={Learn} />
-              {/*<Route exact path="/learn" component={Play} />
+              <Route exact path="/play" component={Play} />
               <Route exact path="/method" component={Method} />
               <Route exact path="/dictionary" component={Dictionary} />
               <Route exact path="/thesaurus" component={Thesaurus} />
               <Route exact path="/appointments" component={Appointments} />
-              <Route exact path="/teacher" component={Teacher} /> */}
+              <Route exact path="/teacher" component={Teacher} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>

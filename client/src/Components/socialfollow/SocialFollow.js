@@ -17,42 +17,37 @@ export default function SocialFollow() {
   return (
     <div className={Styles.socialcontainer}>
       <h6>FOLLOW US</h6>
-      <div>
-        <a
-          target="_blank"
-          href="https://www.youtube.com/c/jamesqquick"
-          className={Styles.youtube}
-        >
-          <FontAwesomeIcon icon={faYoutube} size="1x" />
-        </a>
-      </div>
-      <div>
-        <a
-          target="_blank"
-          href="https://www.facebook.com/learnbuildteach/"
-          className={Styles.facebook}
-        >
-          <FontAwesomeIcon icon={faFacebook} size="1x" />
-        </a>
-      </div>
-      <div>
-        <a
-          target="_blank"
-          href="https://www.twitter.com/jamesqquick"
-          className={Styles.twitter}
-        >
-          <FontAwesomeIcon icon={faTwitter} size="1x" />
-        </a>
-      </div>
-      <div>
-        <a
-          target="_blank"
-          href="https://www.instagram.com/learnbuildteach"
-          className={Styles.instagram}
-        >
-          <FontAwesomeIcon icon={faInstagram} size="1x" />
-        </a>
-      </div>
+      <a
+        target="_blank"
+        href="https://www.youtube.com/c/jamesqquick"
+        className={Styles.youtube}
+      >
+        <FontAwesomeIcon icon={faYoutube} size="1x" />
+      </a>
+
+      <a
+        target="_blank"
+        href="https://www.facebook.com/learnbuildteach/"
+        className={Styles.facebook}
+      >
+        <FontAwesomeIcon icon={faFacebook} size="1x" />
+      </a>
+
+      <a
+        target="_blank"
+        href="https://www.twitter.com/jamesqquick"
+        className={Styles.twitter}
+      >
+        <FontAwesomeIcon icon={faTwitter} size="1x" />
+      </a>
+
+      <a
+        target="_blank"
+        href="https://www.instagram.com/learnbuildteach"
+        className={Styles.instagram}
+      >
+        <FontAwesomeIcon icon={faInstagram} size="1x" />
+      </a>
     </div>
   );
 }
