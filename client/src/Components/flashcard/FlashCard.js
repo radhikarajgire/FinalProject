@@ -12,7 +12,7 @@ function FlashCard() {
   const [schmidt, setSchmidt] = useState();
   const [card, setCard] = useState(1);
   //Entries is the complete data set from the DB
-  const [entries, setEntries] = useState();
+  //const [entries, setEntries] = useState();
   //Use choice of which level to do
   const [choice, setChoice] = useState(0);
 

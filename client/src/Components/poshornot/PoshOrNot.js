@@ -1,11 +1,11 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext, useState, useRef } from "react";
 import ReactPlayer from "react-player";
 import Styles from "./PoshOrNot.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function PoshOrNot() {
   const playerRef = useRef(null);
-  const { choice, setChoice, poshornotchoice } = useContext(StateContext);
+  const { poshornotchoice } = useContext(StateContext);
   const [accent, setAccent] = useState("0");
   const [replay, setReplay] = useState(false);
   const [buttonstyleposh, setButtonStylePosh] = useState(Styles.button);

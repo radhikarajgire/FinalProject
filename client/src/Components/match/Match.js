@@ -12,7 +12,7 @@ function Match() {
   const [textpos, setTextPos] = useState([]);
   const [movingelement, setMovingElement] = useState([]);
   const [found, setFound] = useState(false);
-  const [poscomp, setPosComp] = useState();
+  //const [poscomp, setPosComp] = useState();
 
   useEffect(() => {
     const canvas = canvasRef.current;

@@ -10,6 +10,7 @@ export default function StateContextProvider({ children }) {
   const [volsp, setVolsp] = useState(100);
   const [openSidebar, setOpenSidebar] = useState(false);
   const [showoverview, setShowOverview] = useState();
+  const [referenceexgame, setRefenceExGame] = useState();
 
   const customElements = [
     [
@@ -660,7 +661,7 @@ export default function StateContextProvider({ children }) {
       },
     ],
     [
-      { datecal: "October 10, 2020 23:59:59" },
+      { datecal: "October 12, 2020 23:59:59" },
       {
         id: 41,
         starttime: "14:00",
@@ -695,7 +696,7 @@ export default function StateContextProvider({ children }) {
       },
     ],
     [
-      { datecal: "October 11, 2020 23:59:59" },
+      { datecal: "October 13, 2020 23:59:59" },
       {
         id: 45,
         starttime: "14:00",
@@ -730,7 +731,7 @@ export default function StateContextProvider({ children }) {
       },
     ],
     [
-      { datecal: "October 12, 2020 23:59:59" },
+      { datecal: "October 14, 2020 23:59:59" },
       {
         id: 49,
         starttime: "14:00",
@@ -762,6 +763,184 @@ export default function StateContextProvider({ children }) {
         isSelected: true,
         idofselector: 3,
         subejct: "time form part 2",
+      },
+    ],
+    [
+      { datecal: "October 15, 2020 23:59:59" },
+      {
+        id: 53,
+        starttime: "14:00",
+        endtime: "15:30",
+        isSelected: true,
+        idofselector: 1,
+        subejct: "talk about cats",
+      },
+      {
+        id: 54,
+        starttime: "15:45",
+        endtime: "17:15",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 55,
+        starttime: "17:30",
+        endtime: "19:00",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 56,
+        starttime: "19:15",
+        endtime: "20:45",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+    ],
+    [
+      { datecal: "October 16, 2020 23:59:59" },
+      {
+        id: 57,
+        starttime: "14:00",
+        endtime: "15:30",
+        isSelected: true,
+        idofselector: 3,
+        subejct: "talking practice",
+      },
+      {
+        id: 58,
+        starttime: "15:45",
+        endtime: "17:15",
+        isSelected: true,
+        idofselector: 3,
+        subejct: "pronouns",
+      },
+      {
+        id: 59,
+        starttime: "17:30",
+        endtime: "19:00",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 60,
+        starttime: "19:15",
+        endtime: "20:45",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+    ],
+
+    [
+      { datecal: "October 19, 2020 23:59:59" },
+      {
+        id: 61,
+        starttime: "14:00",
+        endtime: "15:30",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 62,
+        starttime: "15:45",
+        endtime: "17:15",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 63,
+        starttime: "17:30",
+        endtime: "19:00",
+        isSelected: true,
+        idofselector: 3,
+        subejct: "time form",
+      },
+      {
+        id: 64,
+        starttime: "19:15",
+        endtime: "20:45",
+        isSelected: true,
+        idofselector: 3,
+        subejct: "time form part 2",
+      },
+    ],
+
+    [
+      { datecal: "October 20, 2020 23:59:59" },
+      {
+        id: 65,
+        starttime: "14:00",
+        endtime: "15:30",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 66,
+        starttime: "15:45",
+        endtime: "17:15",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 67,
+        starttime: "17:30",
+        endtime: "19:00",
+        isSelected: true,
+        idofselector: 2,
+        subejct: "grammar",
+      },
+      {
+        id: 68,
+        starttime: "19:15",
+        endtime: "20:45",
+        isSelected: true,
+        idofselector: 2,
+        subejct: "grammar again",
+      },
+    ],
+
+    [
+      { datecal: "October 21, 2020 23:59:59" },
+      {
+        id: 69,
+        starttime: "14:00",
+        endtime: "15:30",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 70,
+        starttime: "15:45",
+        endtime: "17:15",
+        isSelected: false,
+        idofselector: 0,
+        subejct: "",
+      },
+      {
+        id: 71,
+        starttime: "17:30",
+        endtime: "19:00",
+        isSelected: true,
+        idofselector: 2,
+        subejct: "talking practice",
+      },
+      {
+        id: 72,
+        starttime: "19:15",
+        endtime: "20:45",
+        isSelected: true,
+        idofselector: 2,
+        subejct: "talking practice",
       },
     ],
   ]);
@@ -839,6 +1018,8 @@ export default function StateContextProvider({ children }) {
         studentcolor,
         openSidebar,
         setOpenSidebar,
+        referenceexgame,
+        setRefenceExGame,
       }}
     >
       {children}

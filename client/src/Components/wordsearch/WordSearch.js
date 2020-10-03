@@ -1,24 +1,17 @@
-import React, {useEffect, useState, useContext} from "react";
-import Styles from "./WordSearch.module.css"
+import React, { useContext } from "react";
+//import Styles from "./WordSearch.module.css"
 import { StateContext } from "../statecontext/stateContext";
 
-function WordSearch(){
+function WordSearch() {
+  const { words } = useContext(StateContext);
 
-const {words} = useContext(StateContext)
+  return (
+    <div>
+      <button>GENERATE NEW</button>
 
-
-   return(
-        <div>
-            <button>GENERATE NEW</button>
-       
-       
-            <div>{words}</div>
-       
-       
-       
-        </div>
-
-   ) 
+      <div>{words}</div>
+    </div>
+  );
 }
 
-export default WordSearch
+export default WordSearch;

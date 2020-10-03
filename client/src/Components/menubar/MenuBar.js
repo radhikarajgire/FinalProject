@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import Styles from "./MenuBar.module.css";
 import ReactPlayer from "react-player";
 import { StateContext } from "../statecontext/stateContext";
@@ -133,7 +133,7 @@ function Menubar() {
         }}
       >
         <ul className={Styles.menulist}>
-          <li onClick={() => setMenuItem("aa")}>Courses</li>
+          <li>Courses</li>
           <hr></hr>
           <li>Current</li>
           <hr></hr>
@@ -207,7 +207,7 @@ function Menubar() {
         <ul className={Styles.menulist}>
           <li>Learn-Methods</li>
           <hr></hr>
-          <li onClick={() => setMenuItem("eb")}>Study-Partners</li>
+          <li>Study-Partners</li>
         </ul>
       </div>
       <div
@@ -220,9 +220,9 @@ function Menubar() {
         }}
       >
         <ul className={Styles.menulist}>
-          <li onClick={() => setMenuItem("fa")}>Dictionary</li>
+          <li>Dictionary</li>
           <hr></hr>
-          <li onClick={() => setMenuItem("fb")}>Thesaurous</li>
+          <li>Thesaurous</li>
           <li></li>
         </ul>
       </div>
@@ -236,7 +236,7 @@ function Menubar() {
         }}
       >
         <ul className={Styles.menulist}>
-          <li onClick={() => setMenuItem("ga")}>Appointment</li>
+          <li>Appointment</li>
           <hr></hr>
           <li onClick={() => setMenuItem("gb")}>Question</li>
           <li></li>

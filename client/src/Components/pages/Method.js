@@ -1,4 +1,5 @@
 import React from "react";
+import Studypartners from "../studypartners/StudyPartners.js";
 
 function Method() {
   console.log("Method");
@@ -6,6 +7,7 @@ function Method() {
   return (
     <div>
       <h2>Method</h2>
+      <Studypartners />
     </div>
   );
 }

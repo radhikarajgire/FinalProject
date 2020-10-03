@@ -17,7 +17,7 @@ const Course = (props) => {
             title={props.course.fields.title}
           />
           <CardContent>
-            <Typography gutterBottom variant="headline" component="h2">
+            <Typography gutterBottom variant="h4" component="h2">
               {props.course.fields.title}
             </Typography>
             <Typography component="p">
@@ -28,7 +28,7 @@ const Course = (props) => {
             <Button
               size="small"
               color="primary"
-              href={props.course.fields.url}
+              href={props.course.fields.url.content[0].content[0].value}
               target="_blank"
             >
               Go To Course

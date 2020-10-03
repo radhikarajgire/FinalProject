@@ -1,8 +1,8 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { StateContext } from "./Components/statecontext/stateContext";
-import Coordinators from "./Components/Coordinators/Coordinators.js";
+//import { StateContext } from "./Components/statecontext/stateContext";
+//import Coordinators from "./Components/Coordinators/Coordinators.js";
 import Navbar from "./Components/layout/Navbar";
 import Landing from "./Components/layout/Landing";
 import Sidebar from "./Components/layout/Sidebar";
@@ -18,15 +18,17 @@ import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
 import Learn from "./Components/pages/Learn";
 import Play from "./Components/pages/Play";
+import Review from "./Components/pages/Review";
 import Method from "./Components/pages/Method";
 import Appointments from "./Components/pages/Appointments";
 import Dictionary from "./Components/pages/Dictionary";
 import Teacher from "./Components/pages/Teacher";
 import Thesaurus from "./Components/pages/Thesaurus";
+import Games from "./Components/exgames/ExGames.js";
 
-/*if (localStorage.token) {
+if (localStorage.token) {
   setAuthToken(localStorage.token);
-}*/
+}
 //<img src={logo} className="App-logo" alt="logo" />
 
 /*const App = () => {
@@ -50,6 +52,8 @@ function Appe() {
               <Route exact path="/login" component={Login} />
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/play" component={Play} />
+              <Route exact path="/play/ExGames" component={Games} />
+              <Route exact path="/review" component={Review} />
               <Route exact path="/method" component={Method} />
               <Route exact path="/dictionary" component={Dictionary} />
               <Route exact path="/thesaurus" component={Thesaurus} />

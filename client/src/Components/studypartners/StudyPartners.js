@@ -1,4 +1,4 @@
-import React, { useContext, useState, useRef, useEffect } from "react";
+import React, { useContext } from "react";
 import ReactPlayer from "react-player";
 import Styles from "./StudyPartners.module.css";
 import { StateContext } from "../statecontext/stateContext";
