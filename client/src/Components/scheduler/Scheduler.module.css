@@ -1,5 +1,5 @@
 .holderholder {
-  width: 100vw;
+  width: 100%;
   justify-content: center;
   align-content: center;
   font-family: Arial;
@@ -17,17 +17,17 @@
 .day {
   display: inline-block;
   border: 1px solid black;
-  padding: 4px 7px 0 7px;
+  padding: 4px 4px 0 4px;
   text-align: center;
-  width: 200px;
+  width: auto;
 }
 
 .daytoday {
   display: inline-block;
   border: 5px solid blue;
-  padding: 4px 7px 0 7px;
+  padding: 4px 4px 0 4px;
   text-align: center;
-  width: 200px;
+  width: 150px;
 }
 
 .appointment {

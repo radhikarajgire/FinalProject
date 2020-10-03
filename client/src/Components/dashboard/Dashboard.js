@@ -69,7 +69,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import Spinner from "../layout/Spinner";
 import { StateContext } from "../statecontext/stateContext";
-import { getCurrentProfile } from "../../actions/profile";
+//import { getCurrentProfile } from "../../actions/profile";
 import MenuBar from "../menubar/MenuBar.js";
 import Header from "../header/Header.js";
 import FlashCard from "../flashcard/FlashCard.js";
@@ -90,7 +90,7 @@ import Thesauraus from "../thesauraus/Thesauraus.js";
 import FooterTwo from "../footertwo/FooterTwo.js";
 
 const Dashboard = ({
-  getCurrentProfile,
+  //getCurrentProfile,
   auth: { user },
   profile: { profile, loading },
 }) => {
@@ -118,9 +118,9 @@ const Dashboard = ({
     setSingleRender(singre);
   }, [menuitem]);
 
-  useEffect(() => {
-    getCurrentProfile();
-  }, []);
+  //useEffect(() => {
+  // getCurrentProfile();
+  //}, [getCurrentProfile]);
 
   // {profile !== null ? (<Fragment>haas</Fragment>) :
   //   (<Fragment><p> No Profile,Please add one </p>
@@ -133,16 +133,13 @@ const Dashboard = ({
 
   return (
     <div className={Styles.holder}>
-      <MenuBar />
-
-      {singlerender}
       <TeacherQuestion />
     </div>
   );
 };
 
 Dashboard.propTypes = {
-  getCurrrentProfile: PropTypes.func.isRequired,
+  //getCurrrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
 };
@@ -152,4 +149,4 @@ const mapStateToProps = (state) => ({
   profile: state.profile,
 });
 
-export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
+export default connect(mapStateToProps)(Dashboard);

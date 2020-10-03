@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef } from "react";
 import Styles from "./ListeningPractice.module.css";
 import ReactPlayer from "react-player";
 import { StateContext } from "../statecontext/stateContext";
@@ -10,7 +10,7 @@ function ListeningPractice() {
   const [vidlistening, setVidListening] = useState();
   const [playvidlistening, setPlayVidListening] = useState(0);
   const [vollp, setVollp] = useState(80);
-  const [playpos, setPlayPos] = useState(0);
+  //const [playpos, setPlayPos] = useState(0);
   const [textinput, setTextInput] = useState("");
 
   return (

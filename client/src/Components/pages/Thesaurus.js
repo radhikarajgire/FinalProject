@@ -1,4 +1,5 @@
 import React from "react";
+import Thesaurusimp from "../thesauraus/Thesauraus.js";
 
 function Thesaurus() {
   console.log("Thesaurus");
@@ -6,6 +7,7 @@ function Thesaurus() {
   return (
     <div>
       <h2>Thesaurus</h2>
+      <Thesaurusimp />
     </div>
   );
 }

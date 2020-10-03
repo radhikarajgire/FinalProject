@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import Styles from "./Dictionary.module.css";
 
 function Dictionary() {

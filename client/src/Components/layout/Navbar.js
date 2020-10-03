@@ -11,12 +11,13 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { StateContext } from "../statecontext/stateContext";
 import { makeStyles } from "@material-ui/core/styles";
 import clsx from "clsx";
+import ReactPlayer from "react-player";
 
 import "./Navbar.css";
 
 const useStyles = makeStyles((theme) => ({
   AppBar: {
-    backgroundColor: '#0093c4'
+    backgroundColor: "#0093c4",
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -27,7 +28,9 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
-  const { openSidebar, setOpenSidebar } = useContext(StateContext);
+  const { openSidebar, setOpenSidebar, choice, playmusic, volsp } = useContext(
+    StateContext
+  );
   const classes = useStyles();
 
   const authLinks = (
@@ -47,6 +50,14 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
 
   return (
     <AppBar position="static" className={classes.AppBar}>
+      <ReactPlayer
+        volume={volsp / 100}
+        playing={playmusic}
+        width="0px"
+        height="0px"
+        controls={false}
+        url={choice}
+      />
       <Toolbar className="Navbar">
         {isAuthenticated && (
           <IconButton

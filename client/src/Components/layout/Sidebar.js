@@ -1,24 +1,24 @@
-import React, { Fragment, useContext, useEffect } from "react";
-import clsx from "clsx";
+import React, { useContext } from "react";
+//import clsx from "clsx";
 import { Link } from "react-router-dom";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import {
   Drawer,
-  CssBaseline,
-  AppBar,
-  Toolbar,
+  //CssBaseline,
+  //AppBar,
+  //Toolbar,
   List,
   Divider,
   IconButton,
   ListItem,
-  ListItemIcon,
+  //ListItemIcon,
   ListItemText,
 } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
+//import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import ChevronRightIcon from "@material-ui/icons/ChevronRight";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+//import InboxIcon from "@material-ui/icons/MoveToInbox";
+//import MailIcon from "@material-ui/icons/Mail";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
 
 import { StateContext } from "../statecontext/stateContext";
@@ -129,15 +129,26 @@ function Sidebar() {
       <List>
         <div className={classes.drawerLink}>
           <ListItem button className={classes.drawerLink}>
-            <BookIcon color="#484848" fontSize="small" />
+            <BookIcon color="inherit" fontSize="small" />
             <Link to="/learn">
               <ListItemText primary="Learn" className={classes.drawerLabel} />
             </Link>
           </ListItem>
         </div>
         <div className={classes.drawerLink}>
+          <ListItem button>
+            <CalendarTodayIcon color="inherit" fontSize="small" />
+            <Link to="/review">
+              <ListItemText
+                primary="Review/test"
+                className={classes.drawerLabel}
+              />
+            </Link>
+          </ListItem>
+        </div>
+        <div className={classes.drawerLink}>
           <ListItem button className={classes.drawerLink}>
-            <SportsEsportsIcon color="#484848" fontSize="small" />
+            <SportsEsportsIcon color="inherit" fontSize="small" />
             <Link to="/play">
               <ListItemText primary="Play" className={classes.drawerLabel} />
             </Link>
@@ -145,7 +156,7 @@ function Sidebar() {
         </div>
         <div className={classes.drawerLink}>
           <ListItem button>
-            <MusicNoteIcon color="#484848" fontSize="small" />
+            <MusicNoteIcon color="inherit" fontSize="small" />
             <Link to="/method">
               <ListItemText primary="Method" className={classes.drawerLabel} />
             </Link>
@@ -153,7 +164,7 @@ function Sidebar() {
         </div>
         <div className={classes.drawerLink}>
           <ListItem button>
-            <SpellcheckIcon color="#484848" fontSize="small" />
+            <SpellcheckIcon color="inherit" fontSize="small" />
             <Link to="/dictionary">
               <ListItemText
                 primary="Dictionary"
@@ -164,7 +175,7 @@ function Sidebar() {
         </div>
         <div className={classes.drawerLink}>
           <ListItem button>
-            <MenuBookIcon color="#484848" fontSize="small" />
+            <MenuBookIcon color="inherit" fontSize="small" />
             <Link to="/thesaurus">
               <ListItemText
                 primary="Thesaurus"
@@ -176,7 +187,7 @@ function Sidebar() {
 
         <div className={classes.drawerLink}>
           <ListItem button>
-            <CalendarTodayIcon color="#484848" fontSize="small" />
+            <CalendarTodayIcon color="inherit" fontSize="small" />
             <Link to="/appointments">
               <ListItemText
                 primary="Appointments"
@@ -188,7 +199,7 @@ function Sidebar() {
 
         <div className={classes.drawerLink}>
           <ListItem button>
-            <PermContactCalendarIcon color="#484848" fontSize="medium" />
+            <PermContactCalendarIcon color="inherit" fontSize="small" />
             <Link to="/teacher">
               <ListItemText primary="Teacher" className={classes.drawerLabel} />
             </Link>

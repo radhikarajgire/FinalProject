@@ -61,7 +61,7 @@ function Appointment() {
                 {entry.map((enter, idz) => (
                   <div key={idz}>
                     {idz !== 0 ? (
-                      <h3
+                      <h5
                         style={
                           userid === 0
                             ? { background: studentcolor[enter.idofselector] }
@@ -101,7 +101,7 @@ function Appointment() {
                         }
                       >
                         {enter.starttime} - {enter.endtime}
-                      </h3>
+                      </h5>
                     ) : (
                       <h4 className={Styles.datecal}>
                         {new Date(enter.datecal).toLocaleDateString("en-UK", {

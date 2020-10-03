@@ -1,104 +1,94 @@
 .holderholder {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
-    align-content: center;
-    font-family: Arial;
-    
-
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  font-family: Arial;
 }
 
-
-.holder{
-    justify-content: center;
-    align-content: center;
-    padding: 0;
-    margin: 15vh 0 0 0;
-    height: 60vh;
-    z-index: 1;
-    position: relative;
-
-
+.holder {
+  justify-content: center;
+  align-content: center;
+  padding: 0;
+  margin: 15vh 0 0 0;
+  height: 60vh;
+  z-index: 1;
+  position: relative;
 }
-
 
 .formholder {
-    display: inline-flex;
-    font-size: 2rem;
-    margin: 5px;
+  display: inline-flex;
+  font-size: 2rem;
+  margin: 5px;
 }
-
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 800px;
-    height: 480px;
-    justify-content: center;
-
+  display: flex;
+  flex-wrap: wrap;
+  width: 800px;
+  height: 480px;
+  justify-content: center;
 }
 
-
 .button {
-    background-color: lightblue;
-    cursor: pointer;
-    width: 100px;
-    margin-left: 10px;
-    box-shadow:5px 5px 5px lightslategray;
+  background-color: lightblue;
+  cursor: pointer;
+  width: 100px;
+  margin-left: 10px;
+  box-shadow: 5px 5px 5px lightslategray;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    transition: all 0.3s;
+  transform: scale(1.05);
+  transition: all 0.3s;
 }
 
 .slidecontainer {
-    display: inline-flex;
-    justify-content: center;
-    width: 100%;
-    height: 7%;
-    margin-top: 5px;
-    padding: 0px;
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+  height: 7%;
+  margin-top: 5px;
+  padding: 0px;
 }
 
-.slider{
-    -webkit-appearance: none;  /* Override default CSS styles */
+.slider {
+  -webkit-appearance: none; /* Override default CSS styles */
   appearance: none;
   width: 50%; /* Full-width */
   height: 100%; /* Specified height */
   background: #d3d3d3; /* Grey background */
   outline: none; /* Remove outline */
   opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
-  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
-  transition: opacity .2s;
+  -webkit-transition: 0.2s; /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
   cursor: pointer;
-
 }
 
 .slider:hover {
-    opacity: 1;
+  opacity: 1;
 }
 
 .slider::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 40px;
-    height: 40px;
-    background: black;
-    cursor: pointer;
-  }
-  
-  .slider::-moz-range-thumb {
-    width: 25px;
-    height: 25px;
-    background: black;
-    cursor: pointer;
-  }
+  -webkit-appearance: none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background: black;
+  cursor: pointer;
+}
 
-.slidermarker{
-    width: 10%;
-    height: 100%;
-    border: 1px solid black;
-    background-color: lightblue ;
-    box-shadow:5px 5px 5px lightslategray;
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: black;
+  cursor: pointer;
+}
+
+.slidermarker {
+  width: 10%;
+  height: 100%;
+  border: 1px solid black;
+  background-color: lightblue;
+  box-shadow: 5px 5px 5px lightslategray;
 }
