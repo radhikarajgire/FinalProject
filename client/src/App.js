@@ -8,8 +8,11 @@ import Landing from "./Components/layout/Landing";
 import Login from "./Components/auth/Login";
 import Register from "./Components/auth/Register";
 import Alert from "./Components/layout/Alert";
-import Dashboard from "./Components/dashboard/Dashboard";
+// import Dashboard from "./Components/dashboard/Dashboard";
 import PrivateRoute from "./Components/routing/PrivateRoute";
+import Teacher from "./Components/teacher/Teacher";
+import Routes from "./Components/routing/Routes";
+import { LOGOUT } from './actions/types';
 //Redux
 
 import { Provider } from "react-redux";
@@ -31,19 +34,22 @@ import ListeningPractice from "./Components/listeningpractice/ListeningPractice.
 import FooterTwo from "./Components/footertwo/FooterTwo.js";*/
 //import MDBFooter from "./Components/footer/footer.js";
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
 //<img src={logo} className="App-logo" alt="logo" />
 
 const App = () => {
   useEffect(() => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
     store.dispatch(loadUser());
+    // log user out from all tabs if they log out in one tab
+    window.addEventListener("storage", () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
   }, []);
-};
 
-function Appe() {
-  const { menuitem } = useContext(StateContext);
+  // function Appe() {
+  //   const { menuitem } = useContext(StateContext);
   //const [singlerender, setSingleRender]=useState()
 
   //useEffect(()=>{
@@ -52,36 +58,37 @@ function Appe() {
   //setSingleRender(singre)},[menuitem])
 
   return (
+    //     <Provider store={store}>
+    //       <Router>
+    //         <Fragment>
+    //           <Navbar />
+    //           <Route exact path="/" component={Landing} />
+    //           <section className="container">
+    //             <Alert />
+    //             <Switch>
+    //               <Route exact path="/register" component={Register} />
+    //               <Route exact path="/login" component={Login} />
+    //               <PrivateRoute exact path="/teacher" component={Teacher} />
+
+    //             </Switch>
+    //           </section>
+    //         </Fragment>
+    //       </Router>
+    //     </Provider>
+    //   );
+    // }
     <Provider store={store}>
       <Router>
         <Fragment>
           <Navbar />
-          <Route exact path="/" component={Landing} />
-          <section className="container">
-            <Alert />
-            <Switch>
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
-          </section>
+          <Switch>
+            <Route exact path="/" component={Landing} />
+            <Route component={Routes} />
+          </Switch>
         </Fragment>
       </Router>
     </Provider>
   );
-}
+};
 
-/* <Header />
-
-      <MenuBar />
-      {singlerender}
-      <FooterTwo />
-
-      <SocialFollow />  
-
-    </div>
-  );
-}
-*/
-
-export default Appe;
+export default App;

@@ -4,20 +4,22 @@ const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const config = require("config");
-const { body, validationResult } = require("express-validator");
+const { check, validationResult } = require("express-validator");
+const normalize = require("normalize-url");
+
 const User = require("../../models/User");
-// router.get("/", async (req, res) => {
-//   const users = await User.find();
-//   res.json({ success: true, msg: "show all users", data: users });
-// });
+
+// @route    POST api/users
+// @desc     Register user
+// @access   Public
 router.post(
   "/",
   [
-    body("name", "Name is required").not().isEmpty(),
-    body("email", "Please include a a valid email").isEmail(),
-    body(
+    check("name", "Name is required").not().isEmpty(),
+    check("email", "Please include a valid email").isEmail(),
+    check(
       "password",
-      "Please emter a password with 6 or more characters"
+      "Please enter a password with 6 or more characters"
     ).isLength({ min: 6 }),
   ],
   async (req, res) => {
@@ -25,45 +27,50 @@ router.post(
     if (!errors.isEmpty()) {
       return res.status(400).json({ errors: errors.array() });
     }
+
     const { name, email, password } = req.body;
+
     try {
-      //See if the user exits if yes send back error
       let user = await User.findOne({ email });
+
       if (user) {
         return res
           .status(400)
           .json({ errors: [{ msg: "User already exists" }] });
       }
-      //get users gravatar on there email
 
-      const avatar =normalize( gravatar.url(email, {
-        s: "200",
-        r: "pg",
-        d: "mm",
-      }),
-      {forceHttps: true}
+      const avatar = normalize(
+        gravatar.url(email, {
+          s: "200",
+          r: "pg",
+          d: "mm",
+        }),
+        { forceHttps: true }
       );
+
       user = new User({
         name,
         email,
         avatar,
         password,
       });
-      //encrpt password using bycrpt
+
       const salt = await bcrypt.genSalt(10);
+
       user.password = await bcrypt.hash(password, salt);
+
       await user.save();
 
-      //return jsonwebtoken
       const payload = {
         user: {
           id: user.id,
         },
       };
+
       jwt.sign(
         payload,
         config.get("jwtSecret"),
-        { expiresIn: 360000 },
+        { expiresIn: "5 days" },
         (err, token) => {
           if (err) throw err;
           res.json({ token });

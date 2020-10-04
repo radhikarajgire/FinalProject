@@ -1,36 +1,7 @@
-/* .App {
-  text-align: center;
-  margin: 0;
-  padding: 0;
-}
-
-
-.App-link {
-  color: #61dafb;
-}
-/* Styling for social media buttons */
-/* a.social {
-  margin: 0 1rem;
-  transition: transform 250ms;
-  display: inline-block;
-}
-
-a.social:hover {
-  transform: translateY(-2px);
-}
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
-a.instagram {
-  color: black;
-} */
-*/:root {
-  --primary-color: #03eeee;
-  --dark-color: #5ba7f3;
+/* Global Styles */
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
   --light-color: #f4f4f4;
   --danger-color: #dc3545;
   --success-color: #28a745;
@@ -46,8 +17,8 @@ body {
   font-family: 'Raleway', sans-serif;
   font-size: 1rem;
   line-height: 1.6;
-  background-color: rgb(201, 25, 25);
-  color: rgb(209, 196, 196);
+  background-color: #fff;
+  color: #333;
 }
 
 a {
@@ -65,12 +36,12 @@ img {
 
 /* Utilities */
 .container {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  border: 1px solid black;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }
 
 /* Text Styles*/
@@ -180,7 +151,6 @@ img {
   margin-right: 0.5rem;
   transition: opacity 0.2s ease-in;
   outline: none;
-
 }
 
 .badge {
@@ -214,7 +184,6 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
-  border-radius: 20px;
 }
 
 .btn-dark,
@@ -363,11 +332,10 @@ button {
 
 .navbar ul {
   display: flex;
-
 }
 
 .navbar a {
-  color: rgb(223, 65, 65);
+  color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -624,7 +592,5 @@ button {
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
-    border-radius: 0.5rem;
   }
 }
-

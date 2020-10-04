@@ -19,7 +19,7 @@ import PoshOrNot from "../poshornot/PoshOrNot.js";
 import ListeningPractice from "../listeningpractice/ListeningPractice.js";
 import ExGames from "../exgames/ExGames.js";
 import Scheduler from "../scheduler/Scheduler.js";
-import FooterTwo from "../footertwo/FooterTwo.js";
+
 import Level1 from "../views/Level1.js";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -60,7 +60,7 @@ const Dashboard = ({
       <MenuBar />
       <Level1 />
       {singlerender}
-      <FooterTwo />
+     
     </div>
   );
 };

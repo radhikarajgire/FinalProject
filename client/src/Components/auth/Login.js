@@ -7,15 +7,15 @@ import PropTypes from "prop-types";
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
     email: "",
-    password: "",
+    password: ""
   });
   const { email, password } = formData;
   const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
+
   const onSubmit = (e) => {
     e.preventDefault();
-
-    login(email, password);
+     login(email, password);
   };
 
   //Redirect if logged in
@@ -46,7 +46,6 @@ const Login = ({ login, isAuthenticated }) => {
             name="password"
             value={password}
             onChange={onChange}
-            required
             minLength="6"
           />
         </div>
@@ -54,17 +53,17 @@ const Login = ({ login, isAuthenticated }) => {
         <input type="submit" className="btn btn-primary" value="Login" />
       </form>
       <p className="my-1">
-        Don't have an account? <Link to="/Register">Sign Up</Link>
+        Don't have an account? <Link to="/register">Sign Up</Link>
       </p>
     </Fragment>
   );
 };
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
-};
+  isAuthenticated: PropTypes.bool
+}
 const mapStateToProps = (state) => ({
-  isAuthenticated: state.auth.isAuthenticated,
+  isAuthenticated: state.auth.isAuthenticated
 });
 
 export default connect(mapStateToProps, { login })(Login);
