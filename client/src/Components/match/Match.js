@@ -24,7 +24,7 @@ function Match() {
     if (!pos.length) return;
     contextRef.current.clearRect(0, 0, 800, 500);
     var i = 0;
-    for (i = 0; i < 8; i++) {
+    for (i = 0; i < referencedata.length * 2; i++) {
       const fishy = textpos[i];
       const sammy = pos[i];
       contextRef.current.fillText(fishy, sammy["xx"] + 5, sammy["yy"] + 20);
@@ -51,12 +51,12 @@ function Match() {
 
     function redo(a, b) {
       const long = Math.floor(
-        contextRef.current.measureText(referencedata[choice][a][b]).width
+        contextRef.current.measureText(JSON.parse(referencedata[a])[b]).width
       );
       const randomnums = Math.floor(Math.random() * (780 - long));
       const randomnumh = Math.floor(Math.random() * 460);
-      const fishy = referencedata[choice][a][b];
-      console.log(referencedata);
+      const fishy = JSON.parse(referencedata[a])[b];
+
       setTextPos((bef) => [...bef, fishy]);
       setPos((before) => [
         ...before,
@@ -74,7 +74,7 @@ function Match() {
       const flipchip = ["a", "q"];
       const z = flipchip[u];
 
-      for (let i = 1; i < 5; i++) {
+      for (let i = 0; i < referencedata.length; i++) {
         redo(i, z);
 
         //var n=0
@@ -190,11 +190,7 @@ function Match() {
       console.log("nothing");
     }
   }
-
-  return (
-    <div className={Styles.holder}>
-      <div className={Styles.header}>
-        <div className={Styles.formholder}>
+  /*<div className={Styles.formholder}>
           <label className={Styles.label}>Choose a level: </label>
           <select
             onChange={(e) => setChoice(e.target.value)}
@@ -208,6 +204,14 @@ function Match() {
                 ))
               : ""}
           </select>
+          <button className={Styles.button} onClick={() => positionthings()}>
+            TRY
+          </button>
+        </div>*/
+  return (
+    <div className={Styles.holder}>
+      <div className={Styles.header}>
+        <div className={Styles.formholder}>
           <button className={Styles.button} onClick={() => positionthings()}>
             TRY
           </button>
