@@ -31,6 +31,9 @@ const ExGames = (props) => {
             <Typography gutterBottom variant="h4" component="h2">
               {props.exgame.fields.description}
             </Typography>
+            <Typography gutterBottom variant="h6" component="h4">
+              {props.exgame.fields.subdescription}
+            </Typography>
           </CardContent>
           <CardActions>
             <Button
