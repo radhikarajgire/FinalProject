@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
@@ -10,7 +10,8 @@ import { StateContext } from "../statecontext/stateContext";
 
 const ExGames = (props) => {
   //const [display, setDisplay] = useState();
-  const { setRefenceExGame } = useContext(StateContext);
+  const { setReferenceExGame, setReferenceData } = useContext(StateContext);
+
   //href={props.exgame.fields.reference}
   //image={props.exgame.fields.courseImage.fields.file.url}
   return (
@@ -28,16 +29,35 @@ const ExGames = (props) => {
             </Typography>
           </CardContent>
           <CardActions>
-            <Link to="/play/ExGames">
-              <Button
-                size="small"
-                onClick={() => setRefenceExGame(props.exgame.fields.reference)}
-                color="primary"
-                target=""
+            <Button
+              size="small"
+              onClick={() => {
+                if (props.exgame.fields.description === "Spell Shot") {
+                  const fish = props.exgame.fields.input2;
+                  setReferenceData(fish);
+                } else if (props.exgame.fields.description === "Match") {
+                  const fish = props.exgame.fields.input2;
+                  setReferenceData(fish);
+                }
+                setReferenceExGame(props.exgame.fields.reference);
+              }}
+              color="primary"
+              target=""
+            >
+              <Link
+                to={
+                  props.exgame.fields.description === "Spell Shot"
+                    ? "/play/SpellShot"
+                    : props.exgame.fields.description === "Match"
+                    ? "/play/Match"
+                    : props.exgame.fields.description === "PoshorNot"
+                    ? "/play/PoshOrNot"
+                    : "/play/ExGames"
+                }
               >
                 Go To Game
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           </CardActions>
         </Card>
       ) : null}

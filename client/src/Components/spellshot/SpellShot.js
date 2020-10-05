@@ -8,7 +8,7 @@ function SpellShot() {
   const contextRef = useRef(null);
   const canvasRef = useRef(null);
   //const [choice, setChoice] = useState()
-  const { words } = useContext(StateContext);
+  const { referencedata } = useContext(StateContext);
   //const [pos, setPos]= useState([])
   const [blockpos, setBlockPos] = useState(300);
   const [singleword, setSingleWord] = useState("Please");
@@ -31,12 +31,12 @@ function SpellShot() {
   }, []);
 
   function positionthings() {
-    const ranword = Math.floor(Math.random() * (words.length - 1));
+    const ranword = Math.floor(Math.random() * referencedata.length);
     contextRef.current.clearRect(0, 0, 800, 500);
     contextRef.current.font = "bold 18px Arial";
     contextRef.current.fillStyle = "red";
     var dave = [];
-    const steve = words[ranword];
+    const steve = referencedata[ranword];
     setSingleWord(steve);
     function redo(ii) {
       const randomnums = Math.floor(Math.random() * 740 + 20);

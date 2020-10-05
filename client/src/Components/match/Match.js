@@ -7,7 +7,7 @@ function Match() {
   const contextRef = useRef(null);
   const canvasRef = useRef(null);
   const [choice, setChoice] = useState(0);
-  const { customElements } = useContext(StateContext);
+  const { customElements, referencedata } = useContext(StateContext);
   const [pos, setPos] = useState([]);
   const [textpos, setTextPos] = useState([]);
   const [movingelement, setMovingElement] = useState([]);
@@ -51,11 +51,12 @@ function Match() {
 
     function redo(a, b) {
       const long = Math.floor(
-        contextRef.current.measureText(customElements[choice][a][b]).width
+        contextRef.current.measureText(referencedata[choice][a][b]).width
       );
       const randomnums = Math.floor(Math.random() * (780 - long));
       const randomnumh = Math.floor(Math.random() * 460);
-      const fishy = customElements[choice][a][b];
+      const fishy = referencedata[choice][a][b];
+      console.log(referencedata);
       setTextPos((bef) => [...bef, fishy]);
       setPos((before) => [
         ...before,
@@ -199,11 +200,13 @@ function Match() {
             onChange={(e) => setChoice(e.target.value)}
             className={Styles.select}
           >
-            {customElements.map((entry, idk) => (
-              <option key={idk} value={idk}>
-                {entry[0]["qadata"]}
-              </option>
-            ))}
+            {referencedata
+              ? referencedata.map((entry, idk) => (
+                  <option key={idk} value={idk}>
+                    {entry[0]["qadata"]}
+                  </option>
+                ))
+              : ""}
           </select>
           <button className={Styles.button} onClick={() => positionthings()}>
             TRY
