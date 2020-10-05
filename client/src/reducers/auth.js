@@ -1,35 +1,33 @@
 import {
-     REGISTER_SUCCESS,
-     REGISTER_FAILED, 
-     USER_LOADED, 
-     AUTH_ERROR,
-     LOGIN_SUCCESS,
-     LOGIN_FAILED,
-     LOGOUT
-    } from '../actions/types';
+  REGISTER_SUCCESS,
+  REGISTER_FAILED,
+  USER_LOADED,
+  AUTH_ERROR,
+  LOGIN_SUCCESS,
+  LOGIN_FAILED,
+  LOGOUT,
+  ACCOUNT_DELETED,
+} from "../actions/types";
 
-
-
-   const initialState = {
-    token: localStorage.getItem('token'),
-    isAuthenticated: null,
-    loading: true,
-    user: null
+const initialState = {
+  token: localStorage.getItem("token"),
+  isAuthenticated: null,
+  loading: true,
+  user: null,
 };
 
+export default function (state = initialState, action) {
+  const { type, payload } = action;
 
-export default function(state = initialState, action){
-    const { type , payload} = action;
-
-    switch(type){
-        case USER_LOADED:
-            return{
-                ...state,
-                isAuthenticated: true,
-                loading: false,
-                user: payload
-            }
-        case REGISTER_SUCCESS:
+  switch (type) {
+    case USER_LOADED:
+      return {
+        ...state,
+        isAuthenticated: true,
+        loading: false,
+        user: payload,
+      };
+    /*   case REGISTER_SUCCESS:
             case LOGIN_SUCCESS:
             localStorage.setItem('token', payload.token);
             return{
@@ -51,5 +49,41 @@ case REGISTER_FAILED:
     };
     default:
         return state;
-    }
+    }*/
+    case REGISTER_SUCCESS:
+      return {
+        ...state,
+        ...payload,
+        isAuthenticated: true,
+        loading: false,
+      };
+    case LOGIN_SUCCESS:
+      return {
+        ...state,
+        ...payload,
+        isAuthenticated: true,
+        loading: false,
+      };
+    case ACCOUNT_DELETED:
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+      };
+    //case AUTH_ERROR:
+
+    case LOGOUT:
+      return {
+        ...state,
+        token: null,
+        isAuthenticated: false,
+        loading: false,
+        user: null,
+      };
+
+    default:
+      return state;
+  }
 }

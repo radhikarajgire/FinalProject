@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
+const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   const { openSidebar, setOpenSidebar, choice, playmusic, volsp } = useContext(
     StateContext
   );
@@ -36,7 +36,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
     <div className="Navbar--actions">
       <Typography variant="button">
-        <Link className="Navbar--link" to="/dashboard">
+        <Link className="Navbar--link" to="/teacher">
           <i className="fas fa-user" /> <span>Dashboard</span>
         </Link>
       </Typography>
@@ -77,7 +77,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
             RThree Academy
           </Link>
         </Typography>
-        {!loading && <Fragment>{isAuthenticated && authLinks}</Fragment>}
+        {/*!loading && <Fragment>{isAuthenticated && authLinks}</Fragment>*/}
       </Toolbar>
     </AppBar>
   );
