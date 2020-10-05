@@ -88,9 +88,11 @@ import CourseList from "../courses/courseList.js";
 import Dictionary from "../dictionary/Dictionary.js";
 import Thesauraus from "../thesauraus/Thesauraus.js";
 import FooterTwo from "../footertwo/FooterTwo.js";
+import Level1 from "../views/Level1.js";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 const Dashboard = ({
-  //getCurrentProfile,
+  getCurrentProfile,
   auth: { user },
   profile: { profile, loading },
 }) => {
@@ -118,9 +120,9 @@ const Dashboard = ({
     setSingleRender(singre);
   }, [menuitem]);
 
-  //useEffect(() => {
-  // getCurrentProfile();
-  //}, [getCurrentProfile]);
+  useEffect(() => {
+    getCurrentProfile();
+  }, []);
 
   // {profile !== null ? (<Fragment>haas</Fragment>) :
   //   (<Fragment><p> No Profile,Please add one </p>
@@ -139,7 +141,7 @@ const Dashboard = ({
 };
 
 Dashboard.propTypes = {
-  //getCurrrentProfile: PropTypes.func.isRequired,
+  getCurrrentProfile: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   profile: PropTypes.object.isRequired,
 };
@@ -150,4 +152,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { getCurrentProfile })(Dashboard);
-

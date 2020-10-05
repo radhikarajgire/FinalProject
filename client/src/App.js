@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
 //import { StateContext } from "./Components/statecontext/stateContext";
@@ -22,16 +22,19 @@ import Review from "./Components/pages/Review";
 import Method from "./Components/pages/Method";
 import Appointments from "./Components/pages/Appointments";
 import Dictionary from "./Components/pages/Dictionary";
-import Teacher from "./Components/pages/Teacher";
+//import Teacher from "./Components/pages/Teacher";
 import Thesaurus from "./Components/pages/Thesaurus";
 import Games from "./Components/exgames/ExGames.js";
 import Match from "./Components/match/Match.js";
 import SpellShot from "./Components/spellshot/SpellShot.js";
 import PoshOrNot from "./Components/poshornot/PoshOrNot.js";
+import Teacher from "./Components/teacher/Teacher";
+import Routes from "./Components/routing/Routes";
+import { LOGOUT } from "./actions/types";
 
-if (localStorage.token) {
-  setAuthToken(localStorage.token);
-}
+//if (localStorage.token) {
+//setAuthToken(localStorage.token);
+//}
 //<img src={logo} className="App-logo" alt="logo" />
 
 /*const App = () => {
@@ -40,7 +43,18 @@ if (localStorage.token) {
   }, []);
 };*/
 
-function Appe() {
+function App() {
+  useEffect(() => {
+    if (localStorage.token) {
+      setAuthToken(localStorage.token);
+    }
+    store.dispatch(loadUser());
+    // log user out from all tabs if they log out in one tab
+    window.addEventListener("storage", () => {
+      if (!localStorage.token) store.dispatch({ type: LOGOUT });
+    });
+  }, []);
+
   return (
     <Provider store={store}>
       <Router>
@@ -74,4 +88,4 @@ function Appe() {
   );
 }
 
-export default Appe;
+export default App;

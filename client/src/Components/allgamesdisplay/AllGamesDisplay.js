@@ -19,7 +19,11 @@ const ExGames = (props) => {
       {props.exgame !== undefined ? (
         <Card>
           <CardMedia
-            style={{ height: 0, paddingTop: "56.25%" }}
+            style={{
+              height: 0,
+              paddingTop: "56.25%",
+              backgroundColor: "red",
+            }}
             title={props.exgame.fields.description}
             image={props.exgame.fields.screenshot.fields.file.url}
           />
