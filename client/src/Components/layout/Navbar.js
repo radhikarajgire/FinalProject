@@ -41,7 +41,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         </Link>
       </Typography>
       <Typography>
-        <a className="Navbar--link" onClick={logout} href="#!">
+        <a className="Navbar--link" onClick={logout} href="/">
           <i className="fas fa-sign-out-alt" /> <span>Logout</span>
         </a>
       </Typography>
@@ -77,6 +77,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
             RThree Academy
           </Link>
         </Typography>
+        {authLinks}
         {/*!loading && <Fragment>{isAuthenticated && authLinks}</Fragment>*/}
       </Toolbar>
     </AppBar>
