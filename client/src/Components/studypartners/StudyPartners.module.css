@@ -14,12 +14,16 @@
   height: 60vh;
   z-index: 1;
   position: relative;
+  border: 1px solid black;
 }
 
 .formholder {
-  display: inline-flex;
+  display: flex;
   font-size: 2rem;
   margin: 5px;
+  justify-content: center;
+  align-content: center;
+  box-shadow: 5px 5px 5px lightslategray;
 }
 
 .container {
@@ -32,8 +36,10 @@
 
 .button {
   background-color: lightblue;
+  color: black;
   cursor: pointer;
   width: 100px;
+  height: 50px;
   margin-left: 10px;
   box-shadow: 5px 5px 5px lightslategray;
 }
@@ -44,12 +50,14 @@
 }
 
 .slidecontainer {
-  display: inline-flex;
+  display: flex;
   justify-content: center;
-  width: 100%;
+  align-content: center;
+  width: 98%;
   height: 7%;
-  margin-top: 5px;
+  margin: 5px;
   padding: 0px;
+  box-shadow: 5px 5px 5px lightslategray;
 }
 
 .slider {
@@ -76,6 +84,7 @@
   height: 40px;
   background: black;
   cursor: pointer;
+  box-shadow: 5px 5px 5px white;
 }
 
 .slider::-moz-range-thumb {
@@ -83,9 +92,11 @@
   height: 25px;
   background: black;
   cursor: pointer;
+  box-shadow: 5px 5px 5px lightslategray;
 }
 
 .slidermarker {
+  text-align: center;
   width: 10%;
   height: 100%;
   border: 1px solid black;
