@@ -24,7 +24,7 @@ export const getCurrentProfile = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
+      payload: { msg: err.response.statusText, status: err.response.status }
     });
   }
 };
@@ -36,7 +36,10 @@ export const getProfiles = () => async (dispatch) => {
   try {
     const res = await api.get("/profile");
 
-    dispatch({ type: GET_PROFILES, payload: res.data });
+    dispatch({
+      type: GET_PROFILES, 
+      payload: res.data
+     });
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,

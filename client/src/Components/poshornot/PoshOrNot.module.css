@@ -10,7 +10,7 @@
   justify-content: center;
   padding: 0;
   margin: 15vh 0 0 0;
-  height: 10vh;
+  height: 50vh;
   z-index: 1;
   position: relative;
 }
@@ -20,7 +20,7 @@
   align-content: center;
   padding: 0;
   margin: 1vh 0 0 0;
-  height: 10vh;
+  height: 20vh;
   z-index: 1;
   position: relative;
 }
@@ -39,20 +39,27 @@
 }
 
 .button {
-  background-color: lightblue;
+  background-color: #2196f3;
   cursor: pointer;
   width: 120px;
   margin-left: 10px;
   box-shadow: 5px 5px 5px lightslategray;
+ 
 }
+
+
 
 .button:hover {
   transform: scale(1.05);
   transition: all 0.3s;
 }
 
+.button:focus {
+  outline: 1px solid hsl(69, 68%, 94%);
+  outline-offset: -4px;
+}
 .buttonwrong {
-  background-color: red;
+  background-color: rgb(250, 98, 98);
   cursor: pointer;
   width: 120px;
   margin-left: 10px;
@@ -60,7 +67,7 @@
 }
 
 .buttonright {
-  background-color: green;
+  background-color: rgb(95, 236, 95);
   cursor: pointer;
   width: 120px;
   margin-left: 10px;

@@ -37,7 +37,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     <div className="Navbar--actions">
       <Typography variant="button">
         <Link className="Navbar--link" to="/teacher">
-          <i className="fas fa-user" /> <span>Dashboard</span>
+          <i className="fas fa-user" /> <span>Teacher</span>
         </Link>
       </Typography>
       <Typography>
