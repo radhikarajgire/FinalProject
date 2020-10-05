@@ -1,67 +1,64 @@
-import React, { Fragment, useContext, useEffect } from "react";
+import React, { Fragment } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "./App.css";
-import { StateContext } from "./Components/statecontext/stateContext";
-import Coordinators from "./Components/Coordinators/Coordinators.js";
+//import { StateContext } from "./Components/statecontext/stateContext";
+//import Coordinators from "./Components/Coordinators/Coordinators.js";
 import Navbar from "./Components/layout/Navbar";
 import Landing from "./Components/layout/Landing";
+import Sidebar from "./Components/layout/Sidebar";
 import Login from "./Components/auth/Login";
 import Register from "./Components/auth/Register";
 import Alert from "./Components/layout/Alert";
 import Dashboard from "./Components/dashboard/Dashboard";
 import PrivateRoute from "./Components/routing/PrivateRoute";
-//Redux
-
+// redux
 import { Provider } from "react-redux";
 import store from "./store";
 import { loadUser } from "./actions/auth";
 import setAuthToken from "./utils/setAuthToken";
-
-/*import MenuBar from "./Components/menubar/MenuBar.js";
-import Header from "./Components/header/Header.js";
-import FlashCard from "./Components/flashcard/FlashCard.js";
-import Snap from "./Components/snap/Snap.js";
-import WordSearch from "./Components/wordsearch/WordSearch.js";
-import MultiTest from "./Components/multitest/MultiTest.js";
-import Match from "./Components/match/Match.js"
-import SpellShot from "./Components/spellshot/SpellShot.js"
-import StudyPartners from "./Components/studypartners/StudyPartners.js"
-import PoshOrNot from "./Components/poshornot/PoshOrNot.js"
-import ListeningPractice from "./Components/listeningpractice/ListeningPractice.js"
-import FooterTwo from "./Components/footertwo/FooterTwo.js";*/
-//import MDBFooter from "./Components/footer/footer.js";
+import Learn from "./Components/pages/Learn";
+import Play from "./Components/pages/Play";
+import Review from "./Components/pages/Review";
+import Method from "./Components/pages/Method";
+import Appointments from "./Components/pages/Appointments";
+import Dictionary from "./Components/pages/Dictionary";
+import Teacher from "./Components/pages/Teacher";
+import Thesaurus from "./Components/pages/Thesaurus";
+import Games from "./Components/exgames/ExGames.js";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
 }
 //<img src={logo} className="App-logo" alt="logo" />
 
-const App = () => {
+/*const App = () => {
   useEffect(() => {
     store.dispatch(loadUser());
   }, []);
-};
+};*/
 
 function Appe() {
-  const { menuitem } = useContext(StateContext);
-  //const [singlerender, setSingleRender]=useState()
-
-  //useEffect(()=>{
-  //const renderarray = {ba: <FlashCard/>, bb: <Snap/>, bc: <WordSearch/>, ca: <ListeningPractice/>,cb: <MultiTest/>, da: <SpellShot/>, dd: <PoshOrNot/>, de: <Match/>, eb: <StudyPartners/>}
-  //const singre = renderarray[menuitem]
-  //setSingleRender(singre)},[menuitem])
-
   return (
     <Provider store={store}>
       <Router>
         <Fragment>
           <Navbar />
+          <Sidebar />
           <Route exact path="/" component={Landing} />
           <section className="container">
             <Alert />
             <Switch>
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/learn" component={Learn} />
+              <Route exact path="/play" component={Play} />
+              <Route exact path="/play/ExGames" component={Games} />
+              <Route exact path="/review" component={Review} />
+              <Route exact path="/method" component={Method} />
+              <Route exact path="/dictionary" component={Dictionary} />
+              <Route exact path="/thesaurus" component={Thesaurus} />
+              <Route exact path="/appointments" component={Appointments} />
+              <Route exact path="/teacher" component={Teacher} />
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>
@@ -70,18 +67,5 @@ function Appe() {
     </Provider>
   );
 }
-
-/* <Header />
-
-      <MenuBar />
-      {singlerender}
-      <FooterTwo />
-
-      <SocialFollow />  
-
-    </div>
-  );
-}
-*/
 
 export default Appe;

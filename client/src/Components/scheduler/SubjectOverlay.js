@@ -1,16 +1,9 @@
-import React, { useState, useContext, useEffect, useRef } from "react";
+import React, { useState, useContext, useRef } from "react";
 import { StateContext } from "../statecontext/stateContext";
 import Styles from "./SubjectOverlay.module.css";
 
 function SubjectOverlay({ fromabove }) {
-  const {
-    days,
-    setDays,
-    userid,
-    appointments,
-    setAppointments,
-    setShowOverview,
-  } = useContext(StateContext);
+  const { days, setDays, userid, setShowOverview } = useContext(StateContext);
   const textoverviewRef = useRef(null);
   const sammy = fromabove.subejct;
   const [textinput, setTextInput] = useState(sammy);
@@ -66,6 +59,9 @@ function SubjectOverlay({ fromabove }) {
     <div className={Styles.box}>
       <h4 className={Styles.abovetext}>
         {fromabove.isSelected ? "Cancel appointment ?" : "Add appointment ?"}
+      </h4>
+      <h4 className={Styles.abovetext}>
+        Student {userid === 0 ? fromabove.idofselector : ""}
       </h4>
       <textarea
         onChange={(e) => setTextInput(e.target.nodeValue)}

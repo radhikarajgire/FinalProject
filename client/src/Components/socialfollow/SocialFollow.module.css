@@ -1,30 +1,39 @@
 /* Styling for social media buttons */
 .social {
-    margin: 0 1rem;
-    transition: transform 250ms;
-    display: inline-block;
-  }
-  
-  .social:hover {
-    transform: translateY(-2px);
-  }
-  
-  .youtube {
-    color: #eb3223;
-    margin-left: 10px;
-  }
-  
-  .facebook {
-    color: #4968ad;
-    margin-left: 10px;
-  }
-  
-  .twitter {
-    color: #49a1eb;
-    margin-left: 10px;
-  }
-  
-  .instagram {
-    color: black;
-    margin-left: 10px;
-  }
+  margin: 0 1rem 20px;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+.social:hover {
+  transform: translateY(-2px);
+}
+
+.youtube {
+  color: #fafafa;
+  margin-left: 30px;
+}
+
+.facebook {
+  color: #fafafa;
+  margin-left: 30px;
+  bottom: 0;
+}
+
+.twitter {
+  color: #fafafa;
+  margin-left: 30px;
+  bottom: 0;
+}
+
+.instagram {
+  color: #fafafa;
+  margin-left: 30px;
+  bottom: 0;
+}
+
+h6 {
+  padding: center;
+  margin-left: 50px;
+  margin-bottom: 10px;
+}
