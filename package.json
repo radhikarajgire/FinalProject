@@ -35,7 +35,8 @@
     "jsonwebtoken": "^8.5.1",
     "mdbreact": "^4.27.0",
     "mongoose": "^5.10.3",
-    "react-native-dotenv": "^2.4.0",
+    "react-chat-widget": "^3.0.5",
+    "react-native-dotenv": "^2.4.1",
     "request": "^2.88.2"
   },
   "devDependencies": {

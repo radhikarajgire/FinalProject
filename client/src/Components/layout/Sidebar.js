@@ -80,6 +80,7 @@ const useStyles = makeStyles((theme) => ({
   },
   drawerLabel: {
     marginLeft: "15px",
+    color: "white",
   },
   content: {
     flexGrow: 1,
@@ -131,7 +132,11 @@ function Sidebar() {
           <ListItem button className={classes.drawerLink}>
             <BookIcon color="#484848" fontSize="small" />
             <Link to="/learn">
-              <ListItemText primary="Learn" className={classes.drawerLabel} />
+              <ListItemText
+                primary="Learn"
+                color="#484848"
+                className={classes.drawerLabel}
+              />
             </Link>
           </ListItem>
         </div>
