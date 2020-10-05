@@ -1,4 +1,5 @@
 import React from "react";
+import ReviewTest from "../allreviewtestdisplay/AllReviewTestDisplayList.js";
 
 function Review() {
   console.log("Play");
@@ -6,6 +7,7 @@ function Review() {
   return (
     <div>
       <h2>Review and Test</h2>
+      <ReviewTest />
     </div>
   );
 }
