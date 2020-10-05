@@ -10,7 +10,8 @@ export default function StateContextProvider({ children }) {
   const [volsp, setVolsp] = useState(100);
   const [openSidebar, setOpenSidebar] = useState(false);
   const [showoverview, setShowOverview] = useState();
-  const [referenceexgame, setRefenceExGame] = useState();
+  const [referenceexgame, setReferenceExGame] = useState();
+  const [referencedata, setReferenceData] = useState();
 
   const customElements = [
     [
@@ -1019,7 +1020,9 @@ export default function StateContextProvider({ children }) {
         openSidebar,
         setOpenSidebar,
         referenceexgame,
-        setRefenceExGame,
+        setReferenceExGame,
+        referencedata,
+        setReferenceData,
       }}
     >
       {children}

@@ -25,6 +25,9 @@ import Dictionary from "./Components/pages/Dictionary";
 import Teacher from "./Components/pages/Teacher";
 import Thesaurus from "./Components/pages/Thesaurus";
 import Games from "./Components/exgames/ExGames.js";
+import Match from "./Components/match/Match.js";
+import SpellShot from "./Components/spellshot/SpellShot.js";
+import PoshOrNot from "./Components/poshornot/PoshOrNot.js";
 
 if (localStorage.token) {
   setAuthToken(localStorage.token);
@@ -53,6 +56,9 @@ function Appe() {
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/play" component={Play} />
               <Route exact path="/play/ExGames" component={Games} />
+              <Route exact path="/play/SpellShot" component={SpellShot} />
+              <Route exact path="/play/Match" component={Match} />
+              <Route exact path="/play/PoshOrNot" component={PoshOrNot} />
               <Route exact path="/review" component={Review} />
               <Route exact path="/method" component={Method} />
               <Route exact path="/dictionary" component={Dictionary} />

@@ -4,6 +4,7 @@ import { StateContext } from "../statecontext/stateContext";
 
 function ExGames() {
   const { exgameslist, referenceexgame } = useContext(StateContext);
+  console.log(referenceexgame);
   // const [singleexgame, setSingleExGame] = useState(0);
 
   //"https://www.gamestolearnenglish.com/fast-vocab/embed.html"
