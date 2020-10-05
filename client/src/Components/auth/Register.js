@@ -4,6 +4,7 @@ import { Link, Redirect } from "react-router-dom";
 import { setAlert } from "../../actions/alert";
 import { register } from "../../actions/auth";
 import PropTypes from "prop-types";
+import Teacher from "../teacher/Teacher";
 
 const Register = ({ setAlert, register, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -44,7 +45,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
   //   }
   // };
   if (isAuthenticated) {
-    return <Redirect to="/dashboard" />;
+    return <Redirect to="/teacher" />;
   }
   return (
     <Fragment>
@@ -52,7 +53,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
       <p className="lead">
         <i className="fas fa-user"></i> Create Your Account
       </p>
-      <form className="form" onSubmit={(e) => onSubmit(e)}>
+      <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <input
             type="text"
@@ -60,7 +61,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             name="name"
             value={name}
             onChange={onChange}
-            // required
           />
         </div>
         <div className="form-group">
@@ -69,8 +69,7 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             placeholder="Email Address"
             name="email"
             value={email}
-            onChange={(e) => onChange(e)}
-            // required
+            onChange={onChange}
           />
           <small className="form-text">
             This site uses Gravatar so if you want a profile image, use a
@@ -93,8 +92,6 @@ const Register = ({ setAlert, register, isAuthenticated }) => {
             name="password2"
             value={password2}
             onChange={onChange}
-            // required
-            // minLength="6"
           />
         </div>
         <input type="submit" className="btn btn-primary" value="Register" />
