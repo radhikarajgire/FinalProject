@@ -3,7 +3,7 @@ import Styles from "./Snap.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function Snap() {
-  const { customElements } = useContext(StateContext);
+  const { customElements, referencedata } = useContext(StateContext);
   const [oneEntry, setOneEntry] = useState("");
   const [entrylist, setEntryList] = useState([]);
   const [ident, setIdent] = useState(0);
@@ -13,20 +13,20 @@ function Snap() {
   const [correctclass, setCorrectClass] = useState();
 
   function TryAgain() {
-    const newElementq = customElements[choice]
-      .filter((entry, id) => id > 0)
+    const newElementq = referencedata
+      //.filter((entry, id) => id > 0)
       .map((entry, id) => {
         const container = {};
         container.idaq = id;
-        container.qa = entry.q;
+        container.qa = JSON.parse(entry).q;
         return container;
       });
-    const newElementa = customElements[choice]
-      .filter((entry, id) => id > 0)
+    const newElementa = referencedata
+      //.filter((entry, id) => id > 0)
       .map((entry, id) => {
         const container = {};
         container.idaq = id;
-        container.qa = entry.a;
+        container.qa = JSON.parse(entry).a;
         return container;
       });
     const newElementall = newElementq.concat(newElementa);
@@ -43,7 +43,7 @@ function Snap() {
     setEntryList(newElementall);
 
     var dataloop = [];
-    for (let i = 0; i < 8; i++) {
+    for (let i = 0; i < referencedata.length * 2; i++) {
       dataloop = dataloop.concat([Styles.element]);
     }
     setCorrectClass(dataloop);
@@ -80,8 +80,8 @@ function Snap() {
     <div className={Styles.holderholder}>
       <div className={Styles.holder}>
         <div className={Styles.formholder}>
-          <label className={Styles.label}>Choose a level: </label>
-          <select
+          <label className={Styles.label}>Have a go </label>
+          {/*<select
             onChange={(e) => setChoice(e.target.value)}
             className={Styles.select}
           >
@@ -90,7 +90,7 @@ function Snap() {
                 {entry[0]["qadata"]}
               </option>
             ))}
-          </select>
+            </select>*/}
           <button className={Styles.button} onClick={() => TryAgain()}>
             TRY
           </button>
@@ -107,7 +107,7 @@ function Snap() {
                     correct(entry.qa, e, entry.idaq);
                   }}
                 >
-                  {ident === idn ? <h4>{oneEntry}</h4> : ""}
+                  {ident === idn ? <p>{oneEntry}</p> : ""}
                 </div>
               ))
             : ""}

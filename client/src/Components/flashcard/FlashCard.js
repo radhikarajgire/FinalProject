@@ -3,25 +3,26 @@ import Styles from "./FlashCard.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function FlashCard() {
-  const { customElements } = useContext(StateContext);
+  const { customElements, referencedata } = useContext(StateContext);
   const [rotpost, setRotPost] = useState(true);
   //these should be changed to be entries from our DB (extracted from Entries - need to then display the chosen card choice)
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [smith, setSmith] = useState();
   const [schmidt, setSchmidt] = useState();
-  const [card, setCard] = useState(1);
+  const [card, setCard] = useState(0);
   //Entries is the complete data set from the DB
   //const [entries, setEntries] = useState();
   //Use choice of which level to do
   const [choice, setChoice] = useState(0);
 
   useEffect(() => {
+    console.log(JSON.parse(referencedata[0]));
     const chips = document.getElementById("flashcard").classList;
     chips.remove(Styles.rotatback);
     chips.add(Styles.extra);
-    const ques = customElements[choice][card].q;
-    const answ = customElements[choice][card].a;
+    const ques = JSON.parse(referencedata[card]).q;
+    const answ = JSON.parse(referencedata[card]).a;
     setQuestion(ques);
     setAnswer(answ);
 
@@ -38,7 +39,7 @@ function FlashCard() {
     utter.rate = 0.8;
     utter.lang = "en-GB";
     setSchmidt(utter);
-  }, [customElements, card, choice]);
+  }, [referencedata, card, choice]);
 
   function Rotatenow() {
     const fish = document.getElementById("flashcard").classList;
@@ -69,8 +70,8 @@ function FlashCard() {
       <div className={Styles.flashnav}>
         <div
           onClick={() => {
-            if (card === 1) {
-              setCard(customElements[choice].length - 1);
+            if (card === 0) {
+              setCard(referencedata.length - 1);
             } else {
               setCard(card - 1);
             }
@@ -80,8 +81,8 @@ function FlashCard() {
           Previous
         </div>
 
-        <label className={Styles.label}>Choose a level: </label>
-        <select
+        <label className={Styles.label}>Choose a question </label>
+        {/* <select
           onChange={(e) => setChoice(e.target.value)}
           className={Styles.select}
         >
@@ -90,12 +91,12 @@ function FlashCard() {
               {entry[0]["qadata"]}
             </option>
           ))}
-        </select>
+          </select>*/}
 
         <div
           onClick={() => {
-            if (card === customElements[choice].length - 1) {
-              setCard(1);
+            if (card === referencedata.length - 1) {
+              setCard(0);
             } else {
               setCard(card + 1);
             }
