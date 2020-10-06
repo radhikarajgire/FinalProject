@@ -36,12 +36,13 @@ h2 {
   outline: none;
 }
 button {
-  background: #553c9a;
-  color: #fff;
+  background: #2196f3;
+  color: #fff !important;
   height: 100%;
   font-size: 16px;
   padding: 0 20px;
   cursor: pointer;
+  border-radius: 4px;
 }
 .data {
   max-width: 600px;

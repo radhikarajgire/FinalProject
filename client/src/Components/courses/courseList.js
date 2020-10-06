@@ -4,8 +4,11 @@ import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
 import Course from "./course.js";
 
-const SPACE_ID = process.env.REACT_APP_SPACE_ID;
-const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
+const SPACE_ID = "zljg32lbj8oj";
+//process.env.REACT_APP_SPACE_ID;
+const ACCESS_TOKEN = "HDCzpW1gMa1y2IwmpLCEEfT-E9kO14UaWDsgYgdCsLc";
+//process.env.REACT_APP_ACCESS_TOKEN;
+
 //to fetch the data from contentful
 const client = contentful.createClient({
   space: SPACE_ID,

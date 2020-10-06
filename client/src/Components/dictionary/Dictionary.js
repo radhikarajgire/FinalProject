@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Styles from "./Dictionary.module.css";
+import Button from "@material-ui/core/Button";
 
 function Dictionary() {
   const searchBtnRef = useRef(null);

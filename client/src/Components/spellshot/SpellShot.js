@@ -1,6 +1,7 @@
 import React, { useContext, useState, useRef, useEffect } from "react";
 import Styles from "./SpellShot.module.css";
 import { StateContext } from "../statecontext/stateContext";
+import Button from "@material-ui/core/Button";
 
 // a game on canvas to shoot your way to the correct spelling
 

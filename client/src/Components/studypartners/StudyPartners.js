@@ -2,6 +2,12 @@ import React, { useContext } from "react";
 import ReactPlayer from "react-player";
 import Styles from "./StudyPartners.module.css";
 import { StateContext } from "../statecontext/stateContext";
+import Button from "@material-ui/core/Button";
+
+//import PropTypes from "prop-types";
+//import { withStyles } from "@material-ui/core/styles";
+//import Typography from "@material-ui/core/Typography";
+//import Slider from "@material-ui/lab/Slider";
 
 function StudyPartners() {
   const {
@@ -32,14 +38,14 @@ function StudyPartners() {
               </option>
             ))}
           </select>
-          <button
+          <Button
             className={Styles.button}
             onClick={() => {
               playmusic ? setPlayMusic(false) : setPlayMusic(true);
             }}
           >
             {playmusic ? "stop" : "play"}
-          </button>
+          </Button>{" "}
         </div>
         <div className={Styles.container}>
           {choice.length ? (

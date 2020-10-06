@@ -36,6 +36,7 @@
   margin-bottom: 10px;
   box-shadow: 5px 5px 5px lightslategray;
   margin-right: 10px;
+  border-radius: 4px;
 }
 
 .button:hover {

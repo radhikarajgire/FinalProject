@@ -2,6 +2,7 @@ import React, { useContext, useState, useRef } from "react";
 import ReactPlayer from "react-player";
 import Styles from "./PoshOrNot.module.css";
 import { StateContext } from "../statecontext/stateContext";
+import Button from "@material-ui/core/Button";
 
 function PoshOrNot() {
   const playerRef = useRef(null);
@@ -30,7 +31,8 @@ function PoshOrNot() {
               </option>
             ))}
           </select>
-          <button
+          <Button
+            color="blue"
             className={Styles.button}
             onClick={() => {
               replay ? setReplay(false) : setReplay(true);
@@ -38,7 +40,7 @@ function PoshOrNot() {
             }}
           >
             {replay ? "playing" : "play"}
-          </button>
+          </Button>{" "}
         </div>
       </div>
       <div className={Styles.holderthree}>
@@ -52,7 +54,7 @@ function PoshOrNot() {
 
       <div className={Styles.holdertwo}>
         <div className={Styles.container}>
-          <button
+          <Button
             className={buttonstyleposh}
             onClick={() => {
               poshornotchoice[accent]["posh"]
@@ -61,7 +63,7 @@ function PoshOrNot() {
             }}
           >
             Posh
-          </button>
+          </Button>
           {
             <ReactPlayer
               ref={playerRef}
@@ -80,7 +82,7 @@ function PoshOrNot() {
               url={poshornotchoice[accent]["s"]}
             />
           }
-          <button
+          <Button
             className={buttonstylenot}
             onClick={() => {
               poshornotchoice[accent]["posh"]
@@ -89,7 +91,7 @@ function PoshOrNot() {
             }}
           >
             Not
-          </button>
+          </Button>
         </div>
       </div>
     </div>

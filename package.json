@@ -33,7 +33,6 @@
     "express-validator": "^6.6.1",
     "gravatar": "^1.8.1",
     "jsonwebtoken": "^8.5.1",
-    "mdbreact": "^4.27.0",
     "mongoose": "^5.10.3",
     "react-native-dotenv": "^2.4.0",
     "request": "^2.88.2"

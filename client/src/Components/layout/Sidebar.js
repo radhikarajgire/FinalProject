@@ -110,7 +110,7 @@ function Sidebar() {
       className={classes.drawer}
       variant="persistent"
       anchor="left"
-      background="light-blue" //tried to change only the top of the drawer so it fits with the header color
+      background="light-blue"
       open={openSidebar}
       classes={{
         paper: classes.drawerPaper,
@@ -207,9 +207,11 @@ function Sidebar() {
         </div>
       </List>
       <Divider />
-      <div>
-        <SocialFollow />
-      </div>
+      <footer>
+        <div>
+          <SocialFollow />
+        </div>
+      </footer>
     </Drawer>
   );
 }
