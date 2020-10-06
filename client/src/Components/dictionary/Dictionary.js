@@ -14,6 +14,7 @@ function Dictionary() {
 
   async function getData(word) {
     setLoadingInfo("Loading...");
+    setAudioDisp();
     const response = await fetch(
       `https://www.dictionaryapi.com/api/v3/references/learners/json/${word}?key=${apiKey}`
     );
@@ -26,6 +27,7 @@ function Dictionary() {
       setNotFoundInfo("No result found");
       setSuggestions("");
       setDefinitionWord("");
+
       return;
     }
 
@@ -35,6 +37,7 @@ function Dictionary() {
 
       setSuggestions(data);
       setDefinitionWord("");
+      setNotFoundInfo("");
 
       return;
     }
@@ -42,6 +45,7 @@ function Dictionary() {
     // Result found
 
     setLoadingInfo("none");
+    setNotFoundInfo("");
 
     setDefinitionWord(data);
     setSuggestions();
@@ -49,20 +53,19 @@ function Dictionary() {
     // Sound
     const soundName = data[0].hwi.prs[0].sound.audio;
     if (soundName) {
-      console.log(soundName);
       renderSound(soundName);
     }
-
-    console.log(data);
   }
 
-  function renderSound(soundName) {
+  function renderSound(soundNam) {
     // https://media.merriam-webster.com/soundc11
-    let subfolder = soundName.charAt(0);
-
-    const fish = `https://media.merriam-webster.com/soundc11/${subfolder}/${soundName}.wav?key=${apiKey}`;
-
-    setAudioDisp(fish);
+    let subfolder = soundNam.charAt(0);
+    const fish = `https://media.merriam-webster.com/soundc11/${subfolder}/${soundNam}.wav?key=${apiKey}`;
+    setAudioDisp(
+      <audio controls>
+        <source src={fish} type="audio/wav" />
+      </audio>
+    );
   }
 
   return (
@@ -122,15 +125,7 @@ function Dictionary() {
               )
             : console.log("123")}
         </div>
-        <div className={Styles.audio}>
-          {audiodisp ? (
-            <audio controls>
-              <source src={audiodisp} type="audio/wav" />
-            </audio>
-          ) : (
-            ""
-          )}
-        </div>
+        <div className={Styles.audio}>{audiodisp}</div>
         <div className={Styles.notfound}>{notfoundinfo}</div>
       </section>
     </div>
