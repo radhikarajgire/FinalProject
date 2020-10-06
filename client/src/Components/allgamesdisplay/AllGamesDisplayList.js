@@ -5,9 +5,9 @@ import * as contentful from "contentful";
 import AllGamesDisplay from "./AllGamesDisplay.js";
 import Match from "../match/Match.js";
 
-const SPACE_ID = "zljg32lbj8oj";
+const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 //process.env.REACT_APP_SPACE_ID;
-const ACCESS_TOKEN = "HDCzpW1gMa1y2IwmpLCEEfT-E9kO14UaWDsgYgdCsLc";
+const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 //process.env.REACT_APP_ACCESS_TOKEN;
 //to fetch the data from contentful
 const client = contentful.createClient({
