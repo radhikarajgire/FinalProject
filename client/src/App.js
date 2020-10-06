@@ -62,11 +62,12 @@ function App() {
           <Navbar />
           <Sidebar />
           <Route exact path="/" component={Landing} />
+          <Route component={Routes} />
           <section className="container">
             <Alert />
             <Switch>
-              <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} />
+              {/* <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} /> */}
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/play" component={Play} />
               <Route exact path="/play/ExGames" component={Games} />
@@ -78,7 +79,7 @@ function App() {
               <Route exact path="/dictionary" component={Dictionary} />
               <Route exact path="/thesaurus" component={Thesaurus} />
               <Route exact path="/appointments" component={Appointments} />
-              <Route exact path="/teacher" component={Teacher} />
+              {/* <Route exact path="/teacher" component={Teacher} /> */}
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
             </Switch>
           </section>

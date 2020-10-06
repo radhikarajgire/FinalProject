@@ -1,5 +1,6 @@
 .holderholder {
-  width: 100%;
+  width: 140%;
+  height: 100%;
   justify-content: center;
   align-content: center;
   font-family: Arial;
@@ -17,7 +18,7 @@
 
 .day {
   display: inline-block;
-  border: 1px solid black;
+  border: 1px solid rgb(63, 62, 62);
   padding: 4px 4px 0 4px;
   text-align: center;
   width: auto;
@@ -25,14 +26,14 @@
 
 .daytoday {
   display: inline-block;
-  border: 5px solid blue;
+  border: 5px solid rgb(181, 181, 241);
   padding: 4px 4px 0 4px;
   text-align: center;
   width: 150px;
 }
 
 .appointment {
-  border: 1px solid red;
+  border: 1px solid rgb(22, 22, 22);
   background: light-grey;
   cursor: pointer;
 }
@@ -43,8 +44,8 @@
 }
 
 .appointmenttaken {
-  border: 1px solid red;
-  background: blue;
+  border: 1px solid rgb(236, 117, 117);
+  background: #92a8d1;
 }
 
 .appointmenttakenme {
@@ -59,21 +60,21 @@
 }
 
 .appointmentnobook {
-  border: 1px solid red;
+  border: 1px solid rgb(173, 238, 184);
 }
 
 .appointmentnotaken {
   border: 1px solid red;
-  background: blue;
+  background: rgb(173, 173, 248);
 }
 
 .appointmentnotakenme {
   border: 1px solid red;
-  background: green;
+  background: rgb(148, 192, 148);
 }
 
 .datecal {
-  background: lightblue;
+  background: #b2b2b2;
 }
 
 .container {

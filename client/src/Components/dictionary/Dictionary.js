@@ -71,14 +71,14 @@ function Dictionary() {
         <h3>Find many words that exist in the world :)</h3>
         <div className={Styles.formwrap}>
           <div className={Styles.inputwrap}>
-            <input
+            <input className={Styles.input}
               type="text"
               placeholder="Type a word"
               id="input"
               value={word}
               onChange={(e) => setWord(e.target.value)}
             />
-            <button
+            <button className={Styles.button}
               ref={searchBtnRef}
               onClick={(e) => {
                 e.preventDefault();
