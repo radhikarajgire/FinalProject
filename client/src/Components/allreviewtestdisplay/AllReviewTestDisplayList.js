@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
 import AllReviewTestDisplay from "./AllReviewTestDisplay.js";
-import Match from "../match/Match.js";
 
 const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;

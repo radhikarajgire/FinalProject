@@ -29,7 +29,6 @@ const Course = (props) => {
               size="small"
               color="primary"
               href={props.course.fields.url.content[0].content[0].value}
-              target="_blank"
             >
               Go To Course
             </Button>

@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
-import AllGamesDisplay from "./AllGamesDisplay.js";
+import AllCourseView from "./AllCourseView.js";
 
 const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -12,25 +12,26 @@ const client = contentful.createClient({
   accessToken: ACCESS_TOKEN,
 });
 
-class ExGamesList extends Component {
+class AllCourseViewList extends Component {
   state = {
-    ExGames: [],
+    Timinf: [],
     searchString: "",
   };
 
   constructor() {
     super();
-    this.getExgames();
+    this.getGDPinfo();
   }
 
-  getExgames = () => {
+  getGDPinfo = () => {
     client
       .getEntries({
-        content_type: "exgames",
+        content_type: "gdpr",
         query: this.state.searchString,
       })
       .then((response) => {
-        this.setState({ ExGames: response.items });
+        this.setState({ Timinf: response.items });
+        console.log(response.items);
       })
       .catch((error) => {
         console.log("Error occured while fetching data");
@@ -55,7 +56,7 @@ class ExGamesList extends Component {
   render() {
     return (
       <div>
-        {this.state.ExGames ? (
+        {this.state.Timinf ? (
           <div>
             <TextField
               style={{ padding: 24 }}
@@ -64,19 +65,21 @@ class ExGamesList extends Component {
               margin="normal"
               onChange={this.onSearchInputChange}
             />
+
+            <h1>I am here</h1>
             <Grid container spacing={2} style={{ padding: 24 }}>
-              {this.state.ExGames.map((currentExGame, idw) => (
+              {this.state.Timinf.map((currentTimelement, idw) => (
                 <Grid key={idw} item xs={12} sm={6} lg={4} xl={3}>
-                  <AllGamesDisplay exgame={currentExGame} />
+                  <AllCourseView courseview={currentTimelement} />
                 </Grid>
               ))}
             </Grid>
           </div>
         ) : (
-          "No courses found"
+          "No Tests or Reviews found"
         )}
       </div>
     );
   }
 }
-export default ExGamesList;
+export default AllCourseViewList;
