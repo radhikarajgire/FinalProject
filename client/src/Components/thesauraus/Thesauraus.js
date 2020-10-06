@@ -56,17 +56,23 @@ function Thesaurus() {
   return (
     <div>
       <section className={(Styles.input, Styles.container)}>
-        <h3>Find others words that mean the same :)</h3>
+        <h3>
+          Search more than 275,000 synonyms, antonyms, related words and idiomatic
+          phrases.Find concise definitions pinpointing the meaning shared by
+          synonyms,and sample sentences showing how words are used in context.
+        </h3>
         <div className={Styles.formwrap}>
           <div className={Styles.inputwrap}>
             <input
+              className={Styles.input}
               type="text"
-              placeholder="Type a word"
+              placeholder="Thesaurus search"
               id="input"
               value={word}
               onChange={(e) => setWord(e.target.value)}
             />
             <button
+              className={Styles.button}
               ref={searchBtnRef}
               onClick={(e) => {
                 e.preventDefault();

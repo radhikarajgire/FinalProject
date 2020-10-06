@@ -68,12 +68,13 @@ function Dictionary() {
   return (
     <div>
       <section className={(Styles.input, Styles.container)}>
-        <h3>Find many words that exist in the world :)</h3>
+        <h3>Discover new words, expand your knowledge, and improve you English.
+          Browse through our extensive database of nglish words.Dont stop learning.</h3>
         <div className={Styles.formwrap}>
           <div className={Styles.inputwrap}>
             <input className={Styles.input}
               type="text"
-              placeholder="Type a word"
+              placeholder="Search the Dictionary"
               id="input"
               value={word}
               onChange={(e) => setWord(e.target.value)}

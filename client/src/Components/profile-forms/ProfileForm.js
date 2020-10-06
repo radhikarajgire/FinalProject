@@ -78,10 +78,10 @@ const ProfileForm = ({
       <form className="form" onSubmit={onSubmit}>
         <div className="form-group">
           <select name="status" value={status} onChange={onChange}>
-            <option>* Select Professional Status</option>
-            <option value="Developer">Developer</option>
-            <option value="Junior Developer">Junior Developer</option>
-            <option value="Senior Developer">Senior Developer</option>
+            <option>* Select Status</option>
+            <option value="Developer">Senior Teacher</option>
+            <option value="Junior Developer">Junior Teacher</option>
+            <option value="Senior Developer">Instructor</option>
             <option value="Manager">Manager</option>
             <option value="Student or Learning">Student or Learning</option>
             <option value="Instructor">Instructor or Teacher</option>
@@ -89,7 +89,7 @@ const ProfileForm = ({
             <option value="Other">Other</option>
           </select>
           <small className="form-text">
-            Give us an idea of where you are at in your career
+            Give us an idea of where you are at in your profession
           </small>
         </div>
         <div className="form-group">
@@ -101,7 +101,7 @@ const ProfileForm = ({
             onChange={onChange}
           />
           <small className="form-text">
-            Could be your own company or one you work for
+            Could be your own School or one you work for
           </small>
         </div>
         <div className="form-group">
@@ -124,9 +124,7 @@ const ProfileForm = ({
             value={location}
             onChange={onChange}
           />
-          <small className="form-text">
-            City & state suggested (eg. Boston, MA)
-          </small>
+          <small className="form-text">City and state</small>
         </div>
         <div className="form-group">
           <input
@@ -136,21 +134,18 @@ const ProfileForm = ({
             value={skills}
             onChange={onChange}
           />
-          <small className="form-text">
-            Please use comma separated values (eg. HTML,CSS,JavaScript,PHP)
-          </small>
+          <small className="form-text">Please use comma separated values</small>
         </div>
         <div className="form-group">
           <input
             type="text"
-            placeholder="Github Username"
+            placeholder="Notes and Links"
             name="githubusername"
             value={githubusername}
             onChange={onChange}
           />
           <small className="form-text">
-            If you want your latest repos and a Github link, include your
-            username
+            If you want your latest notes and a link, include your username
           </small>
         </div>
         <div className="form-group">
