@@ -52,8 +52,8 @@ const Landing = ({ isAuthenticated }) => {
               variant="contained"
               color="primary"
             >
-              <Link className={classes.ButtonLink} to="/register" >
-                Teachers:Sign Up
+              <Link className={classes.ButtonLink} to="/register">
+                Teachers: Sign Up
               </Link>
             </Button>
           </div>
