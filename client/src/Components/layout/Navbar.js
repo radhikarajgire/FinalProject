@@ -51,7 +51,7 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
   return (
     <AppBar position="static" className={classes.AppBar}>
       <ReactPlayer
-        volume={volsp / 100}
+        volume={volsp}
         playing={playmusic}
         width="0px"
         height="0px"

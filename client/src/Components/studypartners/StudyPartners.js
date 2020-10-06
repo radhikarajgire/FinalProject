@@ -2,7 +2,10 @@ import React, { useContext } from "react";
 import ReactPlayer from "react-player";
 import Styles from "./StudyPartners.module.css";
 import { StateContext } from "../statecontext/stateContext";
-
+import Slider from "@material-ui/core/Slider";
+import VolumeDown from "@material-ui/icons/VolumeDown";
+import VolumeUp from "@material-ui/icons/VolumeUp";
+import Typography from "@material-ui/core/Typography";
 function StudyPartners() {
   const {
     choice,
@@ -60,17 +63,24 @@ function StudyPartners() {
           )}
         </div>
         <div className={Styles.slidecontainer}>
-          <h3 className={Styles.slidermarker}>Quiet</h3>
-          <input
-            onChange={(e) => setVolsp(e.target.value)}
-            type="range"
-            min="0"
-            max="100"
+          <Typography id="continuous-slider" gutterBottom>
+            Volume
+          </Typography>
+          <VolumeDown />
+
+          <Slider
             value={volsp}
-            className={Styles.slider}
+            min={0}
+            max={1}
+            step={0.1}
+            onChange={(e, newValue) => {
+              setVolsp(newValue);
+            }}
+            aria-labelledby="continuous-slider"
             id="volRange"
           />
-          <h3 className={Styles.slidermarker}>Loud</h3>
+
+          <VolumeUp />
         </div>
       </div>
     </div>

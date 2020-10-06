@@ -7,7 +7,7 @@ export default function StateContextProvider({ children }) {
 
   const [choice, setChoice] = useState("");
   const [playmusic, setPlayMusic] = useState(true);
-  const [volsp, setVolsp] = useState(100);
+  const [volsp, setVolsp] = useState(0.5);
   const [openSidebar, setOpenSidebar] = useState(false);
   const [showoverview, setShowOverview] = useState();
   const [referenceexgame, setReferenceExGame] = useState();
@@ -981,7 +981,7 @@ export default function StateContextProvider({ children }) {
     },
   ]);
 
-  const studentcolor = [" ", "#80ced6", "#d5f4e6", "#fefbd8", "d5e1df" ];
+  const studentcolor = [" ", "#80ced6", "#d5f4e6", "#fefbd8", "d5e1df"];
 
   /* useEffect(()=>{
     fetch('https://www.oxfordlearnersdictionaries.com/api/v1/wordoftheday', {mode: 'no-cors', method: 'GET'})
