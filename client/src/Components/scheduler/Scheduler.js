@@ -16,14 +16,14 @@ function Appointment() {
   //const [taken, setTaken] = useState(Styles.appointment);
 
   const [singleuserbooking, setSingleUserBooking] = useState({});
-  const [dayofmonth, setDayofmonth] = useState();
-  const [monthofyear, setMonthofyear] = useState();
+  //const [dayofmonth, setDayofmonth] = useState();
+  //const [monthofyear, setMonthofyear] = useState();
   const [newdate, setNewDate] = useState();
 
   useEffect(() => {
     const boy = new Date();
-    setDayofmonth(boy.getDay());
-    setMonthofyear(boy.getMonth());
+    //setDayofmonth(boy.getDay());
+    //setMonthofyear(boy.getMonth());
     const dog = days.filter(
       (element) => Date.parse(element[0]["datecal"]) > Date.parse(boy)
     );

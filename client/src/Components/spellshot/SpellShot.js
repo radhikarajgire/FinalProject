@@ -144,11 +144,9 @@ function SpellShot() {
             davetwo.splice(zz, 1);
             setStartPos(davetwo);
             if (davetwo.length === 0) {
-              console.log("finished");
               contextRef.current.clearRect(0, 0, 800, 500);
               contextRef.current.fillText("FINISHED TRY AGAIN", 300, 300);
             }
-            console.log("hit");
           }
         }
       }
@@ -196,7 +194,7 @@ function SpellShot() {
           <button className={Styles.button} onClick={() => positionthings()}>
             TRY
           </button>
-          <h5>Use LEFT ARROW or RIGHT ARROW to move, UPARROW to shoot</h5>
+          <h5>Use LEFT ARROW or RIGHT ARROW to move, UP ARROW to shoot</h5>
         </div>
         <div>
           <canvas

@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import Styles from "./ExGames.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function ExGames() {
-  const { exgameslist, referenceexgame } = useContext(StateContext);
+  const { referenceexgame } = useContext(StateContext);
   console.log(referenceexgame);
   // const [singleexgame, setSingleExGame] = useState(0);
 
@@ -30,6 +30,7 @@ function ExGames() {
               </div>*/}
         <div className={Styles.holder2}>
           <iframe
+            id="externalgames"
             className={Styles.iframe}
             src={referenceexgame}
             width="600px"
