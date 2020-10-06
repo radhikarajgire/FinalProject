@@ -5,18 +5,27 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import pink from "@material-ui/core/colors/pink";
 
 const Course = (props) => {
+  const primary = pink["500"];
   return (
-    <div>
+    <div styles={{ display: "flex", justifyContent: "center" }}>
       {props.course ? (
         <Card>
           <CardMedia
-            style={{ height: 0, paddingTop: "56.25%" }}
+            style={{
+              height: 0,
+              paddingTop: "56.25%",
+            }}
             image={props.course.fields.courseImage.fields.file.url}
             title={props.course.fields.title}
           />
-          <CardContent>
+          <CardContent
+            style={{
+              backgroundColor: primary,
+            }}
+          >
             <Typography gutterBottom variant="h4" component="h2">
               {props.course.fields.title}
             </Typography>
@@ -24,7 +33,11 @@ const Course = (props) => {
               {props.course.fields.description}
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions
+            style={{
+              backgroundColor: primary,
+            }}
+          >
             <Button
               size="small"
               color="primary"

@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
+
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
@@ -111,7 +112,7 @@ function Sidebar() {
       className={classes.drawer}
       variant="persistent"
       anchor="left"
-      background="light-blue" //tried to change only the top of the drawer so it fits with the header color
+      background="light-blue"
       open={openSidebar}
       classes={{
         paper: classes.drawerPaper,

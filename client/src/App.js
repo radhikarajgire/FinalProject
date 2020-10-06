@@ -72,8 +72,7 @@ function App() {
           <section className="container">
             <Alert />
             <Switch>
-              {/* <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} /> */}
+              
               <Route exact path="/learn" component={Learn} />
               <Route exact path="/learn/course" component={Learncourse} />
               <Route exact path="/play" component={Play} />
