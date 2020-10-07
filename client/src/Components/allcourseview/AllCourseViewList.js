@@ -3,6 +3,7 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
 import AllCourseView from "./AllCourseView.js";
+import Typography from "@material-ui/core/Typography";
 
 const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
@@ -42,6 +43,14 @@ class AllCourseViewList extends Component {
       <div>
         {this.state.Timinf ? (
           <div>
+            <Typography
+              style={{ padding: 12 }}
+              gutterBottom
+              variant="h3"
+              component="h2"
+            >
+              Your Current Course
+            </Typography>
             <h3>{console.log(this.state)}</h3>
             <Grid container spacing={2} style={{ padding: 12 }}>
               {this.state.Timinf.map((currentTimelement, idw) => (
