@@ -6,7 +6,14 @@ function Thesaurus() {
 
   return (
     <div>
-      <h2>Thesaurus</h2>
+      <h2
+        style={{
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        Thesaurus
+      </h2>
       <Thesaurusimp />
     </div>
   );

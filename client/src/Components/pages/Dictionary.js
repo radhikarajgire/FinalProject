@@ -6,7 +6,14 @@ function Dictionary() {
 
   return (
     <div>
-      <h2>Dictionary</h2>
+      <h2
+        style={{
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        Dictionary
+      </h2>
       <Dict />
     </div>
   );

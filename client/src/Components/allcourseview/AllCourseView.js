@@ -16,18 +16,19 @@ const AllCourseView = (props) => {
   //image={props.exgame.fields.courseImage.fields.file.url}
   return (
     <div>
-      {props.courseview !== undefined ? (
+      {props.courseview ? (
         <Card>
           <CardMedia
             style={{
-              height: 0,
-              paddingTop: "56.25%",
-              backgroundColor: "red",
+              height: 300,
+              padding: "5%",
+              backgroundColor: "#e6fffa",
             }}
+            component="img"
             title={props.courseview.fields.title}
-            image={props.courseview.fields.screenshot.fields.file.url}
+            src={props.courseview.fields.thebeginning[0].fields.file.url}
           />
-          <CardContent>
+          <CardContent style={{ backgroundColor: "#e6fffa" }}>
             <Typography gutterBottom variant="h4" component="h2">
               {props.courseview.fields.title}
             </Typography>
@@ -35,37 +36,17 @@ const AllCourseView = (props) => {
               {props.courseview.fields.part}
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions style={{ backgroundColor: "#e6fffa" }}>
             <Button
               size="small"
               onClick={() => {
-                if (props.courseview.fields.description === "Snap") {
-                  const fish = props.courseview.fields.input2;
-                  setReferenceData(fish);
-                } else if (
-                  props.courseview.fields.description === "Flashcard"
-                ) {
-                  const fish = props.courseview.fields.input2;
-                  setReferenceData(fish);
-                }
-                setReferenceExGame(props.courseview.fields.reference);
+                const fish = props.courseview;
+                setReferenceData(fish);
               }}
               color="primary"
               target=""
             >
-              <Link
-                to={
-                  props.courseview.fields.description === "Snap"
-                    ? "/review/Snap"
-                    : props.reviewtest.fields.description === "Flashcard"
-                    ? "/review/Flashcard"
-                    : props.reviewtest.fields.description === "Listening"
-                    ? "/review/Listening"
-                    : "/review/Knowledge"
-                }
-              >
-                Go To Review/Test
-              </Link>
+              <Link to={"/learn/course/singlecoursemodule"}>Go To Module</Link>
             </Button>
           </CardActions>
         </Card>
