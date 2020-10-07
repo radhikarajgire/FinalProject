@@ -5,10 +5,10 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import pink from "@material-ui/core/colors/pink";
+import blue from "@material-ui/core/colors/blue";
 
 const Course = (props) => {
-  const primary = pink["500"];
+  const primary = blue["200"];
   return (
     <div styles={{ display: "flex", justifyContent: "center" }}>
       {props.course ? (
