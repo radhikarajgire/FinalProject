@@ -59,14 +59,12 @@ class AllCourseViewList extends Component {
         {this.state.Timinf ? (
           <div>
             <TextField
-              style={{ padding: 24 }}
+              style={{ padding: 5 }}
               id="searchInput"
               placeholder="Search for ExGames"
               margin="normal"
               onChange={this.onSearchInputChange}
             />
-
-            <h1>I am here</h1>
             <Grid container spacing={2} style={{ padding: 24 }}>
               {this.state.Timinf.map((currentTimelement, idw) => (
                 <Grid key={idw} item xs={12} sm={6} lg={4} xl={3}>

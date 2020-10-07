@@ -6,7 +6,14 @@ function Review() {
 
   return (
     <div>
-      <h2>Review and Test</h2>
+      <h2
+        style={{
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        Review and Test
+      </h2>
       <ReviewTest />
     </div>
   );
