@@ -32,7 +32,7 @@ const AllCourseView = (props) => {
             <Typography gutterBottom variant="h4" component="h2">
               {props.courseview.fields.title}
             </Typography>
-            <Typography gutterBottom variant="h6" component="h4">
+            <Typography gutterBottom variant="h6" component="h2">
               {props.courseview.fields.part}
             </Typography>
           </CardContent>
