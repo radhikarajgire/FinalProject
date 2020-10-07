@@ -6,7 +6,14 @@ function Play() {
 
   return (
     <div>
-      <h2>Play</h2>
+      <h2
+        style={{
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        Play
+      </h2>
       <AllGames />
     </div>
   );

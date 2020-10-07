@@ -60,7 +60,7 @@ class ExGamesList extends Component {
         {this.state.ExGames ? (
           <div>
             <TextField
-              style={{ padding: 24 }}
+              style={{ padding: 5 }}
               id="searchInput"
               placeholder="Search for ExGames"
               margin="normal"
