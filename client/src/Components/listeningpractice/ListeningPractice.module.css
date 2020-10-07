@@ -14,6 +14,7 @@
   height: 70vh;
   z-index: 1;
   position: relative;
+  background: #b3e5fc;
 }
 
 .formholder {
@@ -26,8 +27,18 @@
   display: flex;
   flex-wrap: wrap;
   width: 800px;
-  height: 480px;
+  height: 380px;
   justify-content: center;
+  align-content: center;
+}
+
+.containertwo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  text-justify: center;
+  text-align: center;
 }
 
 .button {
@@ -36,12 +47,17 @@
   width: 100px;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: 5px;
   box-shadow: 5px 5px 5px lightslategray;
 }
 
 .button:hover {
   transform: scale(1.05);
   transition: all 0.3s;
+}
+
+.select {
+  margin-top: 5px;
 }
 
 .slidecontainer {
