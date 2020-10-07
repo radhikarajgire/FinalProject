@@ -3,9 +3,11 @@ import Studypartners from "../studypartners/StudyPartners.js";
 
 function Method() {
   console.log("Method");
-
+  let styleses = {
+    backgroundColor: 'black'
+  }
   return (
-    <div>
+    <div className ="methods" style={styleses}>
       <h2>Method</h2>
       <Studypartners />
     </div>

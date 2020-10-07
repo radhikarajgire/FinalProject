@@ -204,7 +204,7 @@ function Sidebar() {
         </div>
 
         <div className={classes.drawerLink}>
-          <Link to="/teacher">
+          <Link to="/profiles">
             <ListItem button>
               <PermContactCalendarIcon color="inherit" fontSize="small" />
               <ListItemText primary="Teacher" className={classes.drawerLabel} />

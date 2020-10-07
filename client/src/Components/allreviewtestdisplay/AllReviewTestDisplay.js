@@ -7,9 +7,10 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { StateContext } from "../statecontext/stateContext";
-import blue from "@material-ui/core/colors/blue";
+
+import teal from "@material-ui/core/colors/teal";
 const ReviewTest = (props) => {
-  const primary = blue["200"];
+  const primary = teal["100"];
   //const [display, setDisplay] = useState();
   const { setReferenceExGame, setReferenceData } = useContext(StateContext);
 
@@ -41,7 +42,7 @@ const ReviewTest = (props) => {
           </CardContent>
           <CardActions
           style={{
-            backgroundColor: primary,
+            backgroundColor: primary
           }}>
             <Button
               size="small"

@@ -6,7 +6,8 @@ function Dictionary() {
 
   return (
     <div>
-      <h2>Dictionary</h2>
+      <h2>
+      Dictionary</h2>
       <Dict />
     </div>
   );
