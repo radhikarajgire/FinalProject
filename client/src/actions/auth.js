@@ -15,7 +15,7 @@ import {
 //Load User
 export const loadUser = () => async (dispatch) => {
   try {
-    const res = await api.get("/auth");
+    const res = await api.get(`${process.env.REACT_APP_API_URL}/api/auth`);
 
     dispatch({
       type: USER_LOADED,
@@ -56,7 +56,7 @@ export const login = (email, password) => async (dispatch) => {
   const body = { email, password };
 
   try {
-    const res = await api.post("/auth", body);
+    const res = await api.post(`${process.env.REACT_APP_API_URL}/api/auth`, body);
 
     dispatch({
       type: LOGIN_SUCCESS,
