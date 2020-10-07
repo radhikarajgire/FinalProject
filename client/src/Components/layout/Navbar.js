@@ -48,6 +48,8 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     </div>
   );
 
+  if (!isAuthenticated) return null
+    
   return (
     <AppBar position="static" className={classes.AppBar}>
       <ReactPlayer
@@ -59,17 +61,15 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
         url={choice}
       />
       <Toolbar className="Navbar">
-        {isAuthenticated && (
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={() => setOpenSidebar(!openSidebar)}
-            edge="start"
-            className={clsx(classes.menuButton, openSidebar)}
-          >
-            <MenuIcon />
-          </IconButton>
-        )}
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={() => setOpenSidebar(!openSidebar)}
+          edge="start"
+          className={clsx(classes.menuButton, openSidebar)}
+        >
+          <MenuIcon />
+        </IconButton>
 
         <Typography variant="h4" color="inherit">
           <Link className="Navbar--link" to="/">
