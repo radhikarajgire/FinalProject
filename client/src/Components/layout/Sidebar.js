@@ -84,6 +84,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
+
     padding: theme.spacing(3),
     transition: theme.transitions.create("margin", {
       easing: theme.transitions.easing.sharp,
@@ -111,7 +112,7 @@ function Sidebar() {
       className={classes.drawer}
       variant="persistent"
       anchor="left"
-      background="light-blue" //tried to change only the top of the drawer so it fits with the header color
+      background="light-blue"
       open={openSidebar}
       classes={{
         paper: classes.drawerPaper,
@@ -129,86 +130,86 @@ function Sidebar() {
       <Divider />
       <List>
         <div className={classes.drawerLink}>
-          <ListItem button className={classes.drawerLink}>
-            <BookIcon color="inherit" fontSize="small" />
-            <Link to="/learn">
+          <Link to="/learn">
+            <ListItem button className={classes.drawerLink}>
+              <BookIcon color="inherit" fontSize="small" />
               <ListItemText
                 primary="Learn"
                 color="#484848"
                 className={classes.drawerLabel}
               />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
         <div className={classes.drawerLink}>
-          <ListItem button>
-            <CalendarTodayIcon color="inherit" fontSize="small" />
-            <Link to="/review">
+          <Link to="/review">
+            <ListItem button>
+              <CalendarTodayIcon color="inherit" fontSize="small" />
               <ListItemText
                 primary="Review/test"
                 className={classes.drawerLabel}
               />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
         <div className={classes.drawerLink}>
-          <ListItem button className={classes.drawerLink}>
-            <SportsEsportsIcon color="inherit" fontSize="small" />
-            <Link to="/play">
+          <Link to="/play">
+            <ListItem button className={classes.drawerLink}>
+              <SportsEsportsIcon color="inherit" fontSize="small" />
               <ListItemText primary="Play" className={classes.drawerLabel} />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
         <div className={classes.drawerLink}>
-          <ListItem button>
-            <MusicNoteIcon color="inherit" fontSize="small" />
-            <Link to="/method">
+          <Link to="/method">
+            <ListItem button>
+              <MusicNoteIcon color="inherit" fontSize="small" />
               <ListItemText primary="Method" className={classes.drawerLabel} />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
         <div className={classes.drawerLink}>
-          <ListItem button>
-            <SpellcheckIcon color="inherit" fontSize="small" />
-            <Link to="/dictionary">
+          <Link to="/dictionary">
+            <ListItem button>
+              <SpellcheckIcon color="inherit" fontSize="small" />
               <ListItemText
                 primary="Dictionary"
                 className={classes.drawerLabel}
               />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
         <div className={classes.drawerLink}>
-          <ListItem button>
-            <MenuBookIcon color="inherit" fontSize="small" />
-            <Link to="/thesaurus">
+          <Link to="/thesaurus">
+            <ListItem button>
+              <MenuBookIcon color="inherit" fontSize="small" />
               <ListItemText
                 primary="Thesaurus"
                 className={classes.drawerLabel}
               />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
 
         <div className={classes.drawerLink}>
-          <ListItem button>
-            <CalendarTodayIcon color="inherit" fontSize="small" />
-            <Link to="/appointments">
+          <Link to="/appointments">
+            <ListItem button>
+              <CalendarTodayIcon color="inherit" fontSize="small" />
               <ListItemText
                 primary="Appointments"
                 className={classes.drawerLabel}
               />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
 
         <div className={classes.drawerLink}>
-          <ListItem button>
-            <PermContactCalendarIcon color="inherit" fontSize="small" />
-            <Link to="/teacher">
+          <Link to="/teacher">
+            <ListItem button>
+              <PermContactCalendarIcon color="inherit" fontSize="small" />
               <ListItemText primary="Teacher" className={classes.drawerLabel} />
-            </Link>
-          </ListItem>
+            </ListItem>
+          </Link>
         </div>
       </List>
       <Divider />

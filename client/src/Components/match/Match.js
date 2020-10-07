@@ -6,8 +6,8 @@ import { StateContext } from "../statecontext/stateContext";
 function Match() {
   const contextRef = useRef(null);
   const canvasRef = useRef(null);
-  const [choice, setChoice] = useState(0);
-  const { customElements, referencedata } = useContext(StateContext);
+  //const [choice, setChoice] = useState(0);
+  const { referencedata } = useContext(StateContext);
   const [pos, setPos] = useState([]);
   const [textpos, setTextPos] = useState([]);
   const [movingelement, setMovingElement] = useState([]);

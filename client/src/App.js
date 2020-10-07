@@ -34,6 +34,8 @@ import Snap from "./Components/snap/Snap.js";
 import Flashcard from "./Components/flashcard/FlashCard.js";
 import Listening from "./Components/listeningpractice/ListeningPractice.js";
 import Knowledge from "./Components/multitest/MultiTest.js";
+import LevGam from "./Components/views/Level1.js";
+import Learncourse from "./Components/allcourseview/AllCourseViewList.js";
 import { LOGOUT } from "./actions/types";
 
 //if (localStorage.token) {
@@ -70,14 +72,15 @@ function App() {
           <section className="container">
             <Alert />
             <Switch>
-              {/* <Route exact path="/register" component={Register} />
-              <Route exact path="/login" component={Login} /> */}
+              
               <Route exact path="/learn" component={Learn} />
+              <Route exact path="/learn/course" component={Learncourse} />
               <Route exact path="/play" component={Play} />
               <Route exact path="/play/ExGames" component={Games} />
               <Route exact path="/play/SpellShot" component={SpellShot} />
               <Route exact path="/play/Match" component={Match} />
               <Route exact path="/play/PoshOrNot" component={PoshOrNot} />
+              <Route exact path="/play/levelgame" component={LevGam} />
               <Route exact path="/review/Snap" component={Snap} />
               <Route exact path="/review/Flashcard" component={Flashcard} />
               <Route exact path="/review/Listening" component={Listening} />

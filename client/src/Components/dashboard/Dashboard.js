@@ -71,7 +71,7 @@ import Spinner from "../layout/Spinner";
 import { StateContext } from "../statecontext/stateContext";
 import { getCurrentProfile } from "../../actions/profile";
 import MenuBar from "../menubar/MenuBar.js";
-import Header from "../header/Header.js";
+
 import FlashCard from "../flashcard/FlashCard.js";
 import Snap from "../snap/Snap.js";
 import WordSearch from "../wordsearch/WordSearch.js";
@@ -87,7 +87,6 @@ import TeacherQuestion from "../teacherquestion/TeacherQuestion.js";
 import CourseList from "../courses/courseList.js";
 import Dictionary from "../dictionary/Dictionary.js";
 import Thesauraus from "../thesauraus/Thesauraus.js";
-import FooterTwo from "../footertwo/FooterTwo.js";
 import Level1 from "../views/Level1.js";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 

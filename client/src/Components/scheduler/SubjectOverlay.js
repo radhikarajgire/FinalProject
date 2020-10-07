@@ -1,12 +1,17 @@
-import React, { useState, useContext, useRef } from "react";
+import React, { useState, useContext, useRef, useEffect } from "react";
 import { StateContext } from "../statecontext/stateContext";
 import Styles from "./SubjectOverlay.module.css";
 
 function SubjectOverlay({ fromabove }) {
   const { days, setDays, userid, setShowOverview } = useContext(StateContext);
   const textoverviewRef = useRef(null);
-  const sammy = fromabove.subejct;
-  const [textinput, setTextInput] = useState(sammy);
+  const [textinput, setTextInput] = useState("");
+
+  useEffect(() => {
+    const sammy = fromabove.subejct;
+    setTextInput(sammy);
+  }, []);
+
   function filltext(e) {
     const fish = days.map((input) =>
       input.map((inp) =>
@@ -64,7 +69,7 @@ function SubjectOverlay({ fromabove }) {
         Student {userid === 0 ? fromabove.idofselector : ""}
       </h4>
       <textarea
-        onChange={(e) => setTextInput(e.target.nodeValue)}
+        onChange={(e) => setTextInput(e.target.value)}
         value={textinput}
         className={Styles.text}
         ref={textoverviewRef}

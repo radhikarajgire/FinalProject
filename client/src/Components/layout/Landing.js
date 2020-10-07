@@ -37,25 +37,12 @@ const Landing = ({ isAuthenticated }) => {
             exercises,games and tests Take Your Speaking to the Next Level
           </p>
           <div className="buttons">
-            <Button
-              className={classes.Button}
-              variant="contained"
-              color="primary"
-            >
-              <Link className={classes.ButtonLink} to="/login">
-                Login: Students
-              </Link>
-            </Button>
-
-            <Button
-              className={classes.Button}
-              variant="contained"
-              color="primary"
-            >
-              <Link className={classes.ButtonLink} to="/register" >
-                Teachers:Sign Up
-              </Link>
-            </Button>
+           <Link to='/register' className='btn btn-primary'>
+              SignUp: Teachers
+            </Link>
+            <Link to='/login' className='btn btn-light'>
+              Login: Students
+            </Link>
           </div>
         </div>
       </div>
