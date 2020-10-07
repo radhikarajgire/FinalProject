@@ -31,7 +31,6 @@ h2 {
 }
 
 .input {
- 
   border: none;
   padding: 10px;
   font-size: 16px;
@@ -45,13 +44,12 @@ h2 {
   border-radius: 10px;
   background-color: white;
   resize: none;
-
 }
 
 button {
   border: none;
-  background:#0093C4;
-  color: #fff;
+  background: #0093c4;
+  color: #fff !important;
   height: 100%;
   font-size: 16px;
   padding: 0 20px;

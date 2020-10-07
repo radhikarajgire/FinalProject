@@ -15,7 +15,6 @@ const client = contentful.createClient({
 class AllCourseViewList extends Component {
   state = {
     Timinf: [],
-    searchString: "",
   };
 
   constructor() {
@@ -27,7 +26,6 @@ class AllCourseViewList extends Component {
     client
       .getEntries({
         content_type: "gdpr",
-        query: this.state.searchString,
       })
       .then((response) => {
         this.setState({ Timinf: response.items });
@@ -39,35 +37,13 @@ class AllCourseViewList extends Component {
       });
   };
 
-  onSearchInputChange = (event) => {
-    if (event.target.value) {
-      this.setState({ searchString: event.target.value });
-    } else {
-      this.setState({ searchString: "" });
-    }
-    this.getExgames();
-  };
-
-  //console.log(ExGames);
-  //<Grid item xs={12} sm={6} lg={4} xl={3}>
-  //            <Match />
-  //        </Grid>
-
   render() {
     return (
       <div>
         {this.state.Timinf ? (
           <div>
-            <TextField
-              style={{ padding: 24 }}
-              id="searchInput"
-              placeholder="Search for ExGames"
-              margin="normal"
-              onChange={this.onSearchInputChange}
-            />
-
-            <h1>I am here</h1>
-            <Grid container spacing={2} style={{ padding: 24 }}>
+            <h3>{console.log(this.state)}</h3>
+            <Grid container spacing={2} style={{ padding: 12 }}>
               {this.state.Timinf.map((currentTimelement, idw) => (
                 <Grid key={idw} item xs={12} sm={6} lg={4} xl={3}>
                   <AllCourseView courseview={currentTimelement} />

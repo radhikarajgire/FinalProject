@@ -11,9 +11,6 @@
   margin: 1vh 0 0 0;
   height: auto;
   z-index: 1;
-  overflow: auto;
-  white-space: nowrap;
-  box-shadow: 5px 5px 5px lightslategray;
 }
 
 .day {
@@ -22,6 +19,7 @@
   padding: 4px 4px 0 4px;
   text-align: center;
   width: auto;
+  margin: 10px;
 }
 
 .daytoday {
@@ -30,6 +28,7 @@
   padding: 4px 4px 0 4px;
   text-align: center;
   width: 150px;
+  margin: 6px;
 }
 
 .appointment {

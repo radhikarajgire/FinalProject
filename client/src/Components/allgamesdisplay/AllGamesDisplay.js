@@ -20,14 +20,15 @@ const ExGames = (props) => {
         <Card>
           <CardMedia
             style={{
-              height: 0,
-              paddingTop: "56.25%",
-              backgroundColor: "red",
+              height: 300,
+              padding: "5%",
+              backgroundColor: "#e6fffa",
             }}
+            component="img"
             title={props.exgame.fields.description}
-            image={props.exgame.fields.screenshot.fields.file.url}
+            src={props.exgame.fields.screenshot.fields.file.url}
           />
-          <CardContent>
+          <CardContent style={{ backgroundColor: "#e6fffa" }}>
             <Typography gutterBottom variant="h4" component="h2">
               {props.exgame.fields.description}
             </Typography>
@@ -35,7 +36,7 @@ const ExGames = (props) => {
               {props.exgame.fields.subdescription}
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions style={{ backgroundColor: "#e6fffa" }}>
             <Button
               size="small"
               onClick={() => {

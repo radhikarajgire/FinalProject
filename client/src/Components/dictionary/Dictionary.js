@@ -73,8 +73,11 @@ function Dictionary() {
   return (
     <div>
       <section className={(Styles.input, Styles.container)}>
-        <h3>Discover new words, expand your knowledge, and improve you English.
-          Browse through our extensive database of English words.Dont stop learning.</h3>
+        <h3>
+          Discover new words, expand your knowledge, and improve your English.
+          Browse through our extensive database of English words.Dont stop
+          learning.
+        </h3>
         <div className={Styles.formwrap}>
           <div className={Styles.inputwrap}>
             <input

@@ -21,17 +21,16 @@ const ReviewTest = (props) => {
         <Card>
           <CardMedia
             style={{
-              height: 0,
-              paddingTop: "56.25%"
-             
+              height: 300,
+              padding: "5%",
+              backgroundColor: "#e6fffa",
             }}
+            component="img"
             title={props.reviewtest.fields.description}
-            image={props.reviewtest.fields.screenshot.fields.file.url}
+            src={props.reviewtest.fields.screenshot.fields.file.url}
           />
-          <CardContent
-          style={{
-            backgroundColor: primary,
-          }}>
+
+          <CardContent style={{ backgroundColor: "#e6fffa" }}>
             <Typography gutterBottom variant="h4" component="h2">
               {props.reviewtest.fields.description}
             </Typography>
@@ -39,10 +38,8 @@ const ReviewTest = (props) => {
               {props.reviewtest.fields.subdescription}
             </Typography>
           </CardContent>
-          <CardActions
-          style={{
-            backgroundColor: primary,
-          }}>
+
+          <CardActions style={{ backgroundColor: "#e6fffa" }}>
             <Button
               size="small"
               onClick={() => {
