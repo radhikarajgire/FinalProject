@@ -2,37 +2,36 @@ import React, { Component } from "react";
 import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
-import AllReviewTestDisplay from "./AllReviewTestDisplay.js";
+import AllCourseView from "./AllCourseView.js";
 
 const SPACE_ID = process.env.REACT_APP_SPACE_ID;
-
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
-
 //to fetch the data from contentful
 const client = contentful.createClient({
   space: SPACE_ID,
   accessToken: ACCESS_TOKEN,
 });
 
-class ReviewTestList extends Component {
+class AllCourseViewList extends Component {
   state = {
-    ReviewTest: [],
+    Timinf: [],
     searchString: "",
   };
 
   constructor() {
     super();
-    this.getReviewtest();
+    this.getGDPinfo();
   }
 
-  getReviewtest = () => {
+  getGDPinfo = () => {
     client
       .getEntries({
-        content_type: "reviewtest",
+        content_type: "gdpr",
         query: this.state.searchString,
       })
       .then((response) => {
-        this.setState({ ReviewTest: response.items });
+        this.setState({ Timinf: response.items });
+        console.log(response.items);
       })
       .catch((error) => {
         console.log("Error occured while fetching data");
@@ -57,7 +56,7 @@ class ReviewTestList extends Component {
   render() {
     return (
       <div>
-        {this.state.ReviewTest ? (
+        {this.state.Timinf ? (
           <div>
             <TextField
               style={{ padding: 24 }}
@@ -66,10 +65,12 @@ class ReviewTestList extends Component {
               margin="normal"
               onChange={this.onSearchInputChange}
             />
+
+            <h1>I am here</h1>
             <Grid container spacing={2} style={{ padding: 24 }}>
-              {this.state.ReviewTest.map((currentReviewTest, idw) => (
+              {this.state.Timinf.map((currentTimelement, idw) => (
                 <Grid key={idw} item xs={12} sm={6} lg={4} xl={3}>
-                  <AllReviewTestDisplay reviewtest={currentReviewTest} />
+                  <AllCourseView courseview={currentTimelement} />
                 </Grid>
               ))}
             </Grid>
@@ -81,4 +82,4 @@ class ReviewTestList extends Component {
     );
   }
 }
-export default ReviewTestList;
+export default AllCourseViewList;

@@ -3,7 +3,7 @@ import Styles from "./FlashCard.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function FlashCard() {
-  const { customElements, referencedata } = useContext(StateContext);
+  const { referencedata } = useContext(StateContext);
   const [rotpost, setRotPost] = useState(true);
   //these should be changed to be entries from our DB (extracted from Entries - need to then display the chosen card choice)
   const [question, setQuestion] = useState("");
@@ -14,10 +14,9 @@ function FlashCard() {
   //Entries is the complete data set from the DB
   //const [entries, setEntries] = useState();
   //Use choice of which level to do
-  const [choice, setChoice] = useState(0);
+  //const [choice, setChoice] = useState(0);
 
   useEffect(() => {
-    console.log(JSON.parse(referencedata[0]));
     const chips = document.getElementById("flashcard").classList;
     chips.remove(Styles.rotatback);
     chips.add(Styles.extra);
@@ -39,7 +38,7 @@ function FlashCard() {
     utter.rate = 0.8;
     utter.lang = "en-GB";
     setSchmidt(utter);
-  }, [referencedata, card, choice]);
+  }, [referencedata, card]);
 
   function Rotatenow() {
     const fish = document.getElementById("flashcard").classList;

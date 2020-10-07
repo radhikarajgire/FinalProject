@@ -40,6 +40,7 @@ function Thesaurus() {
           setLoadingInfo("");
           setSuggestions(data);
           setDefinitionWord("");
+          setNotFoundInfo("");
 
           return;
         }
@@ -55,9 +56,10 @@ function Thesaurus() {
     <div>
       <section className={(Styles.input, Styles.container)}>
         <h3>
-          Search more than 275,000 synonyms, antonyms, related words and idiomatic
-          phrases.Find concise definitions pinpointing the meaning shared by
-          synonyms,and sample sentences showing how words are used in context.
+          Search more than 275,000 synonyms, antonyms, related words and
+          idiomatic phrases.Find concise definitions pinpointing the meaning
+          shared by synonyms,and sample sentences showing how words are used in
+          context.
         </h3>
         <div className={Styles.formwrap}>
           <div className={Styles.inputwrap}>

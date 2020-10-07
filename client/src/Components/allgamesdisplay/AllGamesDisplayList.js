@@ -3,7 +3,6 @@ import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import * as contentful from "contentful";
 import AllGamesDisplay from "./AllGamesDisplay.js";
-import Match from "../match/Match.js";
 
 const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 

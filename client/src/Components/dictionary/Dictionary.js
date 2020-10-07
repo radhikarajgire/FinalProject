@@ -49,11 +49,13 @@ function Dictionary() {
 
     setDefinitionWord(data);
     setSuggestions();
-
+    console.log(data);
     // Sound
-    const soundName = data[0].hwi.prs[0].sound.audio;
-    if (soundName) {
-      renderSound(soundName);
+    if (data[0].hwi.prs) {
+      const soundName = data[0].hwi.prs[0].sound.audio;
+      if (soundName) {
+        renderSound(soundName);
+      }
     }
   }
 
@@ -75,14 +77,16 @@ function Dictionary() {
           Browse through our extensive database of English words.Dont stop learning.</h3>
         <div className={Styles.formwrap}>
           <div className={Styles.inputwrap}>
-            <input className={Styles.input}
+            <input
+              className={Styles.input}
               type="text"
               placeholder="Search the Dictionary"
               id="input"
               value={word}
               onChange={(e) => setWord(e.target.value)}
             />
-            <button className={Styles.button}
+            <button
+              className={Styles.button}
               ref={searchBtnRef}
               onClick={(e) => {
                 e.preventDefault();

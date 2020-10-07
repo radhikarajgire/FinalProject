@@ -3,13 +3,13 @@ import Styles from "./Snap.module.css";
 import { StateContext } from "../statecontext/stateContext";
 
 function Snap() {
-  const { customElements, referencedata } = useContext(StateContext);
+  const { referencedata } = useContext(StateContext);
   const [oneEntry, setOneEntry] = useState("");
   const [entrylist, setEntryList] = useState([]);
   const [ident, setIdent] = useState(0);
   const [tryagain, setTryAgain] = useState(false);
   const [idcomp, setIDcomp] = useState();
-  const [choice, setChoice] = useState(0);
+  //const [choice, setChoice] = useState(0);
   const [correctclass, setCorrectClass] = useState();
 
   function TryAgain() {

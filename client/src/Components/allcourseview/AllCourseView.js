@@ -8,15 +8,15 @@ import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { StateContext } from "../statecontext/stateContext";
 
-const ExGames = (props) => {
+const AllCourseView = (props) => {
   //const [display, setDisplay] = useState();
   const { setReferenceExGame, setReferenceData } = useContext(StateContext);
-
+  console.log(props);
   //href={props.exgame.fields.reference}
   //image={props.exgame.fields.courseImage.fields.file.url}
   return (
     <div>
-      {props.exgame !== undefined ? (
+      {props.courseview !== undefined ? (
         <Card>
           <CardMedia
             style={{
@@ -24,36 +24,47 @@ const ExGames = (props) => {
               paddingTop: "56.25%",
               backgroundColor: "red",
             }}
-            title={props.exgame.fields.description}
-            image={props.exgame.fields.screenshot.fields.file.url}
+            title={props.courseview.fields.title}
+            image={props.courseview.fields.screenshot.fields.file.url}
           />
           <CardContent>
             <Typography gutterBottom variant="h4" component="h2">
-              {props.exgame.fields.description}
+              {props.courseview.fields.title}
             </Typography>
             <Typography gutterBottom variant="h6" component="h4">
-              {props.exgame.fields.subdescription}
+              {props.courseview.fields.part}
             </Typography>
           </CardContent>
           <CardActions>
             <Button
               size="small"
               onClick={() => {
-                if (props.exgame.fields.description === "Spell Shot") {
-                  const fish = props.exgame.fields.input2;
+                if (props.courseview.fields.description === "Snap") {
+                  const fish = props.courseview.fields.input2;
                   setReferenceData(fish);
-                } else if (props.exgame.fields.description === "Match") {
-                  const fish = props.exgame.fields.input2;
+                } else if (
+                  props.courseview.fields.description === "Flashcard"
+                ) {
+                  const fish = props.courseview.fields.input2;
                   setReferenceData(fish);
                 }
-
-                setReferenceExGame(props.exgame.fields.reference);
+                setReferenceExGame(props.courseview.fields.reference);
               }}
               color="primary"
               target=""
             >
-              <Link to={switchDescription(props.exgame.fields.description)}>
-                Go To Game
+              <Link
+                to={
+                  props.courseview.fields.description === "Snap"
+                    ? "/review/Snap"
+                    : props.reviewtest.fields.description === "Flashcard"
+                    ? "/review/Flashcard"
+                    : props.reviewtest.fields.description === "Listening"
+                    ? "/review/Listening"
+                    : "/review/Knowledge"
+                }
+              >
+                Go To Review/Test
               </Link>
             </Button>
           </CardActions>
@@ -62,25 +73,4 @@ const ExGames = (props) => {
     </div>
   );
 };
-
-const switchDescription = (description) => {
-  let str = "/play/";
-  switch (description) {
-    case "Spell Shot":
-      str += "SpellShot";
-      break;
-    case "Match":
-      str += "Match";
-      break;
-    case "PoshOrNot":
-      str += "PoshorNot";
-      break;
-    case "Level":
-      str += "levelgame";
-      break;
-    default:
-      str += "ExGames";
-  }
-  return str;
-};
-export default ExGames;
+export default AllCourseView;
