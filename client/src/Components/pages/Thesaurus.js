@@ -9,7 +9,7 @@ function Thesaurus() {
       <h2
         style={{
           padding: 0,
-          marginTop: "100px",
+          marginBottom: "100px",
           backgroundColor: "#e6fffa",
         }}
       >

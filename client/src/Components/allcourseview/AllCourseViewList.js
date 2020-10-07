@@ -44,7 +44,7 @@ class AllCourseViewList extends Component {
         {this.state.Timinf ? (
           <div>
             <Typography
-              style={{ padding: 12 }}
+              style={{ padding: 12, backgroundColor: "#e6fffa" }}
               gutterBottom
               variant="h3"
               component="h2"
