@@ -8,6 +8,8 @@ const SPACE_ID = process.env.REACT_APP_SPACE_ID;
 
 const ACCESS_TOKEN = process.env.REACT_APP_ACCESS_TOKEN;
 
+console.log(SPACE_ID);
+
 //to fetch the data from contentful
 const client = contentful.createClient({
   space: SPACE_ID,

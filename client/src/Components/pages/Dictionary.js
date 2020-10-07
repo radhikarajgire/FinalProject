@@ -8,11 +8,9 @@ function Dictionary() {
     <div>
       <h2
         style={{
-          padding: 0,
-        
-          margin: 0,
-          backgroundColor:"#e6fffa"
-
+          padding: "0px",
+          marginTop: "100px",
+          backgroundColor: "#e6fffa",
         }}
       >
         Dictionary

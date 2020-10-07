@@ -24,7 +24,7 @@ export const getCurrentProfile = () => async (dispatch) => {
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status }
+      payload: { msg: err.response.statusText, status: err.response.status },
     });
   }
 };
@@ -37,9 +37,9 @@ export const getProfiles = () => async (dispatch) => {
     const res = await api.get("/profile");
 
     dispatch({
-      type: GET_PROFILES, 
-      payload: res.data
-     });
+      type: GET_PROFILES,
+      payload: res.data,
+    });
   } catch (err) {
     dispatch({
       type: PROFILE_ERROR,
@@ -96,7 +96,7 @@ export const createProfile = (formData, history, edit = false) => async (
     dispatch(setAlert(edit ? "Profile Updated" : "Profile Created", "success"));
 
     if (!edit) {
-      history.push("/dashboard");
+      history.push("/teacher");
     }
   } catch (err) {
     const errors = err.response.data.errors;
@@ -124,7 +124,7 @@ export const addExperience = (formData, history) => async (dispatch) => {
 
     dispatch(setAlert("Experience Added", "success"));
 
-    history.push("/dashboard");
+    history.push("/teacher");
   } catch (err) {
     const errors = err.response.data.errors;
 
@@ -151,7 +151,7 @@ export const addEducation = (formData, history) => async (dispatch) => {
 
     dispatch(setAlert("Education Added", "success"));
 
-    history.push("/dashboard");
+    history.push("/teacher");
   } catch (err) {
     const errors = err.response.data.errors;
 
