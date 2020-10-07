@@ -10,7 +10,7 @@ class Coordinators extends Component {
   }
 
   componentDidMount() {
-    fetch("/api/coordinators")
+    fetch(`${process.env.REACT_APP_API_URL}/api/coordinators`)
       .then((res) => res.json())
       .then((coordinators) =>
         this.setState({ coordinators }, () =>

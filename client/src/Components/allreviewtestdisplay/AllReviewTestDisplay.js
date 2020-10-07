@@ -7,8 +7,9 @@ import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { Link } from "react-router-dom";
 import { StateContext } from "../statecontext/stateContext";
-
+import blue from "@material-ui/core/colors/blue";
 const ReviewTest = (props) => {
+  const primary = blue["200"];
   //const [display, setDisplay] = useState();
   const { setReferenceExGame, setReferenceData } = useContext(StateContext);
 
@@ -20,15 +21,19 @@ const ReviewTest = (props) => {
         <Card>
           <CardMedia
             style={{
+
               height: 300,
               padding: "5%",
               backgroundColor: "#e6fffa",
+
             }}
             component="img"
             title={props.reviewtest.fields.description}
             src={props.reviewtest.fields.screenshot.fields.file.url}
           />
+<
           <CardContent style={{ backgroundColor: "#e6fffa" }}>
+
             <Typography gutterBottom variant="h4" component="h2">
               {props.reviewtest.fields.description}
             </Typography>
@@ -36,7 +41,9 @@ const ReviewTest = (props) => {
               {props.reviewtest.fields.subdescription}
             </Typography>
           </CardContent>
+
           <CardActions style={{ backgroundColor: "#e6fffa" }}>
+
             <Button
               size="small"
               onClick={() => {

@@ -56,10 +56,7 @@ function StudyPartners() {
               url={choice}
             />
           ) : (
-            <h3>
-              Use the Pomodero method to help you study or listen to some study
-              music
-            </h3>
+            <h3>"Learn as if you were to live forever."</h3>
           )}
         </div>
         <div className={Styles.slidecontainer}>
