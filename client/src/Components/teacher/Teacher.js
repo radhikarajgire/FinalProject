@@ -22,7 +22,7 @@ const Teacher = ({
       <h1
         style={{
           textAlign: "center",
-          color: "#0093C4 !important",
+          color: "#0093C4",
         }}
         className="large text-primary"
       >
