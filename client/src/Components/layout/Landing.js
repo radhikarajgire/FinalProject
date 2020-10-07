@@ -6,12 +6,12 @@ import { makeStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 
 const useStyles = makeStyles((theme) => ({
-  Button: {
-    backgroundColor: "#0093c4",
-    "&:hover": {
-      backgroundColor: "#0093c4",
-    },
-  },
+  // Button: {
+  //   backgroundColor: "#0093c4",
+  //   "&:hover": {
+  //     backgroundColor: "#0093c4",
+  //   },
+  // },
   ButtonLink: {
     color: "white",
     padding: "10px",
@@ -31,10 +31,9 @@ const Landing = ({ isAuthenticated }) => {
     <section className="landing">
       <div className="dark-overlay">
         <div className="landing-inner">
-          <h1 className="x-large">Speak Languages Better</h1>
+          {/* <h1 className="x-large">Rthree Academy</h1> */}
           <p className="lead">
-            Get free language coaching on your speaking with lots of fun
-            exercises,games and tests Take Your Speaking to the Next Level
+          Bring your English to the next level, with our experienced language teachers, and on top spice it with lots of fun, exercises, games, and tests.
           </p>
           <div className="buttons">
            <Link to='/register' className='btn btn-primary'>

@@ -2,13 +2,15 @@ import React from "react";
 import Studypartners from "../studypartners/StudyPartners.js";
 
 function Method() {
-  console.log("Method");
-  let styleses = {
-    backgroundColor: 'black'
-  }
+  
+ 
   return (
-    <div className ="methods" style={styleses}>
-      <h2>Method</h2>
+    <div>
+      <h2  style={{
+          padding: 0,
+          margin: 0,
+          backgroundColor:"#e6fffa"
+        }}>Method</h2>
       <Studypartners />
     </div>
   );

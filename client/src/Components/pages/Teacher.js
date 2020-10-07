@@ -5,7 +5,11 @@ function Teacher() {
 
   return (
     <div>
-      <h2>Teacher</h2>
+      <h2  style={{
+          padding: 0,
+          margin: 0,
+          backgroundColor:"#e6fffa"
+        }}>Teacher</h2>
     </div>
   );
 }

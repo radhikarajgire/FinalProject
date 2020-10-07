@@ -1,8 +1,13 @@
 /* Styling for social media buttons */
 .social {
-  margin: 0 1rem 20px;
-  transition: transform 250ms;
-  display: inline-block;
+  /* margin: 0 1rem 20px;
+  transition: transform 250ms; */
+  /* display: flex;
+  justify-content:center; */
+  display: flex!important;
+align-items: center !important;
+justify-content: center !important;
+ 
 }
 
 .social:hover {
@@ -30,8 +35,11 @@
 }
 
 h6 {
-  padding: center;
+  /* padding: center; */
   color: white !important;
-  margin-left: 50px;
+  /* margin-left: 50px; */
   padding-top: 370px;
+  /* align-items: center; */
+  /* justify-content: center; */
+  text-align: center;
 }

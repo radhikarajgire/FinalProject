@@ -22,7 +22,7 @@ export default function SocialFollow() {
         href="https://www.youtube.com/c/jamesqquick"
         className={Styles.youtube}
       >
-        <FontAwesomeIcon icon={faYoutube} size="1x" />
+        <FontAwesomeIcon icon={faYoutube} size="lg" />
       </a>
 
       <a
@@ -30,7 +30,7 @@ export default function SocialFollow() {
         href="https://www.facebook.com/learnbuildteach/"
         className={Styles.facebook}
       >
-        <FontAwesomeIcon icon={faFacebook} size="1x" />
+        <FontAwesomeIcon icon={faFacebook} size="lg" />
       </a>
 
       <a
@@ -38,7 +38,7 @@ export default function SocialFollow() {
         href="https://www.twitter.com/jamesqquick"
         className={Styles.twitter}
       >
-        <FontAwesomeIcon icon={faTwitter} size="1x" />
+        <FontAwesomeIcon icon={faTwitter} size="lg" />
       </a>
 
       <a
@@ -46,7 +46,7 @@ export default function SocialFollow() {
         href="https://www.instagram.com/learnbuildteach"
         className={Styles.instagram}
       >
-        <FontAwesomeIcon icon={faInstagram} size="1x" />
+        <FontAwesomeIcon icon={faInstagram} size="lg" />
       </a>
     </div>
   );

@@ -9,6 +9,7 @@ function Learn() {
         style={{
           padding: 0,
           margin: 0,
+          backgroundColor:"#e6fffa"
         }}
       >
         Learn
