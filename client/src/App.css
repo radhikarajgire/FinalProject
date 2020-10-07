@@ -43,11 +43,11 @@ img {
 /* Utilities */
 .container {
   max-width: 1100px;
-  margin: auto;
+
   overflow: hidden;
   padding: 0 2rem;
-  margin-top: 6rem;
-  margin-bottom: 3rem;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
 }
 
 /* Text Styles*/
@@ -251,10 +251,10 @@ img {
   color: #888;
 }
 
-.form input[type='text'],
-.form input[type='email'],
-.form input[type='password'],
-.form input[type='date'],
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="date"],
 .form select,
 .form textarea {
   display: block;
@@ -264,7 +264,7 @@ img {
   border: 1px solid #ccc;
 }
 
-.form input[type='submit'],
+.form input[type="submit"],
 button {
   font: inherit;
 }
@@ -339,7 +339,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url('./assets/logo3R.png') no-repeat center center/cover;
+  background: url("./assets/logo3R.png") no-repeat center center/cover;
   height: 100vh;
 }
 
@@ -370,10 +370,10 @@ button {
 .profile-grid {
   display: grid;
   grid-template-areas:
-    'top top'
-    'about about'
-    'exp edu'
-    'github github';
+    "top top"
+    "about about"
+    "exp edu"
+    "github github";
   grid-gap: 1rem;
 }
 
@@ -496,10 +496,6 @@ button {
 
 /* Mobile Styles */
 @media (max-width: 700px) {
-  .container {
-    margin-top: 8rem;
-  }
-
   .hide-sm {
     display: none;
   }
@@ -556,11 +552,11 @@ button {
 
   .profile-grid {
     grid-template-areas:
-      'top'
-      'about'
-      'exp'
-      'edu'
-      'github';
+      "top"
+      "about"
+      "exp"
+      "edu"
+      "github";
   }
 
   .profile-about .skills {

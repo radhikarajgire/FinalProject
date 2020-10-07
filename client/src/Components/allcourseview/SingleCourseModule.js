@@ -23,11 +23,16 @@ const SingleCourseModule = () => {
   return (
     <div>
       {referencedata ? (
-        <Card style={{ backgroundColor: "#e6fffa" }}>
+        <Card
+          style={{
+            backgroundColor: "#e6fffa",
+            paddingTop: "2%",
+          }}
+        >
           <Typography gutterBottom variant="h4" component="h2">
             {referencedata.fields.title}
           </Typography>
-          <Typography gutterBottom variant="h6" component="h4">
+          <Typography gutterBottom variant="h6" component="h2">
             {referencedata.fields.part}
           </Typography>
           <CardMedia
@@ -36,8 +41,14 @@ const SingleCourseModule = () => {
             title={referencedata.fields.title}
             src={referencedata.fields.thebeginning[0].fields.file.url}
           />
-          <CardContent></CardContent>
-          <Typography gutterBottom variant="h6" component="h4">
+          <CardContent>
+            <h4>
+              {referencedata.fields.link1.content[0].content.map((entry) => (
+                <span>{entry.value}</span>
+              ))}{" "}
+            </h4>
+          </CardContent>
+          <Typography gutterBottom variant="h6" component="h2">
             <CardActions style={{ backgroundColor: "#e6fffa" }}>
               <Button
                 href={referencedata.fields.thebeginning[1].fields.file.url}
@@ -49,7 +60,7 @@ const SingleCourseModule = () => {
               </Button>
             </CardActions>
           </Typography>
-          <Typography gutterBottom variant="h4" component="h4">
+          <Typography gutterBottom variant="h4" component="h2">
             Useful Connections
           </Typography>
           <CardMedia
@@ -61,6 +72,13 @@ const SingleCourseModule = () => {
             title={referencedata.fields.title}
             src={referencedata.fields.videolink}
           />
+          <CardActions style={{ backgroundColor: "#e6fffa" }}>
+            <Button size="small" color="primary" target="">
+              <Link to={"/review"}>
+                Now that you have learnt something go practice
+              </Link>
+            </Button>
+          </CardActions>
         </Card>
       ) : null}
     </div>
