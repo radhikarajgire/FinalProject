@@ -1,10 +1,10 @@
 .button {
-  background-color: lightblue;
+  background-color: rgb(148, 214, 236);
   cursor: pointer;
   width: 100px;
   margin-left: 10px;
   margin-right: 10px;
-  box-shadow: 5px 5px 5px lightslategray;
+  box-shadow: 5px 5px 5px rgb(36, 152, 160);
 }
 
 .button:hover {
@@ -27,7 +27,7 @@
   height: 20vh;
   z-index: 10000;
   box-shadow: 5px 5px 5px lightslategray;
-  background: lightgrey;
+  background: rgb(28, 113, 139);
   justify-content: center;
 }
 

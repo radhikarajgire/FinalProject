@@ -1121,7 +1121,7 @@ export default function StateContextProvider({ children }) {
     },
   ]);
 
-  const studentcolor = [" ", "#80ced6", "#d5f4e6", "#fefbd8", "d5e1df"];
+  const studentcolor = [" ", "#80ced6", "#d5f4e6", "#42a5f5", "#42a5f5"];
 
   /* useEffect(()=>{
     fetch('https://www.oxfordlearnersdictionaries.com/api/v1/wordoftheday', {mode: 'no-cors', method: 'GET'})

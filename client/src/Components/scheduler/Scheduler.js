@@ -45,7 +45,7 @@ function Appointment() {
 
   return (
     <div className={Styles.holderholder}>
-      {userid === 0 ? <h3>Welcome teacher</h3> : <h3>Appointment Picker</h3>}
+      {userid === 0 ? <h2>Welcome teacher</h2> : <h2>Appointment Picker</h2>}
       <div className={Styles.holder}>
         {newdate !== undefined
           ? newdate.map((entry, idn) => (
