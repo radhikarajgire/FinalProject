@@ -66,7 +66,7 @@ class ExGamesList extends Component {
               margin="normal"
               onChange={this.onSearchInputChange}
             />
-            <Grid container spacing={2} style={{ padding: 24 }}>
+            <Grid container spacing={2} style={{ padding: 12 }}>
               {this.state.ExGames.map((currentExGame, idw) => (
                 <Grid key={idw} item xs={12} sm={6} lg={4} xl={3}>
                   <AllGamesDisplay exgame={currentExGame} />

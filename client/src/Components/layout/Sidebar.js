@@ -132,7 +132,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/learn">
             <ListItem button className={classes.drawerLink}>
-              <BookIcon color="inherit" fontSize="small" />
+              <BookIcon
+                color="inherit"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText
                 primary="Learn"
                 color="#484848"
@@ -144,7 +148,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/review">
             <ListItem button>
-              <CalendarTodayIcon color="inherit" fontSize="small" />
+              <CalendarTodayIcon
+                color="disabled"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText
                 primary="Review/test"
                 className={classes.drawerLabel}
@@ -155,7 +163,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/play">
             <ListItem button className={classes.drawerLink}>
-              <SportsEsportsIcon color="inherit" fontSize="small" />
+              <SportsEsportsIcon
+                color="disabled"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText primary="Play" className={classes.drawerLabel} />
             </ListItem>
           </Link>
@@ -163,7 +175,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/method">
             <ListItem button>
-              <MusicNoteIcon color="inherit" fontSize="small" />
+              <MusicNoteIcon
+                color="disabled"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText primary="Method" className={classes.drawerLabel} />
             </ListItem>
           </Link>
@@ -171,7 +187,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/dictionary">
             <ListItem button>
-              <SpellcheckIcon color="inherit" fontSize="small" />
+              <SpellcheckIcon
+                color="inherit"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText
                 primary="Dictionary"
                 className={classes.drawerLabel}
@@ -182,7 +202,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/thesaurus">
             <ListItem button>
-              <MenuBookIcon color="inherit" fontSize="small" />
+              <MenuBookIcon
+                color="inherit"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText
                 primary="Thesaurus"
                 className={classes.drawerLabel}
@@ -194,7 +218,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/appointments">
             <ListItem button>
-              <CalendarTodayIcon color="inherit" fontSize="small" />
+              <CalendarTodayIcon
+                color="inherit"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText
                 primary="Appointments"
                 className={classes.drawerLabel}
@@ -206,7 +234,11 @@ function Sidebar() {
         <div className={classes.drawerLink}>
           <Link to="/teacher">
             <ListItem button>
-              <PermContactCalendarIcon color="inherit" fontSize="small" />
+              <PermContactCalendarIcon
+                color="inherit"
+                style={{ color: "white" }}
+                fontSize="small"
+              />
               <ListItemText primary="Teacher" className={classes.drawerLabel} />
             </ListItem>
           </Link>
