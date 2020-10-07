@@ -5,7 +5,14 @@ function Learn() {
   console.log("Learn");
   return (
     <div>
-      <h2>Learn</h2>
+      <h2
+        style={{
+          padding: 0,
+          margin: 0,
+        }}
+      >
+        Learn
+      </h2>
       <Courses />
     </div>
   );

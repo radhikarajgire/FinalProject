@@ -55,7 +55,7 @@ class CourseList extends Component {
         {this.state.courses ? (
           <div>
             <TextField
-              style={{ padding: 24 }}
+              style={{ padding: 5 }}
               id="searchInput"
               placeholder="Search for Courses"
               margin="normal"
