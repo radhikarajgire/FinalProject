@@ -4,36 +4,13 @@
   padding: 0;
 }
 
-
-.App-link {
-  color: #61dafb;
-}
-/* Styling for social media buttons */
-/* a.social {
-  margin: 0 1rem;
-  transition: transform 250ms;
-  display: inline-block;
-}
-
-a.social:hover {
-  transform: translateY(-2px);
-}
-
-
-
-.App-link {
-  color: #61dafb;
-}
-
-a.instagram {
-  color: black;
-} */
-*/:root {
-  --primary-color: #03eeee;
-  --dark-color: #5ba7f3;
+/* Global Styles */
+:root {
+  --primary-color: #17a2b8;
+  --dark-color: #343a40;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+  --danger-color: #fc4b45;
+  --success-color: #80e297;
 }
 
 * {
@@ -43,11 +20,11 @@ a.instagram {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  /* font-family: 'Raleway', sans-serif; */
   font-size: 1rem;
   line-height: 1.6;
-  background-color: rgb(105, 94, 94);
-  color: rgb(209, 196, 196);
+  background-color: #fff;
+  color: #333;
 }
 
 a {
@@ -65,11 +42,12 @@ img {
 
 /* Utilities */
 .container {
-  width: 100vw;
-  margin: 0;
-  padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+  padding: 0 2rem;
+  margin-top: 6rem;
+  margin-bottom: 3rem;
 }
 
 /* Text Styles*/
@@ -106,31 +84,24 @@ img {
 .p {
   padding: 0.5rem;
 }
-
 .p-1 {
   padding: 1rem;
 }
-
 .p-2 {
   padding: 2rem;
 }
-
 .p-3 {
   padding: 3rem;
 }
-
 .py {
   padding: 0.5rem 0;
 }
-
 .py-1 {
   padding: 1rem 0;
 }
-
 .py-2 {
   padding: 2rem 0;
 }
-
 .py-3 {
   padding: 3rem 0;
 }
@@ -139,31 +110,24 @@ img {
 .m {
   margin: 0.5rem;
 }
-
 .m-1 {
   margin: 1rem;
 }
-
 .m-2 {
   margin: 2rem;
 }
-
 .m-3 {
   margin: 3rem;
 }
-
 .my {
   margin: 0.5rem 0;
 }
-
 .my-1 {
   margin: 1rem 0;
 }
-
 .my-2 {
   margin: 2rem 0;
 }
-
 .my-3 {
   margin: 3rem 0;
 }
@@ -212,7 +176,6 @@ img {
 .alert-light {
   background: var(--light-color);
   color: #333;
-  border-radius: 20px;
 }
 
 .btn-dark,
@@ -288,10 +251,10 @@ img {
   color: #888;
 }
 
-.form input[type="text"],
-.form input[type="email"],
-.form input[type="password"],
-.form input[type="date"],
+.form input[type='text'],
+.form input[type='email'],
+.form input[type='password'],
+.form input[type='date'],
 .form select,
 .form textarea {
   display: block;
@@ -301,7 +264,7 @@ img {
   border: 1px solid #ccc;
 }
 
-.form input[type="submit"],
+.form input[type='submit'],
 button {
   font: inherit;
 }
@@ -318,19 +281,15 @@ button {
 .form .social-input i.fa-twitter {
   color: #38a1f3;
 }
-
 .form .social-input i.fa-facebook {
   color: #3b5998;
 }
-
 .form .social-input i.fa-instagram {
   color: #3f729b;
 }
-
 .form .social-input i.fa-youtube {
   color: #c4302b;
 }
-
 .form .social-input i.fa-linkedin {
   color: #0077b5;
 }
@@ -364,7 +323,7 @@ button {
 }
 
 .navbar a {
-  color: rgb(223, 65, 65);
+  color: #fff;
   padding: 0.45rem;
   margin: 0 0.25rem;
 }
@@ -380,7 +339,7 @@ button {
 /* Landing Page */
 .landing {
   position: relative;
-  background: url("./assets/logo3R.png") no-repeat center center/cover;
+  background: url('./assets/logo3R.png') no-repeat center center/cover;
   height: 100vh;
 }
 
@@ -411,10 +370,10 @@ button {
 .profile-grid {
   display: grid;
   grid-template-areas:
-    "top top"
-    "about about"
-    "exp edu"
-    "github github";
+    'top top'
+    'about about'
+    'exp edu'
+    'github github';
   grid-gap: 1rem;
 }
 
@@ -465,15 +424,15 @@ button {
   margin-bottom: 1rem;
 }
 
-.profile-exp>div,
-.profile-edu>div {
+.profile-exp > div,
+.profile-edu > div {
   margin-bottom: 1rem;
   padding-bottom: 1rem;
   border-bottom: #ccc 1px dotted;
 }
 
-.profile-exp>div:last-child,
-.profile-edu>div:last-child {
+.profile-exp > div:last-child,
+.profile-edu > div:last-child {
   border: 0;
 }
 
@@ -490,12 +449,12 @@ button {
   display: flex;
 }
 
-.profile-github .repo>div:first-child {
+.profile-github .repo > div:first-child {
   flex: 7;
   flex-basis: 70%;
 }
 
-.profile-github>div:last-child {
+.profile-github > div:last-child {
   flex: 3;
   flex-basis: 20%;
 }
@@ -513,7 +472,7 @@ button {
   align-items: center;
 }
 
-.post>div:first-child {
+.post > div:first-child {
   text-align: center;
 }
 
@@ -597,11 +556,11 @@ button {
 
   .profile-grid {
     grid-template-areas:
-      "top"
-      "about"
-      "exp"
-      "edu"
-      "github";
+      'top'
+      'about'
+      'exp'
+      'edu'
+      'github';
   }
 
   .profile-about .skills {
@@ -617,10 +576,8 @@ button {
   .post {
     grid-template-columns: 1fr;
   }
-
   .post a,
   .post button {
     padding: 0.3rem 0.4rem;
-    border-radius: 0.5rem;
   }
 }
