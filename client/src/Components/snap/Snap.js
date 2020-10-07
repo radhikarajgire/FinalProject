@@ -107,7 +107,7 @@ function Snap() {
                     correct(entry.qa, e, entry.idaq);
                   }}
                 >
-                  {ident === idn ? <p>{oneEntry}</p> : ""}
+                  {ident === idn ? <h5>{oneEntry}</h5> : ""}
                 </div>
               ))
             : ""}

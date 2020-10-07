@@ -2,6 +2,10 @@ import React, { useState, useContext, useRef } from "react";
 import Styles from "./ListeningPractice.module.css";
 import ReactPlayer from "react-player";
 import { StateContext } from "../statecontext/stateContext";
+import Slider from "@material-ui/core/Slider";
+import VolumeDown from "@material-ui/icons/VolumeDown";
+import VolumeUp from "@material-ui/icons/VolumeUp";
+import Typography from "@material-ui/core/Typography";
 
 function ListeningPractice() {
   const listpracplayer = useRef(null);
@@ -25,7 +29,7 @@ function ListeningPractice() {
               listpracplayer.current.seekTo(playtime - 10, "seconds");
             }}
           >
-            Go back
+            Back
           </button>
           <select
             onChange={(e) => {
@@ -56,10 +60,9 @@ function ListeningPractice() {
           {vidlistening ? (
             <ReactPlayer
               ref={listpracplayer}
-              volume={vollp / 100}
+              volume={vollp}
               playing={playvidlistening}
-              width="500px"
-              height="300px"
+              width="700px"
               className={Styles.player}
               url={vidlistening}
             />
@@ -68,26 +71,33 @@ function ListeningPractice() {
           )}
         </div>
         <div className={Styles.slidecontainer}>
-          <h3 className={Styles.slidermarker}>Quiet</h3>
-          <input
-            onChange={(e) => setVollp(e.target.value)}
-            type="range"
-            min="0"
-            max="100"
+          <Typography id="continuous-slider" gutterBottom>
+            Volume
+          </Typography>
+          <VolumeDown />
+
+          <Slider
             value={vollp}
-            className={Styles.slider}
+            min={0}
+            max={1}
+            step={0.1}
+            onChange={(e, newValue) => {
+              setVollp(newValue);
+            }}
+            aria-labelledby="continuous-slider"
             id="volRange"
           />
-          <h3 className={Styles.slidermarker}>Loud</h3>
+
+          <VolumeUp />
         </div>
-        <div>
+        <div className={Styles.containertwo}>
           <h4>When you have finished typing please submit</h4>
           <textarea
             ref={textsubmissionRef}
             onChange={(e) => setTextInput(e.target.value)}
             value={textinput}
             name="stuidlistenpractice"
-            rows="4"
+            rows="10"
             cols="50"
           >
             {" "}
