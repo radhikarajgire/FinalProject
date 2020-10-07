@@ -6,6 +6,7 @@ import TeacherActions from "./TeacherActions";
 import Experience from "./Experience";
 import Education from "./Education";
 import { getCurrentProfile, deleteAccount } from "../../actions/profile.js";
+import { ThemeProvider } from "@material-ui/core";
 
 const Teacher = ({
   getCurrentProfile,
@@ -22,7 +23,7 @@ const Teacher = ({
       <h1
         style={{
           textAlign: "center",
-          color: "#0093C4 !important",
+          color: "pink",
         }}
         className="large text-primary"
       >
@@ -66,14 +67,16 @@ const Teacher = ({
           <Link
             to="/create-profile"
             className="btn btn-primary my-1"
-            justifyContent="center"
-            display="flex"
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "row,",
               borderRadius: "4px",
+              padding: "10px",
+              width: "12%",
+              marginLeft: "490px",
+              backgroundColor: "pink",
             }}
           >
             Create Profile
