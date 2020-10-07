@@ -24,7 +24,6 @@ const Teacher = ({
         style={{
           textAlign: "center",
           color: "pink",
-
         }}
         className="large text-primary"
       >
@@ -68,17 +67,17 @@ const Teacher = ({
           <Link
             to="/create-profile"
             className="btn btn-primary my-1"
-
             justifyContent="center"
             display="flex"
-
             style={{
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
               flexDirection: "row,",
               borderRadius: "4px",
-
+              padding: "10px",
+              width: "12%",
+              marginLeft: "490px",
             }}
           >
             Create Profile
