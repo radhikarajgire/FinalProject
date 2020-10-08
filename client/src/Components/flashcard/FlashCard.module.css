@@ -64,10 +64,10 @@
   transform: rotateY(180deg);
 }
 
-.front h1,
-.back h1 {
+.front h2,
+.back h2 {
   z-index: 100;
-  margin-top: 10vh;
+  margin-top: 2vh;
   box-shadow: 5px 5px 5px lightslategray;
 }
 

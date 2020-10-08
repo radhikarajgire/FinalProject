@@ -20,6 +20,7 @@ import ChevronRightIcon from "@material-ui/icons/ChevronRight";
 //import InboxIcon from "@material-ui/icons/MoveToInbox";
 //import MailIcon from "@material-ui/icons/Mail";
 import SportsEsportsIcon from "@material-ui/icons/SportsEsports";
+import Typography from "@material-ui/core/Typography";
 
 import { StateContext } from "../statecontext/stateContext";
 import BookIcon from "@material-ui/icons/Book";
@@ -30,8 +31,8 @@ import MenuBookIcon from "@material-ui/icons/MenuBook";
 import MusicNoteIcon from "@material-ui/icons/MusicNote";
 import SocialFollow from ".././socialfollow/SocialFollow.js";
 
-const drawerWidth = 240;
-
+const drawerWidth = "15vw";
+//`calc(100% - ${drawerWidth}px)`,
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     }),
   },
   appBarShift: {
-    width: `calc(100% - ${drawerWidth}px)`,
+    width: drawerWidth,
     marginLeft: drawerWidth,
     transition: theme.transitions.create(["margin", "width"], {
       easing: theme.transitions.easing.easeOut,
@@ -66,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
     backgroundColor: "#0093c4",
     color: "white",
+    border: "0",
   },
   drawerHeader: {
     display: "flex",
@@ -103,6 +105,7 @@ const useStyles = makeStyles((theme) => ({
 
 function Sidebar() {
   const { openSidebar, setOpenSidebar } = useContext(StateContext);
+  setOpenSidebar(true);
   const classes = useStyles();
 
   const theme = useTheme();
@@ -119,15 +122,15 @@ function Sidebar() {
       }}
     >
       <div className={classes.drawerHeader}>
-        <IconButton onClick={() => setOpenSidebar(false)}>
+        {/*<IconButton onClick={() => setOpenSidebar(true)}>
           {theme.direction === "ltr" ? (
             <ChevronLeftIcon />
           ) : (
             <ChevronRightIcon />
           )}
-        </IconButton>
+          </IconButton>*/}
       </div>
-      <Divider />
+      {/*<Divider />*/}
       <List>
         <div className={classes.drawerLink}>
           <Link to="/learn">
@@ -244,10 +247,8 @@ function Sidebar() {
           </Link>
         </div>
       </List>
-      <Divider />
-      <div>
-        <SocialFollow />
-      </div>
+      {/*<Divider />*/}
+      <div>{/*<SocialFollow />*/}</div>
     </Drawer>
   );
 }

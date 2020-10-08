@@ -43,9 +43,9 @@ const SingleCourseModule = () => {
           />
           <CardContent>
             <h4>
-              {referencedata.fields.link1.content[0].content.map((entry) => (
-                <span>{entry.value}</span>
-              ))}{" "}
+              {referencedata.fields.link1.content.map((entry) =>
+                entry.content.map((ent) => <span>{ent.value}</span>)
+              )}{" "}
             </h4>
           </CardContent>
           <Typography gutterBottom variant="h6" component="h2">

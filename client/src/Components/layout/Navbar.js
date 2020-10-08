@@ -48,8 +48,8 @@ const Navbar = ({ auth: { isAuthenticated }, logout }) => {
     </div>
   );
 
-  if (!isAuthenticated) return null
-    
+  if (!isAuthenticated) return null;
+
   return (
     <AppBar position="static" className={classes.AppBar}>
       <ReactPlayer
