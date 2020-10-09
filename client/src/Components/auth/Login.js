@@ -1,8 +1,9 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useState, useContext } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { login } from "../../actions/auth";
 import PropTypes from "prop-types";
+import { StateContext } from "../statecontext/stateContext";
 
 const Login = ({ login, isAuthenticated }) => {
   const [formData, setFormData] = useState({
@@ -17,9 +18,11 @@ const Login = ({ login, isAuthenticated }) => {
 
     login(email, password);
   };
+  const { openSidebar, setOpenSidebar } = useContext(StateContext);
 
   //Redirect if logged in
   if (isAuthenticated) {
+    setOpenSidebar(true);
     return <Redirect to="/learn/course" />;
   }
   return (

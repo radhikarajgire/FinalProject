@@ -70,34 +70,42 @@ function App() {
           <Sidebar />
           <Route exact path="/" component={Landing} />
           <Route component={Routes} />
-          <section className="container">
-            <Alert />
-            <Switch>
-              <Route exact path="/learn" component={Learn} />
-              <Route exact path="/learn/course" component={Learncourse} />
-              <Route
-                exact
-                path="/learn/course/singlecoursemodule"
-                component={SingleCourseModule}
-              />
-              <Route exact path="/play" component={Play} />
-              <Route exact path="/play/ExGames" component={Games} />
-              <Route exact path="/play/SpellShot" component={SpellShot} />
-              <Route exact path="/play/Match" component={Match} />
-              <Route exact path="/play/PoshOrNot" component={PoshOrNot} />
-              <Route exact path="/play/levelgame" component={LevGam} />
-              <Route exact path="/review/Snap" component={Snap} />
-              <Route exact path="/review/Flashcard" component={Flashcard} />
-              <Route exact path="/review/Listening" component={Listening} />
-              <Route exact path="/review/Knowledge" component={Knowledge} />
-              <Route exact path="/review" component={Review} />
-              <Route exact path="/method" component={Method} />
-              <Route exact path="/dictionary" component={Dictionary} />
-              <Route exact path="/thesaurus" component={Thesaurus} />
-              <Route exact path="/appointments" component={Appointments} />
-              {/* <Route exact path="/teacher" component={Teacher} /> */}
-              <PrivateRoute exact path="/dashboard" component={Dashboard} />
-            </Switch>
+          <section className="containerholder">
+            <div
+              style={{
+                width: "85vw",
+                marginLeft: "13vw",
+                padding: "0 2vw 0 2vw",
+              }}
+            >
+              <Alert />
+              <Switch>
+                <Route exact path="/learn" component={Learn} />
+                <Route exact path="/learn/course" component={Learncourse} />
+                <Route
+                  exact
+                  path="/learn/course/singlecoursemodule"
+                  component={SingleCourseModule}
+                />
+                <Route exact path="/play" component={Play} />
+                <Route exact path="/play/ExGames" component={Games} />
+                <Route exact path="/play/SpellShot" component={SpellShot} />
+                <Route exact path="/play/Match" component={Match} />
+                <Route exact path="/play/PoshOrNot" component={PoshOrNot} />
+                <Route exact path="/play/levelgame" component={LevGam} />
+                <Route exact path="/review/Snap" component={Snap} />
+                <Route exact path="/review/Flashcard" component={Flashcard} />
+                <Route exact path="/review/Listening" component={Listening} />
+                <Route exact path="/review/Knowledge" component={Knowledge} />
+                <Route exact path="/review" component={Review} />
+                <Route exact path="/method" component={Method} />
+                <Route exact path="/dictionary" component={Dictionary} />
+                <Route exact path="/thesaurus" component={Thesaurus} />
+                <Route exact path="/appointments" component={Appointments} />
+                {/* <Route exact path="/teacher" component={Teacher} /> */}
+                <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              </Switch>
+            </div>
           </section>
         </Fragment>
       </Router>

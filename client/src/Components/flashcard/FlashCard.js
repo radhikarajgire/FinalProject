@@ -113,16 +113,16 @@ function FlashCard() {
         >
           <div className={Styles.front}>
             <div className={Styles.textholder}>
-              <h1 onMouseOver={() => speechSynthesis.speak(smith)}>
+              <h2 onMouseOver={() => speechSynthesis.speak(smith)}>
                 {question}
-              </h1>
+              </h2>
             </div>
           </div>
           <div className={Styles.back}>
             <div className={Styles.textholder}>
-              <h1 onMouseOver={() => speechSynthesis.speak(schmidt)}>
+              <h2 onMouseOver={() => speechSynthesis.speak(schmidt)}>
                 {answer}
-              </h1>
+              </h2>
             </div>
           </div>
         </div>

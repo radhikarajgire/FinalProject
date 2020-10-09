@@ -8,7 +8,7 @@ export default function StateContextProvider({ children }) {
   const [choice, setChoice] = useState("");
   const [playmusic, setPlayMusic] = useState(true);
   const [volsp, setVolsp] = useState(0.5);
-  const [openSidebar, setOpenSidebar] = useState(false);
+  const [openSidebar, setOpenSidebar] = useState(true);
   const [showoverview, setShowOverview] = useState();
   const [referenceexgame, setReferenceExGame] = useState();
   const [referencedata, setReferenceData] = useState();
@@ -17,7 +17,7 @@ export default function StateContextProvider({ children }) {
     [
       { qadata: "animals" },
       {
-        q: "A four leged friend",
+        q: "A four legged friend",
         a: "dog",
         waone: "chimp",
         watwo: "parot",
@@ -87,7 +87,7 @@ export default function StateContextProvider({ children }) {
     [
       { qadata: "country" },
       {
-        q: "A four leged friend",
+        q: "A four legged friend",
         a: "dog",
         waone: "chimp",
         watwo: "parot",
@@ -122,7 +122,7 @@ export default function StateContextProvider({ children }) {
     [
       { qadata: "people" },
       {
-        q: "A four leged friend",
+        q: "A four legged friend",
         a: "dog",
         waone: "chimp",
         watwo: "parot",

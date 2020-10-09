@@ -6,13 +6,16 @@ function Review() {
   console.log("Play");
 
   return (
-    <div>
+    <div
+      style={{
+        padding: "0px",
+      }}
+    >
       <h2
         style={{
           padding: 0,
           margin: 0,
-          backgroundColor:"#e6fffa"
-         
+          backgroundColor: "#e6fffa",
         }}
       >
         Review and Test
