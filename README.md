@@ -1,5 +1,5 @@
 # FinalProject
-Better way to learn a language. English learning app. It containslessons made of up range of activities including games.
+Better way to learn a language. English learning app. It contains lessons made of up range of activities including games.
 
 Tech Stacks
 . React
@@ -8,3 +8,4 @@ Tech Stacks
 . Express
 . JWT Authentication
 . MongoDB
+. Headless CMS 
